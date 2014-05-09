@@ -1,0 +1,924 @@
+/* Header */
+#header_link .button_healthscan {
+	height: 72px;
+	margin: 16px 10px 0;
+	background: url('../img/common/common_header.png') no-repeat 0 -2421px;
+}
+
+#header_link .button_healthscan.connecting,  .button_healthscan.scanning{
+	background: url('../img/common/common_header.png') no-repeat 0 -534px !important;
+}
+
+#header_link .button_healthscan.outcome {
+	background: url('../img/common/common_header.png') no-repeat 0 -534px;
+}
+/* END - Header */
+
+/* Tabs */
+#techsupport_tab {
+}
+/* END - Tabs */
+
+/* DashboardPane */
+#dashboard_techsupport .panel_left .dashboard_content {
+	line-height: 1.5em;
+}
+
+#dashboard_techsupport .panel_right .dashboard_content {
+	margin: 35px 0;
+}
+
+#dashboard_techsupport .panel_right ul {
+	margin-top: 10px;
+}
+
+#dashboard_techsupport .panel_right li {
+	list-style: disc inside none;
+	margin: 0;
+	padding: 5px 0;
+}
+/* END - DashboardPane */
+
+/* Mobile Tech Support Pane */
+#techsupport {
+	/*background:#EEE;*/
+    height: 50%;
+	min-height: 540px;
+	width: auto;
+}
+
+.settings_short {
+	height: 170px;
+}
+
+.settings_tall {
+	height: 590px;
+}
+
+#techsupport_left {
+	float: left;
+	height: 100%;
+	padding-left: 11px;
+	position: relative;
+	width: 186px;
+}
+
+#techsupport_left .lp_info .last_backup {
+	display: none;
+}
+
+#techsupport_right {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #B7B5B6;
+    color: #4B4B4B;
+	float: left;
+    margin: 10px;
+    padding: 6px;
+    position: relative;
+    width: 933px;
+}
+
+#techsupport .rs_searchinput {
+	font-size: 11px;
+	margin: 0;
+}
+
+.techsupport_column {
+	background: none repeat scroll 0 0 white;
+	border: 1px solid #B7B5B6;
+	float: left;
+	height: 440px;
+	_height: 477px;
+	padding: 10px;
+	width: 515px;
+}
+
+.techsupport_details_column {
+	width: 395px;
+}
+
+#techsupport .techsupport_header {
+	background: none repeat scroll 0 0 #EEEEEE;
+	font-size: 13px;
+	font-weight: 700;
+	padding: 6px;
+	height: 13px;
+	margin: 10px 0;
+}
+
+#techsupport .techsupport_title {
+	font-size: 13px;
+	font-weight: 700;
+	padding: 6px;
+}
+
+#techsupport .techsupport_note {
+	margin: 10px 5px;
+	_margin: 0 5px;
+}
+/* Mobile Tech Support Category List */
+#techsupport_snapshot_container .techsupport_category {
+	width: 100%;
+	cursor: pointer;
+}
+
+#techsupport_snapshot_container .active {
+	background: none repeat scroll 0 0 #48ADD7;
+}
+
+#techsupport_snapshot_container .rt_row {
+	height: 57px;
+	_height: 55px;
+}
+
+#techsupport_snapshot_container .snapshot_count {
+	/*color: #2470AA;*/
+	float: left;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 5px;
+	text-align: center;
+	width: 50px;
+}
+
+#techsupport_snapshot_container .snapshot_title {
+	float: left;
+	width: 130px;
+}
+/* END - Mobile Tech Support Category List */
+
+/* Mobile Tech Support App List */
+#techsupport_rowbox .rs_searchinput {
+	margin: 0;
+	font-size: 11px;
+}
+
+.techsupport_sort_and_filter {
+	background: none repeat scroll 0 0 #EEEEEE;
+	height: 22px;
+	margin: 10px 0;
+	padding: 5px;
+}
+
+.techsupport_sort_and_filter div {
+	float: left;
+	margin-right: 60px;
+}
+
+#techsupport_rowbox {
+	height: 394px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#techsupport_rowbox .usage_app {
+	height: 45px;
+	_height: 43px;
+	padding: 10px 5px;
+	border-color: #FFFFFF;
+	border-style: solid;
+	border-width: 2px;
+	cursor: pointer;
+}
+
+#techsupport_rowbox .usage_app:hover {
+	border-color: #48ADD7;
+}
+
+#techsupport_rowbox .selected {
+	background: none repeat scroll 0 0 #48ADD7;
+	border-color: #48ADD7;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+
+#techsupport_rowbox .usage_app_name {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#techsupport_rowbox .usage_app_usage {
+	margin: 5px 0;
+}
+
+#techsupport_rowbox .app_usage_0 {
+	background: url("../img/common/security/app_usage.png") no-repeat
+		scroll 90px 0px;
+}
+
+#techsupport_rowbox .app_usage_1 {
+	background: url("../img/common/security/app_usage.png") no-repeat
+		scroll 90px -25px;
+}
+
+#techsupport_rowbox .app_usage_2 {
+	background: url("../img/common/security/app_usage.png") no-repeat
+		scroll 90px -50px;
+}
+
+#techsupport_rowbox .app_usage_3 {
+	background: url("../img/common/security/app_usage.png") no-repeat
+		scroll 90px -75px;
+}
+
+#techsupport_rowbox .app_usage_4 {
+	background: url("../img/common/security/app_usage.png") no-repeat
+		scroll 90px -100px;
+}
+
+#techsupport_rowbox .app_usage_5 {
+	background: url("../img/common/security/app_usage.png") no-repeat
+		scroll 90px -125px;
+}
+
+#techsupport_rowbox .app_usage_6 {
+	background: url("../img/common/security/app_usage.png") no-repeat
+		scroll 90px -150px;
+}
+
+#techsupport_rowbox .app_usage_7 {
+	background: url("../img/common/security/app_usage.png") no-repeat
+		scroll 90px -175px;
+}
+
+#techsupport_rowbox .app_usage_8 {
+	background: url("../img/common/security/app_usage.png") no-repeat
+		scroll 90px -200px;
+}
+
+#techsupport_rowbox .app_usage_9 {
+	background: url("../img/common/security/app_usage.png") no-repeat
+		scroll 90px -225px;
+}
+
+#techsupport_rowbox .app_usage_10 {
+	background: url("../img/common/security/app_usage.png") no-repeat
+		scroll 90px -250px;
+}
+/* END - Mobile Tech Support App List */
+
+/* Mobile Tech Support Details Pane */
+#techsupport_details .details_bigtext {
+	color: #000000;
+	font-size: 15px;
+	font-weight: bold;
+	height: 20px;
+}
+
+#techsupport_details .uninstall_app {
+	background: url("../img/common/security/btn_uninstall_app.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+#techsupport_details .stop_app {
+	background: url("../img/common/security/btn_stop_app.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+#techsupport_details .details_buttonholder {
+	height: 23px;
+	width: 107px;
+	cursor: pointer;
+	margin: 10px 0;
+}
+/* END - Privacy Details Pane */
+
+/* END - Mobile Tech Support Pane */
+
+/* Account Settings */
+
+/* END - Account Settings */
+
+/* Dialogs */
+
+/* Health-Scan Dialog */
+#healthscanphonedialog {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #B7B5B6;
+    color: #4B4B4B;
+    float: left;
+	font-family: Verdana;
+    margin: 10px;
+    padding: 6px;
+    width: 933px;
+}
+
+#support_tab {
+	height: 605px !important;
+	background: #EEE;
+	padding: 5px 5px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+#healthscanphonedialog .header{
+    background: none repeat scroll 0 0 #ECECEC;
+    height: 30px;
+    padding-top: 10px;
+    text-align: left;
+    width: 933px;
+   }
+#healthscanphonedialog .header .title {
+	height: auto;
+	margin-left: 10px;
+	padding-top: 0;
+	font-size: 14pt;
+	color: #000000;
+}
+
+#healthscanphonedialog .header .healthscan_date { 
+		font-size: 11pt; 
+		color: #666666; 
+		margin: 15px; 
+}
+
+.healthscan_column {
+	background: #fff;
+	border: 1px solid #d5d5d5;
+	float: left;
+	height: 500px;
+	_height: 477px;
+	width: 510px;
+	margin: 0 10px;
+}
+
+/* app list */
+.healthscan_category {
+	font-weight: bold;
+	font-size: 10pt;
+	background: #ececec;
+	padding: 5px;
+	border-bottom: 1px solid #d5d5d5;
+	margin: 10px;
+}
+
+.healthscan_filter_instructions {
+	margin: 10px;
+}
+
+.healthscan_sort_and_filter {
+	background: none repeat scroll 0 0 #999;
+	color: #fff;
+	height: 20px;
+	margin: 10px 0 0 0;
+	padding: 5px 0;
+}
+
+.healthscan_sort_and_filter div {
+	float: left;
+	margin: 0 0 0 12px;
+	padding: 0;
+	width: 240px;
+}
+
+.healthscan_sort_and_filter .separator {
+	height: 20px;
+	padding: 0;
+	margin: 0;
+	border-left: 1px solid #333;
+	border-right: 1px solid #CCC;
+	width: 0;
+}
+
+#healthscan_rowbox {
+	overflow-y: scroll;
+	/* old value keep it for reference later
+      height: 360px;
+      _height: 316px;
+      */
+	height: 190px;
+	_height: 146px;
+	position: relative;
+	*width: 190px;
+	_width: 175px;
+}
+
+#healthscan_rowbox .rt_rowindicated {
+	background: #fff;
+	color: #222;
+	border-color: #fff;
+	font-weight: normal;
+}
+
+#healthscan_rowbox .rt_column {
+	height: 90px;
+	margin: 0 0 0 10px;
+}
+
+#healthscan_rowbox .rt_row {
+	height: 90px;
+	cursor: default;
+}
+
+#healthscan_rowbox .rt_row:hover {
+	border-color: #fff;
+}
+
+#healthscan_rowbox .appDetails {
+	margin-top: 30px;
+	padding-left: 15px;
+	border-left-style: solid;
+	border-width: 1px;
+	border-color: #d5d5d5;
+}
+
+#healthscan_rowbox .divider {
+	display: block;
+	width: 95%;
+	/* IE7 shows a horizontal scrollbar so lessen the width*/
+	*width: 90%;
+	_width: 100%;
+}
+
+#healthscan_rowbox .rt_rowthreatname {
+	white-space: nowrap;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 13px;
+	padding: 5px 0;
+}
+
+#healthscan_rowbox .rt_rowthreatname:hover {
+	text-overflow: inherit;
+	overflow: visible;
+}
+
+.healthscan_sort_and_filter select {
+	background: none repeat scroll 0 0 #999;
+	border: medium none #000;
+	color: #fff;
+}
+
+.healthscan_details {
+	font-size: 12pt;
+	width: 370px;
+}
+
+/* system details */
+.healthscan_systemdetails {
+	margin: 30px 10px 10px 50px;
+}
+
+.healthscan_systemdetailrow {
+	clear: left;
+	height: 20px;
+	margin-bottom: 30px;
+}
+
+.healthscan_systemdetailrow .icon {
+	float: left;
+	margin-right: 10px;
+	text-align: right;
+	width: 50px;
+}
+
+.healthscan_systemdetailrow .green_tick {
+	background: url("../img/common/green_checkmark.png") no-repeat
+		scroll 25px 0 transparent;
+	height: 25px;
+}
+
+.healthscan_systemdetailrow .description {
+	float: left;
+	width: 250px;
+}
+
+.healthscan_systemdetails .noerror {
+	height: 32px;
+}
+
+.healthscan_systemdetails .systemerror {
+	height: 75px;
+}
+
+.healthscan_systemdetails .noerror .description {
+	margin-top: 10px;
+}
+
+.healthscan_systemdetails .systemerror .description {
+	margin-top: 3px;
+}
+
+.healthscan_systemdetailrow .description_details {
+	font-size: 10pt;
+	margin-top: 15px;
+}
+
+.healthscan_systemdetailrow .os_version {
+	color: #999;
+	font-weight: bold;
+}
+
+/* health meter */
+.health_key {
+	display: inline-block;
+	width: 75px;
+}
+
+.health_meter {
+	display: inline-block;
+	height: 10px;
+	width: 50px;
+	margin-left: 10px;
+}
+
+.health_meter_0 {
+	background: url(../img/common/security/health_meter_sprite.png)
+		no-repeat;
+}
+
+.health_meter_1 {
+	background: url(../img/common/security/health_meter_sprite.png)
+		no-repeat 0 -20px;
+}
+
+.health_meter_2 {
+	background: url(../img/common/security/health_meter_sprite.png)
+		no-repeat 0 -40px;
+}
+
+.health_meter_3 {
+	background: url(../img/common/security/health_meter_sprite.png)
+		no-repeat 0 -60px;
+}
+
+.health_meter_4 {
+	background: url(../img/common/security/health_meter_sprite.png)
+		no-repeat 0 -80px;
+}
+
+.health_meter_5 {
+	background: url(../img/common/security/health_meter_sprite.png)
+		no-repeat 0 -100px;
+}
+
+.health_meter_6 {
+	background: url(../img/common/security/health_meter_sprite.png)
+		no-repeat 0 -120px;
+}
+
+.health_meter_7 {
+	background: url(../img/common/security/health_meter_sprite.png)
+		no-repeat 0 -140px;
+}
+
+.health_meter_8 {
+	background: url(../img/common/security/health_meter_sprite.png)
+		no-repeat 0 -160px;
+}
+
+.health_meter_9 {
+	background: url(../img/common/security/health_meter_sprite.png)
+		no-repeat 0 -180px;
+}
+
+.health_meter_10 {
+	background: url(../img/common/security/health_meter_sprite.png)
+		no-repeat 0 -200px;
+}
+
+.healthscan_category_performance_snapshot_title {
+	font-weight: bold;
+	font-size: 12pt;
+	background: #ececec;
+	padding: 5px;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+.healthscan_category_performance_snapshot_content {
+	padding: 5px;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+.healthscan_category_app_performance_title {
+	font-weight: bold;
+	font-size: 12pt;
+	padding: 30px 5px 5px 5px;
+}
+
+.healthscan_column_Performance {
+    background: none repeat scroll 0 0 #FFFFFF;
+	float: left;
+    height: auto;
+    margin: 10px;
+    width: 675px;
+}
+
+.healthscan_column_box {
+	border: 1px solid #d5d5d5;
+}
+
+.healthscan_column_box_2 {
+	border-left: 1px solid #d5d5d5;
+	border-right: 1px solid #d5d5d5;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+.healthscan_details_recommendations {
+	font-size: 10pt;
+	font-color: #666666;
+	width: 214px;
+	background: #f2f2f2;
+}
+
+.healthscan_category_recommendations {
+	padding: 5px 5px 5px 12px;
+      height: 490px;
+}
+
+.healthscan_category_recommendations_title {
+	font-weight: bold;
+	font-size: 12pt;
+	padding-bottom: 5px;
+}
+
+.healthscan_category_recommendations_content {
+	font-weight: normal;
+	font-size: 10pt;
+	line-height: 125%;
+}
+
+.healthscan_category_recommendations_line {
+	border-bottom: 1px solid #d5d5d5;
+}
+
+#healthscan_recommendations_battery_section {
+	padding-top: 17px;
+	height: 135px;
+}
+
+#healthscan_recommendations_memory_section {
+	padding-top: 17px;
+	height: 135px;
+}
+
+#healthscan_recommendations_storage_section {
+	padding-top: 17px;
+}
+
+   #healthscanphonedialog .header a.healthscan_again{
+	    color:#067ab4;
+	    font-size:11pt
+	}	
+.healthscan_performance_snapshot_table {
+	font-size: 10pt;
+	padding: 5px;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.healthscan_performance_snapshot_table_row_1 {
+	height: 22px;
+	vertical-align: bottom;
+}
+
+.healthscan_performance_snapshot_table_row_2 {
+	height: 22px;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+.snapshot_content_1 {
+	padding-left: 2px;
+	vertical-align: bottom;
+}
+
+.snapshot_content_2 {
+	font-weight: bold;
+	padding-left: 2px;
+	padding-right: 2px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.snapshot_content_3 {
+	font-size: 9px;
+	font-weight: bold;
+	padding-right: 2px;
+}
+
+.snapshot_content_4 {
+	padding-left: 2px;
+	vertical-align: middle;
+}
+
+.snapshot_content_5 {
+	padding-left: 2px;
+	vertical-align: top;
+}
+
+#healthscan_apps_performance_section {
+	
+}
+
+.app_performance_app_name_header {
+	width: 229px;
+	height: 41px;
+	background: url("../img/common/common_btn_full_white.png") no-repeat scroll 0 0 / 100% 100%;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_app_name_header_down {
+	width: 229px;
+	height: 41px;
+	background: url("../img/common/common_btn_down.png") no-repeat scroll 0 0 / 100% 100%;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_app_name_header_up {
+	width: 229px;
+	height: 41px;
+	background: url("../img/common/common_btn_up.png") no-repeat scroll 0 0 / 100% 100%;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_last_used_header {
+	width: 120px;
+	height: 41px;
+	background: url("../img/common/common_btn_full_white.png") no-repeat scroll 0 0 / 100% 100%;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_last_used_header_up {
+	width: 120px;
+	height: 41px;
+	background: url("../img/common/common_btn_up.png") no-repeat scroll 0 0 / 100% 100%;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_last_used_header_down {
+	width: 120px;
+	height: 41px;
+	background: url("../img/common/common_btn_down.png") no-repeat scroll 0 0 / 100% 100%;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_battery_header {
+	width: 98px;
+	height: 41px;
+	background: url("../img/common/common_btn_full_white.png") no-repeat scroll 0 0 / 100% 100%;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_battery_header_down {
+	width: 98px;
+	height: 41px;
+	background: url("../img/common/common_btn_down.png") no-repeat scroll 0 0 / 100% 100%;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_battery_header_up {
+	width: 98px;
+	height: 41px;
+	background: url("../img/common/common_btn_up.png") no-repeat scroll 0 0 / 100% 100%;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_memory_header {
+	width: 101px;
+	height: 41px;
+	background: url("../img/common/common_btn_full_white.png") no-repeat scroll 0 0 / 100% 100%;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_memory_header_down {
+	width: 101px;
+	height: 41px;
+	background: url("../img/common/common_btn_down.png") no-repeat scroll 0 0 / 100% 100%;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_memory_header_up {
+	width: 101px;
+	height: 41px;
+	background: url("../img/common/common_btn_up.png") no-repeat scroll 0 0 / 100% 100%;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_storage_header {
+	width: 125px;
+	height: 41px;
+	background: url("../img/common/common_btn_full_white.png") no-repeat scroll 0 0 / 100% 100%;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_storage_header_down {
+	width: 125px;
+	height: 41px;
+	background: url("../img/common/common_btn_down.png") no-repeat scroll 0 0 / 100% 100%;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.app_performance_storage_header_up {
+	width: 125px;
+	height: 41px;
+	background: url("../img/common/common_btn_up.png") no-repeat scroll 0 0 / 100% 100%;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* END - Health-Scan Dialog */
+/* END - Dialogs */
+/* ===== Setting Snapshot CSS =====*/
+#healthAppView {
+    margin: 12px auto 0 auto;
+}
+.dataTableTop_bg{background-color:#ececec; color:#222222; height:38px; font-size:16px; font-family:verdana}
+.dataTableTop_bg td.dataTableTitle{}
+.dataTableDate{font-size:13px; padding-right:10px;}
+.dataTableTop_bg td{vertical-align:middle; padding-left:4px; font-weight:bold;}
+table.dataTable tr.even {
+    background-color: #EEEEEE !important;
+}
+table.dataTable tr.odd {
+    background-color: #FFFFFF !important;
+}
+
+#healthAppView #phonePerformanceContainer tbody td.categoryEven{background-color: #EEEEEE; font-weight:bold;}
+#healthAppView #phonePerformanceContainer tbody td.categoryOdd{background-color: #FFFFFF; font-weight:bold;}
+#settingsSnapshotTable table.dataTable td{padding:7.5px !important;}
+#resourcesSummary_wrapper table.dataTable{width:99.6%;}
+.dataTables_wrapper{}
+#resourcesTable.noSnapshot {
+    margin-left: 225px;
+    margin-top: 60px;
+}
+#techsupport_right {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #B7B5B6;
+    color: #4B4B4B;
+    float: left;
+    margin: 10px;
+    padding: 6px;
+    position: relative;
+    width: 933px;
+}
+#techsupportpane {
+    background: none repeat scroll 0 0 #EEEEEE;
+    height: 695px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 974px;
+}
+#healthscanphonedialog .main {
+    padding: 10px 0 0;
+    text-align: left;
+}
+
+.appNameSpan, .lastUsedSpan, .batterySpan, .memorySpan, .storageSpan {
+    display: block;
+    font-weight: bold;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.styleNoData td {
+	display:block;
+	text-align:center;
+}
+
+.styleNoData div {
+	background-color:#EEE;
+	padding:10px;
+}

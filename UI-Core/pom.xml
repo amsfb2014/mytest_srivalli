@@ -1,0 +1,172 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!-- FIXME: move all profile and plugin versions to parent POM -->
+	<parent>
+		<groupId>com.asurion.web</groupId>
+		<artifactId>web-core</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>UI-Core</artifactId>
+	<packaging>war</packaging>
+
+	<properties>
+		<descriptorId>project</descriptorId>
+		<sonar.branch>java</sonar.branch>
+		<sonar.language>java</sonar.language>
+		<!-- version numbers -->
+		<phantomjs-qunit-runner.version>1.0.15</phantomjs-qunit-runner.version>
+		<phantomJsExec.version>1.8.2</phantomJsExec.version>
+		<saga-maven-plugin.version>1.4.0</saga-maven-plugin.version>
+		<wro4j.version>1.6.3</wro4j.version>
+	</properties>
+
+	<dependencies>
+		<!-- COMPILE -->
+		<!-- TEST -->
+		<!-- THIRD-PARTY -->
+	</dependencies>
+
+	<profiles>
+		<!-- profile used for sonar javascript plugin -->
+		<profile>
+			<id>sonarjs</id>
+			<properties>
+				<sourceDir>src/main/webapp/js</sourceDir>
+				<testSourceDir>src/test/js</testSourceDir>
+				<sonar.branch>js</sonar.branch>
+				<sonar.language>js</sonar.language>
+				<sonar.exclusions>lib/**</sonar.exclusions>
+				<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+				<!-- these overrides do not currently work, defaults: target/jstestdriver jsTestDriver.conf-coverage.dat -->
+				<sonar.javascript.jstestdriver.reportsfolder>target/saga</sonar.javascript.jstestdriver.reportsfolder>
+				<sonar.javascript.jstestdriver.coveragefile>total-coverage.dat</sonar.javascript.jstestdriver.coveragefile>
+			</properties>
+			<build>
+				<plugins>
+					<!-- experimental phantomjs qunit maven plugin, needs install of phantomjs -->
+					<!-- FIXME: pay attention to non-portable phantomJsExec!!! -->
+					<plugin>
+						<groupId>net.kennychua</groupId>
+						<artifactId>phantomjs-qunit-runner</artifactId>
+						<version>${phantomjs-qunit-runner.version}</version>
+						<configuration>
+							<jsSourceDirectory>${sourceDir}/ama</jsSourceDirectory>
+							<jsTestDirectory>${testSourceDir}/ama</jsTestDirectory>
+							<ignoreFailures>true</ignoreFailures>
+							<phantomJsExec>C:\dev\phantomjs-${phantomJsExec.version}-windows\phantomjs.exe</phantomJsExec>
+							<!-- FIXME: proper lib loading order is rather tricky -->
+							<includeLibsInDir>
+								<directory>${sourceDir}/lib</directory>
+								<includes>
+									<include>backbone.js</include>
+									<include>jquery-ui.js</include>
+									<include>jquery.js</include>
+									<include>underscore.js</include>
+								</includes>
+							</includeLibsInDir>
+						</configuration>
+						<executions>
+							<execution>
+								<id>qunit-test</id>
+								<phase>test</phase>
+								<goals>
+									<goal>test</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>com.github.timurstrekalov</groupId>
+						<artifactId>saga-maven-plugin</artifactId>
+						<version>${saga-maven-plugin.version}</version>
+						<configuration>
+							<baseDir>${testSourceDir}</baseDir>
+							<outputDir>${sonar.javascript.jstestdriver.reportsfolder}</outputDir>
+							<includes>
+								**/*Test*.html
+							</includes>
+							<excludes>
+								**/*ProdTest*.html
+							</excludes>
+							<noInstrumentPatterns>
+								<pattern>.+/qunit.js</pattern>
+								<pattern>.+/require.js</pattern>
+								<pattern>.+/lib/.*.js</pattern>
+								<pattern>.+/.*Test.js</pattern>
+								<!-- comment out below to include views in saga -->
+								<pattern>.+/view/.*.js</pattern>
+							</noInstrumentPatterns>
+							<sourcesToPreload>
+							</sourcesToPreload>
+							<outputStrategy>BOTH</outputStrategy>
+						</configuration>
+						<executions>
+							<execution>
+								<id>coverage</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>coverage</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<!-- recommended local web server verification goals: mvn clean install jetty:run -->
+	<!--	jetty will be listening on http://localhost:8080 -->
+	<!-- recommended deploy goals: mvn clean install assembly:single -->
+
+	<!-- recommended JS code coverage goals: mvn clean verify sonar:sonar -P sonarjs -->
+	<!-- 	manually start Sonar before maven - listening on http://localhost:9000 -->
+	<!--	code correctness/duplication results available on Sonar dashboard -->
+	<!--	code coverage results available under target/saga/total-coverage.html -->
+
+	<build>
+		<sourceDirectory>${sourceDir}</sourceDirectory>
+		<testSourceDirectory>${testSourceDir}</testSourceDirectory>
+
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.9.v20130131</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<attachClasses>true</attachClasses>
+					<!-- TODO: remove later, Java libraries excluded
+					<packagingExcludes>WEB-INF/web.xml, WEB-INF/conf/**</packagingExcludes>
+					-->
+					<packagingExcludes>**/*.jar, WEB-INF/web.xml, WEB-INF/conf/**</packagingExcludes>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+						<manifest>
+							<classpathPrefix>lib/</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<inherited>true</inherited>
+				<artifactId>maven-jar-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

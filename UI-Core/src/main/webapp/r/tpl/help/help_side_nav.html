@@ -1,0 +1,21 @@
+<!-- BEGIN: help_side_nav -->
+<div id="helpLinks">
+    <ul>
+        <li class="helpTitle"><h2>Topics</h2></li>
+        <li id="sideNav_help_locatephone"><a href="#help_locatephone">Locate phone</a></li>
+        <%if(window.location.search!="?iphone"){%><li id="sideNav_help_soundalarm"><a href="#help_soundalarm">Sound alarm</a></li>
+        <li id="sideNav_help_lockphone"><a href="#help_lockphone">Lock phone</a></li>
+        <li id="sideNav_help_erasecontacts"><a href="#help_erasecontacts">Erase data</a></li>
+       <%}else{%>
+        <li id="sideNav_help_secure_phone"><a href="#help_secure_phone">Secure phone</a><%}%>
+         <li id="sideNav_help_synccontacts"><a href="#help_synccontacts">Sync data</a></li>
+        <li id="sideNav_help_transfercontacts"><a href="#help_transfercontacts">Transfer data</a></li>
+        <li id="sideNav_help_managecontacts"><a href="#help_managecontacts">Manage data</a></li>
+        <%if(window.location.search!="?iphone"){%><li id="sideNav_help_security"><a href="#help_security">Security</a></li>
+        <li id="sideNav_help_appassist"><a href="#help_appassist">App assist</a></li>
+        <li id="sideNav_help_safebrowsing"><a href="#help_safebrowsing">Safe browsing</a></li>
+        <li id="sideNav_help_diagnosticscan"><a href="#help_diagnosticscan">Diagnostics</a></li><%}%>
+        <li id="sideNav_help_faqs"><a href="#help_faqs">FAQs</a></li>
+    </ul>
+</div>
+<!-- END: help_side_nav -->

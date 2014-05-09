@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contacts</title>
+	<link REL="SHORTCUT ICON" HREF="images/pageicon.ico"/>
+	<style type="text/css">
+		/* Set safe value of width for printing */
+		body {
+			width:670px;
+		}
+		
+		.logo {
+			background: url("img/logo.png") no-repeat scroll 0 0 transparent;
+			width: 300px;
+			height: 102px;
+		}
+		
+		.loader {
+			display: block;
+			margin: 0 auto;
+		}
+		
+		.itemloader {
+			height: 10px;
+		}
+		
+		.loadertext {
+			font-size: 10pt;
+			font-style: italic;
+		}
+		
+		.printfield {
+			font-weight: bold;
+		}
+
+		.printvalue {
+			color: #666666;
+		}
+
+		.tm_tr{
+		   vertical-align: top;
+		}
+		
+		.tm_td {
+			padding: 0 0 10px 0;
+			min-width: 330px;
+			max-width:335px;
+		}
+		
+	</style>
+	<script type="text/javascript" src="js/lib/lodash.underscore.js"></script>
+	<script type="text/javascript" language="javascript">
+
+		document.onreadystatechange = function() {
+			var excludedFields = ["firstName", "lastName", "middleName", "fullName"];
+			var dateFields = ["birthday", "anniversary"];
+			var arrayFields =["im","imAIM","imGTalk","imICQ","imJabber","imQQ","imSkype", "imWindowsLive","imYahoo","imOther","imOther2","imOther1",
+				"webSiteUrl","otherUrl", "preferredUrl", "homeUrl","workUrl", "mobilePhone", "workPhone", "homePhone", "fax", "homeFax", "workFax", "pager",
+				"email", "homeEmail", "localEmail", "otherEmail", "workEmail", "otherPhone", "carPhone", "radioPhone", "localPhone", "assistantPhone", "iPhone"];
+	
+			if (document.readyState === 'complete') {
+				var printInfo = document.getElementById("printinfo");
+				var mainChunk = self.opener.AMA.Util.printHTML();
+				
+				printInfo.innerHTML = mainChunk[0] ? mainChunk[0] : "No contacts to print.";
+				
+				var ids = mainChunk[1];
+				
+				for(var i = 0; i < ids.length; i++) {	
+					var modelDescriptors = self.opener.AMA.model.ContactDetails.MODEL_DESCRIPTOR.fields;
+					
+					(function(counter) {
+						
+						if(typeof self.opener.AMA.models.contactDetails === "undefined") {
+							return "Portal has not been completely loaded.";
+						};
+												
+						self.opener.AMA.models.contactDetails.isFetching = false;
+						
+						var details = [];
+						setTimeout(function() { 
+							getDetails(counter);
+						}, 500);						
+						
+					})(i);			
+				}
+				
+				function getDetails (counter) {
+					self.opener.AMA.models.contactDetails.getDetails(ids[counter], function(success, data) { 
+						var finalhtml = "";
+						for (var prop in data) {
+							var item = modelDescriptors[prop];
+							if(_.indexOf(excludedFields, prop) > -1) {
+								continue;
+							}
+							
+							if(_.indexOf(dateFields, prop) > -1) {
+								data[prop] = new Date(data[prop]).toLocaleDateString();
+							}
+							
+							if(_.indexOf(arrayFields, prop) > -1) {				
+								data[prop] = data[prop].join("<br/>");
+							}
+
+							if(item && data[prop] !== "") {
+								finalhtml += "<span class='printfield'>" + item.displayText + ": </span>"
+									+ "<span class='printvalue'>" + data[prop] + "</span><br>";
+							}
+						}
+						
+						var contact = document.getElementById(data.id);
+						contact.innerHTML = finalhtml;
+					});
+				}
+			}
+		};
+		
+	</script>
+</head>
+<body>
+	<div class="logo"></div>
+	<div id="printinfo">
+		<img class="loader" alt="loading..." src="img/loadingcircle.gif" />
+	</div>
+</body>
+</html>
+

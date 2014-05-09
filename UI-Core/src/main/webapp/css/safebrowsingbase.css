@@ -1,0 +1,85 @@
+/* Tabs */
+#safebrowsing_tab {
+}
+/* END - Tabs */
+
+
+/* Safe Browsing Pane */
+#safebrowsing {
+	background:#EEE;
+	height:100%;
+	min-height: 555px;
+	width:auto;
+}
+
+#safebrowsing_left {
+	float:left;
+	height:100%;
+	padding-left:11px;
+	position:relative;
+	width:186px;
+}
+
+#safebrowsing_left .lp_info .last_backup {
+	display:none;
+}
+
+#safebrowsing_right {
+	float: left;
+    height: 100%;
+    margin: 20px;
+    position: absolute;
+    _position: relative;
+    width: 100%;
+}
+
+#safebrowsing_right .title{
+	font-weight: bold;
+	font-size:20px;
+	margin:10px 0;
+}
+
+#safebrowsing_right .pane_floatingbuttons {
+    left: 0;
+    position: relative;
+    right: 0;
+    top: 25px;
+}
+
+#safebrowsing_right .after_save_message {
+	display: none;
+	color: #2470AA;
+    cursor: default;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px 10px 30px;
+}
+/* END - Safe Browsing Pane */
+
+
+/* Dashboard */
+#dashboard_safebrowsing .explanation{
+  line-height:20px;
+  position:relative;
+}
+
+#dashboard_safebrowsing .safebrowsing_settings{
+  margin:20px 0 0 20px;
+}
+
+#dashboard_safebrowsing label{
+  color: #083737;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+#dashboardSafeBrowsingOff{
+  margin-left:50px;
+}
+
+#dashboard_safebrowsing .pane_floatingbuttons .rs_save{
+}
+
+.viewsafebrowsing{
+}
+/* END - Dashboard */

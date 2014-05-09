@@ -1,0 +1,66 @@
+<!-- BEGIN: retrieve_pin -->
+<div id="contentWrapper">    	
+<div class="container">       	
+    <div id="mainContent">
+        <h3 class="preloginPageTitle">Forgot your Password?</h3>
+        <p class="border">
+            Enter your email address below to reset your password.
+        </p>
+        <form action="#" method="post" name="retrievePin">
+    <fieldset>
+      <div class="clearfix">
+        <div class="input">
+        <input type="text" size="22" value="Email Address" id="username1" name="email" class="username2" />
+          <!-- <input class="username2" id="xlInput" name="xlInput" size="30" value="Email Address" type="text" /> -->
+        </div>
+      </div> <!-- /clearfix -->
+    	<div class="actions">
+        <button type="submit" id="triggerPinChange" class="btn primary">Submit</button>
+      </div>
+    </fieldset>
+          <div class="form-group">
+            <div class="col-md-6">
+                <div class="validation_message validation_accountinfo2">
+                    <p class="bs-callout bs-callout-danger validation_text hidden email_empty">Please enter your email address.<br /></p>
+                </div>
+            </div>
+        </div>
+  </form>
+        <!-- Form Start -->
+        <!-- <form action="../core/jebber/passwordreset/send/" method="post" name="retrievePin" >
+            <input type="hidden" value="lostpwd" name="command"/>
+            <div class="formContainer spaceVLarge">            
+                <table cellspacing="0" width="100%" cellpadding="0" border="0">
+                    <tr>
+                        <td align="left" valign="middle"><label class="contentSubHeader">Enter your Email Address:</label></td>                        
+                    </tr>
+                    <tr>
+                        <td valign="middle"><input type="text" size="22" value="Email Address" id="username1" name="username" class="username2" ></td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                        	<input type="submit" value="Submit" alt="Submit" class="btnSignup"></input>
+                            <div id="btn_submit" class="btnSignup" alt="Submit">Submit</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>    
+        </form> -->
+        <!-- Form End -->
+    </div>      
+</div>        
+    <script>
+      $(document).ready(function(){
+        $(".username2").on({ 
+            focus: function(){
+              clearInput(this, 'Email Address');
+            },
+            blur: function(){
+              restoreInput(this, 'Email Address');
+            }
+        });
+      });
+    </script>
+   
+</div>
+<!-- END: retrieve_pin -->

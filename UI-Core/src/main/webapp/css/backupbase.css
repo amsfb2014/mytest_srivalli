@@ -1,0 +1,2790 @@
+/*
+
+  @FileName: backupbase.css
+  Base file for backup carriers.
+  
+
+*/
+
+/* Pane Header Titles */
+#header_titletext {
+    font-style:normal;
+    left:25px;
+    position:absolute;
+    line-height:40px;
+}
+
+#header_title {
+    background-image:url(../img/backup/windowB_top.png);
+    border-left:2px solid #B7B5B6;
+    border-right:2px solid #B7B5B6;
+    margin:0 12px;
+    width:auto;
+}
+
+#header_title .pane_floatingbuttons {
+    font-size:12px;
+}
+
+.maintitle {
+    background-color:#636363;
+    color:#FFF;
+    font-size:19px;
+    height:40px;
+    position:relative;
+    white-space:nowrap;
+}
+
+#header_link .button_sync {
+	height:72px;
+	margin:16px 10px 0;
+	background: url('../img/common/common_header.png') no-repeat 0 -1191px;
+}
+
+#header_link .button_sync.connecting,
+#header_link .button_sync.outcome {
+	background: url('../img/common/common_header.png') no-repeat 0 -534px;
+}
+
+#header_link .button .viewdetails{
+}
+
+#header_link .button_transferdata {
+	height:72px;
+	margin:16px 10px 0;
+	background: url('../img/common/common_header.png') no-repeat 0 -1683px;
+}
+
+
+   /* Progress Bar */
+   .ui-progressbar{
+      height:1em;
+   }
+
+   .ui-progressbar .ui-progressbar-value{
+      margin:0;
+   }
+
+   #header_link .tooltip .progress{
+      width:265px;
+   }
+
+   #header_link .tooltip .progress div{
+      float: left;
+      cursor: default;
+      width:220px;
+      margin: 0 5px 10px 0;
+   }
+   
+   #header_link .button .tooltip.sync .progress div{
+      float: left;
+      cursor: default;
+      width: 251px;
+      text-align: left;
+      margin: 0 5px 0px 0;
+   }
+   
+    #header_link .button .tooltip.sync .tooltip_image {
+		float: left;
+		margin: 0 6px 0 0;
+		width: 30px;
+		height: 30px;
+	}
+
+   #header_link .tooltip .title{
+      margin-bottom: 15px;
+      font-size:10pt;
+      font-weight: bold;
+   }  
+   
+   #header_link .button .tooltip.sync .title{
+      margin-bottom: 3px;
+      font-size:12pt;
+      font-weight: bold;
+   }
+   
+   .icon_contacts {
+		background: url(../img/common/backup/icon_contacts.png)
+			no-repeat;
+		_background-image: none;
+		_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/backup/icon_contacts.png,
+			sizingMethod='crop');
+	}
+	
+	.icon_images {
+		background: url(../img/common/backup/icon_photos.png)
+			no-repeat;
+		_background-image: none;
+		_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/backup/icon_photos.png,
+			sizingMethod='crop');
+	}
+	
+	.icon_videos {
+		background: url(../img/common/backup/icon_videos.png)
+			no-repeat;
+		_background-image: none;
+		_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/backup/icon_videos.png,
+			sizingMethod='crop');
+	}
+	
+	.icon_checkmark {
+		background: url(../img/common/backup/icon_checkmark.png)
+			no-repeat;
+		_background-image: none;
+		_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/backup/icon_checkmark.png,
+			sizingMethod='crop');
+	}
+	
+	.sync_progress {
+		margin-top:7px;
+		width:70px;
+		margin-right:7px;
+	}
+	
+	.sync_complete {
+		margin-top:3px;
+		width:72px;
+	}
+	
+	.sync_images_count {
+		margin-left:15px;
+		width:21px;
+	}
+	
+	.sync_videos_count {
+		margin-left:16px;
+		width:19px;
+	}
+   
+   /* END - Progress Bar */
+/* END - Pane Header Titles */
+
+/* Tabs */
+#backup_tab {
+}
+
+#backup_tab.selected {
+}
+
+#backup_content_tab {
+}
+/* END - Tabs */
+
+/* Console */
+.console {
+    background-color:#FFF;
+    /*border:1px solid #B7B5B6;*/
+    font-family:"Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    font-size:12px;
+	padding: 5px;
+}
+
+.mc_title {
+	font-weight: bold;
+	padding: 5px 0 5px 10px;
+	font-size: 15px;
+   border-bottom: 1px solid #bbb;
+   background: #eee;
+   margin-bottom: 5px;
+}
+
+	
+	/* Management Console */
+	a.mc_link {
+		display: block;
+		color: #0070aa;
+		padding: 7px 0 7px 10px;
+		text-decoration: none;
+		font-size: 12px;
+	}
+	/* END - Management Console */
+
+
+   /* Sync Settings */
+   .sync_settings{
+      border-top:none;
+   }
+
+   .sync_settings .content,
+   .sync_settings .link{
+      margin:10px 0;
+   }
+
+   .sync_settings .content div{
+      margin: 10px 0;
+   }
+   /* END - Sync Settings*/
+
+
+   /* Transfer Data (console) */
+   #records_consolehalf .transferdata{
+      border-top:none;
+   }
+
+   #records_consolehalf .transferdata .link{
+      margin:10px 0;
+   }
+   /* END - Transfer Data (console) */
+
+
+	/* Storage Capacity */
+   #dashboard_backup .storage_capacity .storage_row {
+      margin: 12px 0;
+   }
+
+   #header_link .storage_capacity .storage_row {
+      margin: 5px 0;
+   }
+
+   .storage_capacity .title{
+      font-weight: bold;
+   }
+
+   #dashboard_backup .storage_capacity .progress{
+      height: 20px;
+   }
+
+   #header_link .progress{
+      _width:200px;
+   }
+
+   .storage_capacity .progress div{
+      float: left;
+   }
+
+   .storage_capacity .ui-corner-all {
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+   }
+
+   .storage_capacity .legend{
+      width:15px;
+      float:left;
+   }
+
+   .storage_capacity .storageText{
+      float: left;
+      margin: 2px 0 0 7px;
+   }
+
+   .storage_capacity .progress .images,
+   .storage_capacity .imagesLegend .ui-widget-header{
+      background-color: #db0675;
+   }
+   #header_link .storage_capacity .imagesStorage{
+      color: #db0675;
+   }
+
+   .storage_capacity .progress .videos,
+   .storage_capacity .videosLegend .ui-widget-header{
+      background-color: #fad32d;
+   }
+   #header_link .storage_capacity .videosStorage{
+      color: #fad32d;
+   }
+
+   .storage_capacity .progress .trash,
+   .storage_capacity .trashLegend .ui-widget-header{
+      background-color: #97ca21;
+   }
+   #header_link .storage_capacity .trashStorage{
+      color: #97ca21;
+   }
+	/* END - Storage Capacity */
+
+	
+	/* New Phone */
+	#new_phone {
+		display:none;
+		border-top: medium none;
+	}
+	/* END - NEW PHONE */
+
+
+	/* Record Breakdown */
+	.record_breakdown {
+		display:block;
+		border-top: medium none;
+	}
+
+	.record_breakdown_top {
+		/*border-top: 1px solid #b7b5b6;*/
+	}
+
+   #record_breakdown .item{
+      margin: 5px;
+      padding: 0 0 0 25px;
+      min-height:20px;
+      _height:20px;
+   }
+
+   #record_breakdown .syncedwithphone{
+      background: url(../img/phone_on.png) 2px 1px no-repeat;
+   }
+
+   #record_breakdown .savedonweb{
+      background: url(../img/website_on.png) 0 2px no-repeat;
+   }
+
+   #record_breakdown .tobesynced{
+      background: url(../img/phone_arrows.png) 2px 4px no-repeat;
+   }
+	#record_breakdown .record_breakdown_spinner {
+		height:10px;
+		padding:10px;
+		font-size:24px;
+		text-align:center;
+	}
+	/* END - Record Breakdown */
+
+
+	/* Icon Legend */
+	#phone_key {
+      display:none;
+		border-top: none;
+      _overflow:hidden;
+	}
+   #phone_key div.icon_text{
+      float: left;
+      width:130px;
+      line-height: 15px;
+      text-decoration: none;
+   }
+   #phone_key div.icon_image{
+      margin-right: 7px;
+   }
+	/*div.on_phone {	
+      margin: 5px 5px 5px 6px;
+		font-size: 12px;
+		display: block;
+	}
+   div.on_phone div.icon_image{
+      width: 10px;
+      height: 19px;
+		background: url(../img/icons.png) no-repeat 0 -244px;
+      float: left;
+   }
+	
+	div.off_phone {	
+      margin: 7px 5px 5px 6px;
+		font-size: 12px;	
+		display: block;
+	}
+   div.off_phone div.icon_image{
+      width: 10px;
+      height: 19px;
+		background: url(../img/icons.png) no-repeat 0 -176px;
+      float: left;
+   }*/
+	
+	div.arrows_on_off {
+      margin: 7px 5px 5px 6px;
+		font-size: 12px;		
+		display: block;
+	}
+   div.arrows_on_off div.icon_image{
+      width: 10px;
+      height: 8px;
+		background: url(../img/icons.png) no-repeat 0 -116px;
+      float: left;
+      margin-top: 5px;
+      _overflow:hidden;
+   }
+	/* END - Icon Legend */
+/* END - Console */
+
+
+/* DashboardTab Pane */
+#dashboard_left {
+	width: 175px;
+}
+
+#dashboard_left .lp_info .last_backup {
+	display:none;
+}
+
+	/* DashboardTab Panels */
+		/* Contact Snapshot */
+      #dashboard_backup .backup_details {
+	      margin:20px 0 15px 0;
+      }
+		
+	  #dashboard_backup .sync_msg {
+	      margin: 0px 0 5px 0;      
+	      font-weight: normal;
+	  }
+		
+	#dashboard_backup .btn_sync {
+		}
+
+      #dashboard_backup .viewdetails{
+         display:none;
+         margin-top: 10px;
+      }
+
+      #dashboard_backup .panel_left li{
+        list-style: disc inside none;
+        margin: 0;
+        padding: 5px 0;
+      }
+
+      #dashboard_backup .row{
+        margin: 5px 0;
+      }
+
+      #dashboard_backup .label{
+        float: left;
+        padding:3px 8px 0 0;
+        text-align:right;
+        width:90px;
+      }
+
+      #dashboard_backup .field{
+        float: left;
+      }
+
+      #dashboard_backup select{
+        width:101px;
+      }
+
+      #dashboard_backup .pane_floatingbuttons .rs_save{
+      }
+
+      #dashboard_backup .dashboard_settings{
+         display:none;
+      }
+		/* END - Contact Snapshot */
+		/* Recent Activities */
+		#dashboard_activity .icon_sync_success {
+			background:url(../img/dashboard/icon_sync_success_sm.png) no-repeat;
+
+      		_background-image: none;
+      		_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/dashboard/icon_sync_success_sm.png, sizingMethod='crop');
+			
+		}
+	/* END - DashboardTab Panels */
+/* END - DashboardTab Pane */
+
+
+/* lp_ = Legend Pane */
+#legendpane {
+    font-size:12px;
+    height:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+    padding-left:11px;
+    width:186px;
+}
+
+#lp_invitebox {
+    margin-top:20px;
+    position:relative;
+}
+
+.lp_invite{
+   background-color: #f4f4f4;
+   border: 1px solid #666;
+   margin: 5px;
+   padding: 5px;
+   position: relative;
+   line-height: 16px;
+}
+
+#lp_inner {
+    height:500px;
+    overflow-x:hidden;
+    overflow-y:auto;
+    position:absolute;
+    width:186px;
+}
+
+.lp_listbox {
+    position:relative;
+    width:100%;
+}
+
+.lp_item {
+    color:#426788;
+    position:relative;
+    width:100%;
+}
+
+.lp_item a {
+    color:#000;
+    text-decoration:none;
+}
+
+.lp_itemclipper {
+    height:100%;
+    overflow:hidden;
+    padding: 2% 8%;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width:92%;
+}
+
+.lp_connector {
+    background-color:#D3D3D3;
+    display:none;
+    height:100%;
+    left:100%;
+    position:absolute;
+    top:0;
+    width:10px;
+}
+
+.lp_endpoint {
+    height:auto;
+    position:relative;
+}
+
+.lp_group {
+    position:relative;
+}
+
+#lp_allcontact{
+	margin-left: 7px;
+}
+
+.lp_plus {
+	background-image: url(../img/icons.png);
+	background-position: 0 -313px;
+	margin: 2px 0 0 0;
+}
+
+.lp_minus {
+	background-image: url(../img/icons.png);
+	background-position: 0 -55px;
+	margin: 2px 0 0 0;
+}
+
+.lp_expander {
+    background-color:transparent;
+    background-repeat:no-repeat;
+    border:0;
+    height:10px;
+    left:2px;
+    position:absolute;
+    top:3px;
+    width:10px;
+}
+
+.lp_viewinfo {
+    background-color:#EEE;
+    color:#666;
+    display:none;
+    font-size:11px;
+    height:89px;
+}
+
+.lp_viewinfoendpoint {
+    height:89px;
+}
+
+.lp_bigitem a {
+    color:#426788;
+    font-weight:700;
+}
+
+.lp_highlight {
+    background-color:#48ADD7;
+    background-image:none;
+}
+
+.lp_highlight a {
+    color:#FFF;
+}
+
+.lp_phonedot {
+   text-decoration: none;
+   width:5px;
+	height:5px;
+   line-height: 5px;
+   font-size: 5px;
+	background-image: url(../img/icons.png);
+	background-repeat: no-repeat;
+	position:absolute;
+	float: left;
+	top: 7px;
+	left: 7px;
+
+   _background-image: none;
+   _filter:
+progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/icons.png,
+sizingMethod='crop');
+}
+
+.lp_group a {
+    font-size:12px;
+}
+/* END - Legend Pane */
+
+.windowbinner {
+  overflow: visible;
+  height: 784px;
+}
+
+/* ip_ = Import Pane */
+#ip_inner {
+    position:relative;
+    text-align:center;
+}
+
+#ip_instructions {
+    color:#666;
+}
+
+#ip_providerselect, #ip_methodselect {
+    margin-left:11px;
+}
+
+#ip_filebrowserholder {
+    margin-top:5px;
+    padding-left:232px;
+    text-align:left;
+    font-size: 10pt;
+}
+
+.import_contactfile {
+    color:#000;
+    font-size:13px;
+    height:34px;
+    text-align:left;
+}
+
+#ip_upload_file {
+    margin-left:12px;
+}
+
+#uploadbox {
+    color:#000;
+}
+
+.fileupload_error {
+    color:red;
+    margin:10px 0 0;
+}
+
+.ins_title {
+    color:#000;
+    font-size:16px;
+    font-weight:700;
+    padding:16px 0 0 16px;
+}
+
+.instructions_body {
+    background-color:#F4F4F4;
+    border:1px solid #CCC;
+    font-size:13px;
+    height:370px;
+    margin:auto;
+    text-align:left;
+    width:600px;
+}
+
+.instructions_body ol {
+    padding:0 0 0 46px;
+}
+
+.instructions_body li {
+    line-height:20px;
+}
+
+.ip_instructionstitle {
+    color:#000;
+    font-weight:700;
+    padding:7px 0 7px 27px;
+}
+
+/* Override the reset-CSS list style so the import
+instructions get numbered. */
+ol.ip_instructions_list, ol.ip_instructions_list li{
+list-style: decimal outside none;
+}
+
+/* END - Import Pane */
+
+
+/* Details Pane */
+#contactdetailsbox {
+	border: 1px solid #B7B5B6;
+    background-color:white;
+    display:none;
+    height:100%;
+    overflow:hidden;
+    position:relative;
+    width:100%;
+    z-index:2;
+}
+
+.details_outer {
+    color:#666;
+    font-size:12px;
+}
+
+.details_contact {
+    height:100%;
+
+    /* IE6-7 when the carrier uses this element to scroll */
+    position: relative;
+}
+
+.details_header {
+    font-size:11px;
+    height:65px;
+    padding:10px;
+}
+
+.details_syncinfo{
+   color: #f67e1d;
+   height:20px;
+   margin-left: 48px;
+   padding: 5px 0 0 20px;
+}
+
+.synctext{
+   position:relative;
+   display:inline-block;
+   top: -5px;
+   margin-left:5px;
+}
+
+.littlephone{
+   display:inline-block;
+   height:19px;
+   width:12px;
+}
+
+.phone_on{
+   background: url(../img/phone_on.png) no-repeat 0 0;
+   _background-image: none;
+   _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/phone_on.png,sizingMethod='crop');
+}
+
+.phone_on_after_sync{
+   background: url(../img/phone_on_aftersync.png) no-repeat 0 0;
+   _background-image: none;
+   _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/phone_on_aftersync.png,sizingMethod='crop');
+}
+
+.phone_off{
+   background: url(../img/phone_off.png) no-repeat 0 0;
+   _background-image: none;
+   _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/phone_off.png,sizingMethod='crop');
+}
+
+.phone_off_after_sync{
+   background: url(../img/phone_off_aftersync.png) no-repeat 0 0;
+   _background-image: none;
+   _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/phone_off_aftersync.png,sizingMethod='crop');
+}
+
+
+/* Details Pane - Contact Image */
+.details_contactpicture {
+  margin:0;
+}
+
+.details_pictureholder {
+  float:left;
+  margin-right:10px;
+}
+
+#ep_pictureholder .standard_link{
+   line-height: 15px;
+}
+/* END - Details Pane - Contact Image */
+
+	
+.details_namebox {
+    font-weight:700;
+    white-space:normal;
+}
+
+
+.details_bigtext {
+    color:#000;
+    font-size:19px;
+    font-weight:400;
+    height:40px;
+    padding-top: 5px;
+}
+
+.details_indented {
+    padding:10px;
+}
+
+.details_devicesupportselect {
+    color:#666;
+    font-size:8pt;
+    margin:5px;
+}
+
+
+	/* Details Pane Buttons */
+	.details_buttonholder {
+	    border-color:#CCC;
+	    height:42px;
+	}
+	
+	.details_buttonholder ul {
+	    background-image:url(../img/backup/contact_button_gradient.png);
+	    border-bottom:1px solid #B7B5B6;
+	    border-top:1px solid #B7B5B6;
+	    height:40px;
+	}
+	
+	.details_buttonholder li {
+		cursor:pointer;
+		float:left;
+		font-size:11px;
+		position:static;
+		height:40px;
+		line-height:15px;
+		border-left: 1px solid white;
+		border-right: 1px solid #B7B5B6;
+	}
+
+	.details_buttonholder li span{
+      display:inline-block;
+      margin-top:5px;
+   }
+
+	.details_buttonholder .oneline{
+      margin-top:13px;
+   }
+	
+	.details_button {
+		background-image: url(../img/backup/contact_button_gradient.png);
+	}
+	
+	.details_button:hover {
+	    background-image:url(../img/backup/contact_button_gradient_rollover.gif);
+		border-left: 1px solid transparent;
+	}
+
+
+		/* Contacts & Content Buttons */
+		.details_editbutton, .details_upload {
+		    width:32.946%;
+		}
+		
+		.details_addtodevicebutton, .details_removefromdevicebutton {
+		    width:32.947%;
+		}
+		
+		.details_removefromlistbutton, .details_removefromlistbutton {
+		    width:33%;
+		}
+		
+		.details_deleteFPWbutton, .details_deletebutton  {
+          display:none;
+		    width:33%;
+		}
+		.details_deleteFPWbuttonLong, .details_deletebutton  {
+		    width:32.947%;   
+		}
+		
+		.details_button.details_deletebutton {
+			border-right: none;
+		}
+		/* END - Contacts & Content Buttons */
+		
+		/* Trash Buttons */
+		.details_undeletebutton, .details_deletefromtrashbutton{
+		    width:49.654%;
+		}
+		
+		.details_button.details_deletefromtrashbutton{ 
+			border-right: none;
+		}
+
+      .details_image .details_undeletebutton,
+      .details_image .details_deletefromtrashbutton,
+      .details_video .details_undeletebutton,
+      .details_video .details_deletefromtrashbutton,
+      .details_viewfullsizebutton {
+         width:32.9%;
+      }
+		/* END - Trash Buttons */
+	/* END - Details Pane Buttons */
+
+	
+	/* Details Pane Details */
+		/* Contact Details */
+		.contacts_vertical_scroll {
+		   height: 676px;
+         width:430px;
+			overflow-y: auto;
+         margin-top: 2px;
+
+         /* IE6-7 */
+         position: relative;
+		}
+      .shifter_vertical_scroll {
+        height: 631px;
+        _height: 622px;
+        width: 292px;
+      }
+		
+		.contact_note {
+		    color:#929292;
+		    font-size:11px;
+		    padding:10px 0 0 10px;
+          text-align:center;
+		}
+	
+		.details_title {
+		    font-size: 12px;
+			clear: left;
+			margin: 10px;
+			padding-left: 5px;
+			padding-top: 5px;
+			width: auto;
+			color: #444;
+			font-weight: bold;
+			position: relative;
+			height: 20px;
+			/*background-image: url(../img/backup/contact_button_gradient.gif);*/
+         background: #ececec;
+         border-bottom:1px solid #d5d5d5;
+         border-top: 1px solid #f5f5f5;
+		}
+	
+		.details_infobox {
+		    clear:left;
+		    margin-left:15px;
+
+		}
+      .contacts_details_infobox{
+          width: 400px;
+      }
+    .contacts_details_infobox > div{
+        padding: 3px 0;
+        line-height: 15px;
+        min-height: 12px;
+        clear: both;
+    }
+      .shifter_details_infobox{
+         width: 260px;
+      }
+	
+		.details_lineitem {
+		    clear:left;
+		    color:#000;
+		    cursor:default;
+		    font-size:8pt;
+		    font-weight:400;
+		    line-height:16px;
+		    position:relative;
+		    white-space:normal;
+		    width:100%;
+		}
+		
+		.details_lineitemvalue {
+		    float:left;
+		    padding-left:10px;
+		}
+      .contacts_details_lineitemvalue{
+		    width:255px;
+      }
+      .shifter_details_lineitemvalue{
+         width: 130px;
+      }
+		
+		.details_lineitemunsupported {
+		    color:#929292;
+		}
+		
+		.commands_searchfaded,
+		.details_lineitemunsupported .lineitem_key,
+		.details_lineitemvalueunsupported {
+		    color:gray;
+		}
+		
+		.details_toptwo .lineitem_key {
+			width: auto;	
+		}
+		
+		.lineitem_key {
+		    float:left;
+		    width:120px;
+          text-align:right;
+		}
+		/* END - Contact Details */
+
+		
+		/* Image Details */
+		.details_image {
+		    margin:0;
+		    padding-bottom:15px;
+		}
+
+      .details_image .filename{
+         text-align: center;
+      }
+		
+		.details_filepicture {
+		    margin-bottom:10px;
+		    margin-top:20px;
+		    overflow:hidden;
+		    position:relative;
+		    text-align:center;
+		    width:100%;
+		}
+		/* END - Contact Details */
+	/* END - Details Pane Details*/
+/* END - Details Pane */
+
+
+/* Records Pane */
+#recordspane, #data_tab {
+    background:#EEE;
+    height:826px;
+    position:relative;
+}
+
+#records_navigationhalf {
+    float:left;
+    height:100%;
+    position:relative;
+    width:197px;
+    z-index:4;
+}
+
+#records_maincontent, 
+#data_contacts_tab,
+#data_photos_tab,
+#data_videos_tab,
+#data_trash_tab {
+	height: 831px;
+	width: 974px;
+	padding-top: 20px;
+}
+
+.records_lefthalf {
+    float:left;
+    height:749px;
+    *height: 744px;
+    margin-left:20px;
+    _margin-left:10px;
+    position:relative;
+    width:262px;
+    z-index:3;
+}
+
+.records_middlehalf {
+	float: left;
+	width: 430px;
+	margin-left: 20px;
+   _margin-left: 10px;
+	height: 803px;
+   display:none;
+}
+
+#records_consolehalf {
+    color:#666;
+    float:left;
+    margin-left:20px;
+    _margin-left:10px;
+    _margin-right:13px;
+    width:200px;
+    background:#fff;
+    border: 1px solid #B7B5B6;
+	height: 738px;
+}
+
+#records_mainhalf {
+    float:left;
+    height:100%;
+    width:974px;
+}
+
+.records_tablehalfimage,
+.records_tablehalfvideo {
+  /* If you change this width, also change the width in View.js::updateTable.
+     Search for "IE6 records_tablehalfimage". */
+    /*width:124px;*/
+   width:637px;
+}
+
+.records_detailshalfimage {
+    width:420px;
+}
+
+#contact_resource {
+    padding-bottom:15px;
+    cursor: pointer;
+   display:none;
+}
+
+.details_image .details_metadata,
+.details_video .details_metadata
+{
+   display:none;
+}
+
+.sync_icon{
+   background: url(../img/phone_arrows.png) no-repeat;
+   height:10px;
+   padding-left: 15px;
+}
+
+   /* Less-is-more Dialog */
+   #lessismoredialog .header{
+      height:60px;
+   }
+
+   #lessismoredialog .title{
+      color: #222;
+      margin-left: 20px;
+      font-size: 18pt;
+      padding-top: 20px;
+   }
+
+   #lessismoredialog .main{
+      padding: 0 0 10px;
+   }
+
+	.cc_body{
+		background-color: #F3F3F3;
+		padding: 10px;
+	}
+   /* END - Less-is-more Dialog */
+
+   /* Recordspane Nav */
+   .recordspane_nav {
+      margin: 20px 20px 0 !important;
+      display:block;/*remove when backupbaseOld.css is obsolete*/
+     border-radius : 0 !important;
+         padding: 0 !important;
+   }
+
+   .recordspane_nav ul {
+      background-image: url("../img/backup/contact_button_gradient.png")  !important;
+      border-bottom: 1px solid #B7B5B6 !important;
+      border-top: 1px solid #B7B5B6 !important;
+      height: 27px !important;
+	  border-left: 1px solid #b7b5b6;
+   }
+
+   .recordspane_nav li {
+    border: medium none;
+    border-radius: 0 0 0 0 !important;
+    cursor: pointer;
+    float: left !important;
+    font-size: 11px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    text-align: center !important;
+    width: 24.787% !important;
+	border-right: 1px solid #b7b5b6;
+	border-left: 1px solid white;
+   }
+.recordspane_nav li a {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    width: 100%;
+}
+   .recordspane_nav_button {
+      background-image: url(../img/backup/contact_button_gradient.png);
+   }
+#records_mainhalf {
+	border: none !important;	
+}
+#records_mainhalf .ui-tabs-panel {
+    padding: 20px 0 0 !important;
+   }
+   .recordspane_nav_button.selected {
+      background-image: url(../img/backup/contact_button_gradient_rollover.gif);
+      color: #0070AA;
+      font-weight: bold;
+	  border-left: 1px solid transparent;
+   }
+
+   .recordspane_nav_button:hover {
+      background-image:url(../img/backup/contact_button_gradient_rollover.gif);
+	  border-left: 1px solid transparent;
+   }
+   /* END - Recordspane Nav */
+
+
+	/* Search Box */
+	#commands_search {
+		color: #666666;
+		width: 100%;
+		z-index: 5;
+		font-weight: bold;
+		height: auto;
+		position: relative;
+		font-size: 13px;
+	}
+	
+	#commands_searchinput {
+		font-size: 10pt;
+      /* If you change this width, also change the width in View.js::updateTable.
+         Search for "IE6 commands_searchinput". */
+      width:256px;
+		z-index: 5;
+      margin-top: 3px;
+	}
+	
+	#commands_searchplace {
+	    z-index:3;
+	}
+	/* END - Search Box */
+
+
+   /* Trash Select */
+   #selecttrash{
+      top:30px;
+   }
+
+   #trashtype{
+      width:210px;
+   }
+   /* END - Trash Select */
+
+
+   /* Action Bar */
+   .actionbar{
+      padding:5px;
+      margin-top:26px;
+      background-color: #ccc;
+      position: relative;
+   }
+   .actionbar_media{
+      margin-top:0;
+   }
+
+   #records_tablehalf .actionbar .actiontext{
+      font-weight:bold;
+   }
+
+   #records_tablehalf .actionbar select{
+      font-size: 8pt;
+      width:150px;
+   }
+
+   #records_tablehalf .actionbar .btn_perform{
+      position:absolute;
+      margin:6px;
+   }
+
+   .btn_perform {
+   }
+   /* END - Action Bar */
+
+
+   /* Select Bar */
+   #records_tablehalf .selectbar{
+      background: url(../img/backup/actionbar_background.png) 0 0 repeat-x;
+      padding: 3px;
+      position:relative;
+      height:22px;
+   }
+
+   #ct_checkallbox{
+      position:relative;
+      top:2px;
+   }
+   /* END - Select Bar */
+
+
+	/* Batch Select */
+	.tab_batchselectholder {
+	    float:left;
+	}
+	
+	#ct_batchselect, .tab_batchselectholder {
+      position:absolute;
+      right:5px;
+      top:5px;
+	}	
+	/* END - Batch Select */
+/* END - Records Pane */
+
+
+/* rt_ = RecordsTable */
+.recordstable {
+    border: 1px solid #B7B5B6;
+ 	 height: 693px;
+    overflow: hidden;
+    position: absolute;
+    top: 110px;
+    *top:0;
+    *position: relative;
+    *height:681px;
+    _height: 683px;
+    width: 100%;
+}
+.recordstable_media {
+    top: 57px;
+}
+
+.recordstable_media_noaction {
+    top: 27px;
+}
+
+.rt_rowdarker {
+    background-color:#FFF;
+    border-color:#FFF;
+}
+
+.rt_rowbox {
+    background-color:#FFF;
+    height:693px;
+    *height:682px;
+    overflow-x:hidden;
+    overflow-y:auto;
+    position:relative;
+    width:100%;
+}
+
+.rt_row {
+    border-style:solid;
+    border-width:2px;
+    color:#000;
+    font-size:11px;
+    height:33px;
+    position:relative;
+    cursor:pointer;
+}
+
+.rt_row:hover {
+    border-color:#0070aa;
+}
+
+.rt_rowlighter {
+    background-color:#FFF;
+    border-color:#FFF;
+}
+
+.rt_column {
+    overflow:hidden;
+    position:absolute;
+    text-overflow:ellipsis;
+    top:3px;
+    white-space:nowrap;
+	 height:20px;
+    line-height: 17px;
+}
+
+.rt_column .contactRecordOn{
+   width:20px;
+   height:20px;
+   background:  url(../img/backup/icon_trash_contacts_on.png) no-repeat 0 0;
+}
+.rt_column .contactRecordOff{
+   width:20px;
+   height:20px;
+   background:  url(../img/backup/icon_trash_contacts_off.png) no-repeat 0 0;
+}
+
+.rt_column .imageRecordOn{
+   width:20px;
+   height:20px;
+   background:  url(../img/backup/icon_trash_photo_on.png) no-repeat 0 0;
+}
+.rt_column .imageRecordOff{
+   width:20px;
+   height:20px;
+   background:  url(../img/backup/icon_trash_photo_off.png) no-repeat 0 0;
+}
+
+.rt_column .videoRecordOn{
+   width:20px;
+   height:20px;
+   background:  url(../img/backup/icon_trash_video_on.png) no-repeat 0 0;
+}
+.rt_column .videoRecordOff{
+   width:20px;
+   height:20px;
+   background:  url(../img/backup/icon_trash_video_off.png) no-repeat 0 0;
+}
+
+.rt_header {
+    height: 26px;
+    position: relative;
+}
+.rt_headercolumn {
+    position: absolute;
+    top: 4px;
+}
+
+.rt_columnmedia {
+    overflow:hidden;
+    position:relative;
+    width:200px;
+    *width:auto;
+    height:200px;
+}
+
+.rt_columnresource {
+    position:absolute;
+    top:2px;
+}
+
+/*
+.rt_rowchecked:hover {
+    background-color:#aae2ff;
+    border-color:gray;
+}
+*/
+
+.rt_mediaarrowcolumn {
+    padding-top:0;
+}
+
+.rt_batchselect {
+    font-size:8pt;
+    height:18px;
+}
+
+#arrow {
+    margin:0 6px;
+    padding-top:2px;
+}
+
+.arrow,.rt_mediaarrowcolumn {
+    height:17px;
+    width:17px;
+}
+
+.rt_rowindicated {
+    background:#0070aa;
+    border-color:#0070aa;
+    color:#FFF;
+    font-weight:700;
+}
+
+.rt_rowmedia {
+    position:relative;
+    text-align:center;
+	float:left;
+	margin:3px;
+   background: #666;
+   border: 3px solid #444;
+}
+
+.rt_syncRow{
+   top:20px;
+   position:relative;
+   margin-left:28px;
+   color: #f67e1d;
+}
+
+.rt_checkRow{
+   width:20px;
+   position:relative;
+   z-index:3;
+}
+
+.rt_endpointsync {
+   text-align: right;
+   font-weight: bold;
+   color: #d46013;
+   height:20px;
+   width:100%;
+   background: url(../img/backup/mediainfobackground.png) repeat 0 0;
+   position:relative;
+   z-index:2;
+   margin-top: -20px;
+   background-color: #666;
+}
+
+.rt_endpointsync_text{
+   padding:5px 5px 0 0;
+   font-size: 10px;
+}
+
+.buttoncontainer{
+   position:absolute;
+   z-index:2;
+   display:none;
+   margin: 34px 0 0 16px;
+}
+
+.buttoncontainer.nodeviceaction{
+   margin: 49px 0 0 16px;
+}
+
+.buttoncontainer div{
+   margin: 5px;
+   cursor:pointer;
+}
+
+.btn_viewfullsize{
+   background: url("../img/backup/btn_view_full_size.png") no-repeat scroll 0 0;
+   width:158px;
+   height:23px;
+}
+
+.btn_playvideo{
+   background: url("../img/backup/btn_play_video.png") no-repeat scroll 0 0;
+   width:158px;
+   height:23px;
+}
+
+.btn_removefromphone{
+   background: url("../img/backup/btn_remove_from_phone.png") no-repeat scroll 0 0;
+   width:158px;
+   height:23px;
+}
+
+.btn_addtophone{
+   background: url("../img/backup/btn_add_to_phone.png") no-repeat scroll 0 0;
+   width:158px;
+   height:23px;
+}
+
+.btn_restorephoto{
+   background: url("../img/backup/btn_restore_photo.png") no-repeat scroll 0 0;
+   width:155px;
+   height:23px;
+}
+
+.btn_restorevideo{
+   background: url("../img/backup/btn_restore_video.png") no-repeat scroll 0 0;
+   width:155px;
+   height:23px;
+}
+
+.btn_downloadphoto{
+   background: url("../img/backup/btn_download_photo.png") no-repeat scroll 0 0;
+   width:158px;
+   height:23px;
+}
+
+.btn_downloadvideo{
+   background: url("../img/backup/btn_download_video.png") no-repeat scroll 0 0;
+   width:158px;
+   height:23px;
+}
+
+.pp_content_container .pp_details .mediaActionButtons .btn_download.nodeviceaction{
+   margin: 0 165px;
+}
+
+.btn_deletephoto{
+   background: url("../img/backup/btn_delete_photo.png") no-repeat scroll 0 0;
+   width:158px;
+   height:23px;
+}
+
+.btn_deletevideo{
+   background: url("../img/backup/btn_delete_video.png") no-repeat scroll 0 0;
+   width:158px;
+   height:23px;
+}
+
+.btn_delete.nodeviceaction{
+   margin-right: 70px;
+}
+
+.btn_permadeletephoto{
+   background: url("../img/backup/btn_perma_delete_photo.png") no-repeat scroll 0 0;
+   width:209px;
+   height:23px;
+}
+
+.btn_permadeletevideo{
+   background: url("../img/backup/btn_perma_delete_video.png") no-repeat scroll 0 0;
+   width:209px;
+   height:23px;
+}
+
+.btn_mediaprev{
+   background: url("../img/backup/btn_mediaprev.png") no-repeat scroll 0 0;
+   width:100px;
+   height:18px;
+}
+
+.btn_medianext{
+   background: url("../img/backup/btn_medianext.png") no-repeat scroll 0 0;
+   width:64px;
+   height:18px;
+}
+
+.btn_mediaclose{
+   background: url("../img/backup/btn_mediaclose.png") no-repeat scroll 0 0;
+   width:59px;
+   height:18px;
+}
+
+.pp_content_container .mediaActionButtons div{
+   float: left;
+}
+
+/* We want the loading dialog to be able to go on top */
+div.pp_overlay{
+   z-index: 999;
+}
+div.pp_pic_holder{
+   z-index: 1000;
+}
+
+#pp_full_res{
+   /* Center the image in case it is smaller than our minimum width. */
+   text-align:center;
+
+   background: #666;
+}
+
+.pp_content_container .pp_left,
+div.pp_default .pp_content_container .pp_left,
+.pp_content_container .pp_right,
+div.pp_default .pp_content_container .pp_right{
+   padding:0;
+}
+
+.pp_content_container{
+   border: 2px solid #999;
+}
+
+div.pp_default .pp_top, div.pp_default .pp_top .pp_middle, 
+div.pp_default .pp_top .pp_left, div.pp_default .pp_top .pp_right, 
+div.pp_default .pp_bottom, div.pp_default .pp_bottom .pp_left, 
+div.pp_default .pp_bottom .pp_middle, div.pp_default .pp_bottom .pp_right{
+   height:0;
+}
+
+div.pp_default .pp_content_container .pp_right{
+   background:none;
+}
+
+div.pp_default .pp_content_container .pp_details{
+   background: #666;
+   margin: 0;
+   border-color: #999;
+   border-style: solid;
+   border-width: 3px 0 0;
+   height:75px;
+}
+
+div.pp_default .pp_content{
+   background-color: #666;
+}
+
+.pp_content_container .pp_details .fileInfo,
+.pp_content_container .pp_details .mediaBorder,
+.pp_content_container .pp_details .mediaButtons{
+   float: left;
+}
+
+.pp_content_container .pp_details .mediaButtons{
+   width:688px;
+}
+
+.pp_content_container .pp_details .fileInfo{
+   margin: 10px 0 0 10px;
+   width: 100px;
+   color: #fff;
+}
+
+.pp_content_container .pp_details .fileInfo div{
+   margin: 5px 0;
+}
+
+.pp_content_container .pp_details .fileInfo .title{
+   font-weight: bold;
+   margin: 0;
+}
+
+.pp_content_container .pp_details .mediaBorder{
+   background: url("../img/backup/mediaborder.png") repeat-y scroll 0 0;
+   width:2px;
+   height:55px;
+   margin-top: 10px;
+}
+
+.pp_content_container .pp_details .mediaButtons .mediaActionButtons div{
+   cursor:pointer;
+}
+
+.pp_content_container .pp_details .mediaActionButtons{
+   padding: 10px;
+   height:20px;
+}
+
+.pp_content_container .pp_details .mediaActionButtons div{
+   margin: 0 3px;
+}
+
+.pp_content_container .pp_details .mediaButtons .btn_mediaprev{
+   margin: 3px 0 0 10px;
+}
+
+.pp_content_container .pp_details .mediaButtons .btn_medianext{
+   margin: 3px 0 0;
+}
+
+.pp_content_container .pp_details .mediaButtonsClose{
+   float: right;
+   margin:10px;
+}
+
+.pp_content_container .pp_details .syncStatus{
+   color: #d46013;
+   font-weight: bold;
+}
+/* END - RecordsTable */
+
+
+/* ep_ = Edit Pane */
+#editpane {
+    background-color:#FFF;
+    display:none;
+    font-size:8pt;
+    font-weight:400;
+    height:100%;
+    position:relative;
+}
+
+#editpaneinner {
+    padding:7px 7px 20px;
+    position:relative;
+    /* overflow-y: auto; */
+}
+
+.ep_column {
+    background-color:transparent;
+    border:0;
+    color:#666;
+    float:none;
+    font-weight:700;
+    height:auto;
+    margin:0;
+    overflow:visible;
+    padding-left:2%;
+    padding-right:2%;
+    position:absolute;
+    text-align:left;
+    top:0;
+    width: 230px; /* IE6 */
+}
+
+#ep_column1 {
+    left:0;
+    position:relative;
+    z-index:2;
+}
+
+#ep_column2 {
+    left:35%;
+    position:absolute;
+    top:37px;
+}
+
+#ep_column3 {
+    border-left:0 none;
+    height:100%;
+    left:66%;
+    position:absolute;
+    top:37px;
+}
+#contactEditor #ep_column3 {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 35px;
+}
+
+#ep_supportedkey {
+    color:#666;
+    font-weight:400;
+}
+
+#ep_supportedbar {
+    background-color:#FFF;
+    border:0;
+    margin:0;
+    padding:0;
+}
+
+.ep_supportedtext {
+    font-weight:700
+}
+
+.ep_fieldclosebutton:hover {
+    background-image:url(images/redXhover.gif);
+}
+
+#ep_birthdayholder select,#ep_anniversaryholder select {
+    border:1px solid #a5aeb5;
+    font-size:8pt;
+    margin-right:10px;
+}
+
+.ep_fieldtable {
+    /** cell-spacing:3px; ??? **/
+    color:#666;
+    font-size:8pt;
+    font-weight:400;
+    width:95%;
+}
+
+.ep_textinput {
+    border:1px solid #184B84;
+    height:18px;
+    width: 230px; /* use px instead of % for IE6 */
+    overflow-y: hidden; /* IE6 */
+    margin-top: 1px;
+}
+
+.ep_textareainput {
+    font-family:inherit;
+    font-size:inherit;
+    height:100px;
+    position:relative;
+    width:230px;
+}
+
+#ep_endpointselect {
+    font-weight:400;
+    width:100%;
+}
+
+#ep_endpointselectwithtitle {
+    position:relative;
+    width: 230px; /* IE6 */
+}
+
+.ep_dateinput {
+    width:191px;
+}
+
+.ep_stateinput {
+    width:116px;
+}
+
+.ep_zipinput {
+    margin-left:3px;
+    width:100px;
+    *width:97px;
+}
+
+.ep_names {
+    width:140px;
+}
+
+.ep_nameinput {
+    width:180px;
+}
+
+/*
+The ep page should use ep_fieldblock to encompase a block of fields,
+ep_row to encompase everything within a row, and ep_title for title-
+text divs.
+*/
+.ep_fieldblock {
+    position:relative;
+    width:260px;
+    margin: 20px 0 10px;
+}
+
+#ep_column1 .contactnumbers{
+   overflow-y:auto;
+   height:370px;
+}
+
+.ep_row{
+    margin-bottom: 5px;
+    width: 250px;
+}
+.ep_title{
+  margin-bottom: 0;
+}
+
+
+#ep_pictureholder {
+    height:66px;
+    left:215px;
+    position:absolute;
+    text-align:center;
+    top:120px;
+    width:60px;
+}
+
+#ep_picture {
+    border:1px solid #3B5998;
+    height:66px;
+    width:60px;
+}
+
+.ep_contactfieldtitletd {
+    width:60px;
+}
+
+.spanish .ep_contactfieldtitletd {
+    width: 80px;
+}
+
+
+#ep_note {
+    background-color:#E1E0E0;
+    border:1px solid #184B84;
+    overflow-x:hidden;
+    padding:7px;
+}
+
+.ep_unsupported {
+    background-color:#E1E0E0;
+}
+
+.ep_phoneinput {
+    width:170px;
+}
+
+.spanish .ep_phoneinput{
+   width: 150px;
+}
+#contactEditor .error {
+    border: 1px solid #FF4B84
+}
+/* END - Edit Pane */
+
+
+/* rs_ = Record Shifter Pane */
+.rsboth_rowboxes {
+    border:1px solid #CCC;
+    position:relative;
+    width:100%;
+}
+
+#rs_details {
+    background-color:#FFF;
+    border:1px solid #CCC;
+    position:relative;
+    width:100%;
+    height:716px;
+}
+
+#import_contacts_details {
+    background-color:#FFF;
+    border:1px solid #CCC;
+    position:relative;
+    height:716px;
+}
+
+#import_contacts_details div,
+#importpane .selectbar {
+  text-align: left;
+}
+
+#import_contacts_details .contact_note {
+  text-align: center;
+}
+
+#import_contacts_details .details_lineitem {
+  width: 260px;
+}
+
+#import_contacts_details .lineitem_key {
+  width: 75px;
+  text-align: right;
+  padding-right: 10px;
+}
+#import_contacts_details .lineitem_value {
+  text-align: left;
+  padding-left: 10px;
+}
+
+
+.rs_sidetitlebox {
+    font-size:10pt;
+    font-weight:700;
+    padding-bottom:10px;
+    position:relative;
+    text-align:left;
+    width:80%;
+}
+
+.rs_sidetitleboxright {
+    left:20%;
+    width:90%;
+}
+
+.rs_tablegrouptitle {
+    color:#000;
+    font-size:10pt;
+    font-weight:700;
+    width:100%;
+}
+
+.rs_selectallwrapperleft {
+    position:absolute;
+    text-align:right;
+    top:0;
+    width:100%;
+}
+
+.rs_selectallwrapperright {
+    position:absolute;
+    text-align:left;
+    top:0;
+    width:100%;
+}
+
+.rs_column {
+    position:absolute;
+    width:20%;
+}
+
+.rs_leftcolumn {
+    left:2%;
+}
+
+.rs_lefttablecolumn {
+    left:56%;
+}
+
+.rs_righttablecolumn {
+    left:78%;
+}
+
+.rs_rightcolumn {
+    left:24%;
+    width:30%;
+    height:717px;
+}
+
+.contact_rs_ins {
+    color:#426788;
+    font-family:arial, sans-serif;
+    font-size:19px;
+    padding-bottom:7px;
+    padding-left:8px;
+    padding-top:5px;
+}
+
+.contact_rs_description {
+    color:#000;
+    font-family:arial, sans-serif;
+    font-size:13px;
+    padding-bottom:30px;
+    padding-left:13px;
+}
+
+#rs_description,#share_description {
+    padding-bottom:10px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#rso_batchselect,#rsi_batchselect {
+    background-color:#FFF;
+    margin-top:5px;
+}
+
+.rs_searchinput {
+    margin:5px 10px 10px;
+    width:90%;
+}
+
+.rs_ins {
+    color:#426788;
+    font-size:16px;
+    font-style:italic;
+    font-weight:700;
+    padding-bottom:3px;
+    padding-left:8px;
+    padding-top:5px;
+}
+
+.rs_description {
+    color:#333;
+    font-size:12px;
+}
+
+.whole_rs_description {
+    background:#F4F4F4;
+    border:1px solid #B7B5B6;
+    width:190px;
+}
+
+.rs_selectallright {
+	background: url(../img/shifter_arrow_all_left.png);
+	height: 24px;
+	width: 25px;
+}
+
+.rs_selectallleft {
+	background: url(../img/shifter_arrow_all_right.png);
+	height: 24px;
+	width: 25px;
+	position: absolute;
+	right: 0px;
+}
+/* END - Record Shifter Pane */
+
+
+/* AddGroup Pane */
+#addgrouppane{
+   padding:10px;
+}
+
+#gd_name{
+	margin-bottom: 5px;
+    margin-top: 5px;
+}
+/* END - AddGroup Pane */
+
+
+/* Dialogs */
+#dialogbackground {
+    -moz-opacity:0.5;
+    background-color:#000;
+    display:none;
+    filter:alpha(opacity=50);
+    height:100%;
+    left:0;
+    margin:0;
+    opacity:0.5;
+    padding:0;
+    position:absolute;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+
+#dialogholder {
+    display:none;
+    height:600px;
+    left:0;
+    margin:0;
+    padding:0;
+    position:absolute;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:1001;
+}
+
+.dialogbox {
+    background-color:#FFF;
+    border:1px solid #000;
+    color:#333;
+    font-size:8pt;
+    font-weight:400;
+    height:auto;
+    line-height:15px;
+    margin:auto;
+    overflow:hidden;
+    position:relative;
+    text-decoration:none;
+    top:150px;
+    width:448px;
+    z-index:1002;
+}
+
+.dialogbag {
+    display:none;
+    height:100%;
+    left:0;
+    position:absolute;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:1002;
+}
+
+.dbox_title {
+    background-color:#636363;
+    background-image:url(../img/contentpane_top.gif);
+    background-position:0 -1px;
+    color:#FFF;
+    font-size:15px;
+    font-weight:700;
+    height:27px;
+    margin-bottom:18px;
+    padding:8px 0 0 28px;
+    text-align:left;
+}
+
+.dbox_buttons {
+    position:static;
+    text-align:center;
+    width:100%;
+}
+
+.dialog_list {
+    font-size:10pt;
+    padding-right:10px;
+    text-align:left;
+}
+
+.dialog_list li {
+    padding-bottom:10px;
+}
+
+#picturedialog {
+    position:relative;
+    text-align:center;
+}
+
+#ajaxfailuredialog {
+    height:auto;
+}
+
+#sd_smsmessage {
+    height:70px;
+    width:300px;
+}
+
+.sd_charcounttext {
+    color:#999;
+}
+
+#jgd_groupname {
+    font-size:12pt;
+    font-weight:700;
+}
+
+#ld_timer {
+    bottom:0;
+    position:absolute;
+    right:0;
+}
+
+	
+	/* Transfer-Data Dialog */
+   .transferdata_dialog .instructions{
+      position:relative;
+   }
+
+   .transferdata_dialog .header {
+	   background:url(../img/dialog_header.png) no-repeat 0 -524px;
+   }
+
+   .transferdata_dialog .transferdata_old{
+      float:left;
+      width:90px;
+      padding: 90px 0 0 20px;
+      text-align: left;
+   }
+
+   .transferdata_dialog .transferdata_web{
+      float:left;
+      width:100px;
+      padding: 90px 30px 0 30px;
+      text-align: center;
+   }
+
+   .transferdata_dialog .transferdata_new{
+      float:left;
+      width:85px;
+      padding: 90px 0 0 20px;
+      text-align: right;
+   }
+
+   .transferdata_dialog .transferdata_step1{
+      background:url(../img/common/common_transferdata_step1.png) no-repeat;
+      width:378px;
+      height:116px;
+      margin: 20px 82px;
+      color: #ccc;
+   }
+
+   .transferdata_dialog .transferdata_step2{
+      background:url(../img/common/common_transferdata_step2.png) no-repeat;
+      width:378px;
+      height:116px;
+      margin: 20px 82px;
+      color: #ccc;
+   }
+
+   .transferdata_dialog .stepcount{
+      font-weight: bold;
+      margin-bottom: 10px;
+   }
+
+   .transferdata_dialog .step{
+      margin-bottom: 10px;
+   }
+
+   .transferdata_dialog .button{
+      position: absolute;
+      right: 20px;
+   }
+
+   .transferdata_dialog .next{
+      background:url(../img/common/common_btn_next.png) no-repeat right;
+      width:56px;
+      height:17px;
+      cursor: pointer;
+      font-size:18px;
+      font-weight:bold;
+      color:#0070AA;
+      padding-right:5px;
+      margin-right:5px;
+   }
+
+   .transferdata_dialog .previous{
+      background:url(../img/common/common_btn_previous.png) no-repeat left;
+      width:86px;
+      height:17px;
+      cursor: pointer;
+      font-size:18px;
+      font-weight:bold;
+      color:#0070AA;
+      padding-left:20px;
+   }
+	/* END - Transfer-Data Dialog */
+
+
+	/* Update Phone Dialog */
+	.updatephone_synced {
+	    font-weight:700;
+	    padding-left:20px;
+	    text-align:left;
+	}
+	
+	.updatephone_notoccur {
+	    cursor:pointer;
+	    font-weight:700;
+	    padding:5px 0 0 20px;
+	    text-align:left;
+	    text-decoration:underline;
+	}
+	
+	#updatephone_notoccur_ins {
+	    display:none;
+	    font-size:12px;
+	    padding:10px 0 0 20px;
+	    text-align:left;
+	}
+	/* END -Update Phone Dialog */
+
+
+   /* Sync Dialogs */
+   .sync_dialog .instructions .selectdata{
+      font-weight:bold;
+   }
+
+   .sync_dialog .selectdata label{
+      position:relative;
+      top:-1px;
+      margin-right: 10px;
+   }
+
+   .sync_dialog .instructions .note{
+      border: 1px solid #ccc;
+      padding: 10px 10px 0;
+   }
+
+	.sync_dialog .instructions .sync_setting{
+      border: 1px solid #ccc;
+      padding: 10px 10px 0;
+      margin-top: 10px;
+      font-weight:bold;
+   }
+   
+   .sync_dialog .instructions .sync_setting .sync_current{
+       height:16px;
+      padding: 3px 0 0 20px;
+		background:url(../../images/common/green_tick_sm.png) no-repeat;
+      _background-image: none;
+      _filter:
+      progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/green_tick_sm.png, sizingMethod='crop');
+   }
+   
+   .sync_dialog .instructions .sync_setting .sync_message{
+      font-weight: normal;
+      display:none;
+      padding-bottom:10px;
+   }   
+   
+   .sync_dialog .instructions .error{
+      display:none;
+      color: #990000;
+      margin-top: 10px;
+   }
+
+   .sync_dialog .success{
+      margin-left: 30px;
+   }
+
+   .sync_successdetails .title{
+      font-weight: bold;
+   }
+
+   .sync_successdetails  .onphonedetails,
+   .sync_successdetails  .onwebdetails{
+      float: left;
+      width: 250px;
+   }
+
+   .sync_successdetails .name,
+   .sync_successdetails .details{
+      float: left;
+      margin-right: 10px;
+   }
+
+   .sync_successdetails .name{
+      width:55px;
+   }
+
+   .sync_successdetails div{
+      margin: 5px 0;
+   }
+   .sync_successdetails .divider {
+		display: block;
+		margin: 6px 0;
+   }
+   
+     .sync_successdetails .instruction {
+		float: right;
+		height: 200px;
+		margin-top: -30px;
+   }
+   /* END - Sync Dialogs */
+
+.dialog_buttons .btn_sync {
+	background:url(../img/backup/btn_dialog_sync_data.png) no-repeat;
+	width:118px;
+	height:23px;
+}
+
+.sync_dialog .header,.syncqa_dialog .header,.sync_successdetails .header {
+	background:url(../img/dialog_header.png) no-repeat 0 0;
+}
+/* END - Dialogs*/
+
+
+/* Sharing Pane */
+#sharingpane{
+   height: 500px;
+}
+/* END - Sharing Pane */
+
+
+/* Account Settings */
+	/* Backup Settings */
+   .settings_content .backupBatteryRow .field,
+   .settings_content .backupConnection .field{
+      padding-top: 5px;
+   }
+
+   .settings_content .backupBatteryRow .field.readonly,
+   .settings_content .backupConnection .field.readonly{
+      padding-top: 10px;
+   }
+	/* END - Backup Settings */
+/* END - Account Settings */
+
+
+/*Not sure about...*/
+#afd_message {
+    width:100%;
+}
+
+#lmc3d img {
+    height:492px;
+    width:59px;
+}
+
+.providers_form {
+    height:35px;
+    padding-left:286px;
+}
+
+#legaldisclaimer_text {
+    padding:0 18px 13px;
+    text-align:left;
+}
+#contactcount {
+    left:79px;
+    position:absolute;
+    top:50px;
+}
+
+#contactcount {
+    left:79px;
+    position:absolute;
+    top:50px;
+}
+
+#recordshifterpane{
+   min-height:800px;
+   _height:800px;
+}
+
+#ep_endpointselectwithtitle,
+#recordshifterpane,
+#rs_body,
+#lp_endpointbox {
+    position:relative;
+}
+
+.ep_fieldtable .right,
+#ep_supportedkeyboxes,
+#ep_debugrecordoutput {
+    display:none;
+}
+
+.relativebuffer{
+	height:57px;
+}
+
+
+/*	CSS from importpane.js */
+#importpane {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    top: 42px;
+}
+
+.spanish #ip_filebrowserholder{
+	padding-left:292px;	
+}
+
+.spanish #methodbox{
+	padding-left:283px;
+}
+.spanish #gps_keyword,
+.spanish #gid_keyword{
+	padding-left:350px;
+}
+
+.spanish #CI_button{
+	padding-left:415px;
+}
+
+.french #ip_filebrowserholder{
+	padding-left:207px;	
+}
+
+.french #methodbox{
+	padding-left:309px;
+}
+.french #gps_keyword{
+	padding-left:340px;
+}
+
+.french #gid_keyword{
+	padding-left:282px;
+}
+
+.french #CI_button{
+	padding-left:431px;
+}
+/*	END - CSS from importpane.js */
+
+
+#data_contact_add-edit {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    top: 42px;
+}
+
+#data_contact_add-edit .pane_floatingbuttons ul {
+    float: right;
+}
+#data_contact_add-edit .pane_floatingbuttons {
+    background-image: url(../img/backup/windowB_top.png);
+    margin: 0;
+    width: 100%;
+    min-height: 40px;
+    line-height: 40px;
+    top: -42px;
+    right: 0px;
+    left: 0px;
+}
+#data_contact_add-edit .pane_floatingbuttons h3 {
+    position: absolute;
+    left: 20px;
+    font-size: 16px;
+    color: #FFF;
+    font-weight: bold;
+}
+.ui-datepicker {
+	z-index: 100 !important;
+}
+
+.ui-dialog {
+	z-index: 9999 !important;
+}
+.ui-widget-overlay {
+	z-index: 8888;
+}
+
+.toolbar-tooltip {
+    background: url(../img/tooltip_bgnd.png) no-repeat 0 0;
+    padding: 20px;
+    width: 220px;
+    height: 93px;
+    color: #000;
+    font-size: 11px;
+    line-height: 11px;
+    font-weight: normal;
+    text-align: left;
+    cursor: default;
+    z-index: 900;
+    border: none;
+}
+
+.instructions .current {
+    display: block !important;
+}
+#endpoint_toolset .lp_info {
+    height:77px;
+    border-right: 1px solid #CACACA;
+    width: 180px;
+}
+
+#sync_toolset .syncing .syncing  {
+    top:0px;
+}
+
+#dashboard_location #dashboard_map {
+    overflow:hidden;
+    width: 250px !important;
+    height: 210px !important;
+}
+#dashboard_location #dashboard_map #bing_map {
+    border: 0px solid #cacaca !important;
+    margin: 0px !important;
+    width: 250px !important;
+    height: 210px !important;
+}
+
+/*
+Start IOS base styles
+*/
+/*
+
+.ios #contact_removefrmdevice_btn {
+    display:none;
+}
+.ios .details_buttonholder li {
+    width:49%;
+}*/
+
+.Edit_Location_Settings {
+    display:block;
+}
+
+.View_Location_Settings {
+    display:none;
+}
+
+.ios #contact_resource {
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: none;
+}
+.ios #data_contacts_tab .recordstable {
+    top: 110px;
+}
+.selectNote {
+    display:none;
+}
+
+#data_tab .syncdetails .ios {
+    display: block;
+}
+#data_tab .syncdetails .android {
+    display: block;
+}
+.ios #data_photos_tab #records_tablehalf,
+.ios #data_videos_tab #records_tablehalf {
+    display: block;
+    background: #FFF;
+    padding: 14px 35px 18px 35px;
+    border: 1px solid #B7B5B6;
+}
+.ios #data_photos_tab #contactstable, .ios #data_videos_tab #contactstable {
+    width:638px;
+    height: 623px;
+    padding: 20px 0;
+    border-left: 0;
+    border-right: 0;
+}
+.ios #data_photos_tab .actionbar_media, .ios #data_videos_tab .actionbar_media {
+    display:none;
+}
+.ios #data_photos_tab .selectbar .selectall, .ios #data_videos_tab .selectbar .selectall {
+    display:none;
+}
+.ios #data_photos_tab #data_photos_list .rt_checkRow, .ios #data_videos_tab #data_videos_list .rt_checkRow {
+    display:none;
+}
+.ios #data_photos_tab .selectbar .selectNote, .ios #data_videos_tab .selectbar .selectNote  {
+    display:block;
+}
+.ios #data_photos_tab .selectbar, .ios #data_videos_tab .selectbar {
+    background: none;
+}
+
+.ios #data_photos_tab .btn_deletephoto, .ios #data_videos_tab .btn_deletevideo {
+    display: none;
+}
+
+.ios #data_photos_tab .web_only  .btn_deletephoto, .ios #data_videos_tab .web_only  .btn_deletevideo {
+    display: block;
+}
+
+.ios .Edit_Location_Settings {
+    display:none;
+}
+
+.ios .View_Location_Settings {
+    display:block;
+}
+
+.ios .onphone .btn_removefromphone, .ios .onphone .btn_deletephoto, .ios .onphone .btn_deletevideo {
+    display: none !important;
+}
+
+.ios .onphone .btn_mediaprev {position: absolute; right: 69px;}
+.ios .onphone .btn_medianext {position: absolute; right: 5px;}
+
+.ios #data_tab .syncdetails .ios {
+    display: block;
+}
+.ios #data_tab .syncdetails .android {
+    display: none;
+}
+
+.transfer_data_instruction {
+    display: none;
+}
+.ios .transfer_data_instruction {
+    display: block;
+}
+
+.ios #dashboard_backup .viewdetails  {
+    display: block;
+}
+.learnMore, a.link_text {
+    color: #0070AA;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#sync_settings span.ios {
+    display: none;
+}
+.ios #sync_settings span.ios {
+    display: inline;
+}
+#sync_settings span.non-ios {
+    display: inline;
+}
+.ios #sync_settings span.non-ios {
+    display: none;
+}
+
+#import_contacts_list .rt_column {
+  text-align: left;
+}
+#import_contacts_list .rt_column_name {
+  width: 88%;
+  *width: auto;
+}

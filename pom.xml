@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.asurion.web</groupId>
+		<artifactId>web</artifactId>
+		<version>2</version>
+	</parent>
+	<artifactId>web-core</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>Web Parent</name>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- COMPILE -->
+			<dependency>
+				<groupId>com.asurion.web</groupId>
+				<artifactId>UI-Core</artifactId>
+				<version>1.0-SNAPSHOT</version>
+                <type>war</type> 
+			</dependency>
+			<dependency>
+				<groupId>com.asurion.web</groupId>
+				<artifactId>UI-LABS</artifactId>
+				<version>1.0-SNAPSHOT</version>
+                <type>war</type> 
+			</dependency>
+		
+		</dependencies>
+	</dependencyManagement>
+	<scm>
+		<url>https://amascm/svn/Asurion/AMA/Web/trunk</url>
+		<developerConnection>scm:svn:https://amascm/svn/Asurion/AMA/Web/trunk</developerConnection>
+	</scm>
+	<modules>
+        <module>UI-Core</module>
+        <module>UI-LABS</module>
+	</modules>
+
+</project>

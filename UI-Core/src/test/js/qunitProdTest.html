@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>UI-Core JS Unit Test Runner</title>
+	
+	<link rel="stylesheet" href="../resources/qunit/qunit.css">	
+</head>
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+	<script src="../resources/qunit/qunit.js"></script>
+	<script src="../../../target/UI-Core-13.0-SNAPSHOT/js/all.js"></script>
+	<script src="ama/AMATest.js"></script>
+	<script src="ama/UtilTest.js"></script>
+	<script src="model/LegacyApiSupportTest.js"></script>
+	<script src="action/ActionManagerTest.js"></script>
+	<script src="view/GridViewTest.js"></script>
+
+	<!-- Router is being excluded for now, because it's too dependent on bootstrap markup -->
+	<!-- <script src="../../main/webapp/js/router/Router.js"></script> -->
+
+</body>
+</html>

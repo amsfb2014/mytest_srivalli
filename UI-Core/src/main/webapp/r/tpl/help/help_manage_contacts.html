@@ -1,0 +1,105 @@
+<!-- BEGIN: help_manage_contacts -->
+<div id="helpContent">
+    <h2>Manage Data from the Web</h2>
+    <div id="helpSections">
+        <p><b>Add contacts</b></p>
+        <ol start="1">
+            <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+            <li>Click <span>Create New Contact(s)</span> in the Manage Contacts tab on the left side of the screen.</li>
+            <li>Enter new contact information and click <b>Save</b>.</li>
+        </ol>
+        <p><b>Edit Contacts:</b></p>
+      
+        <ol start="1">
+            <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+            <li>Select the contact to edit.</li>
+            <li>Click the <b>Edit Contact</b>  button in the contact details section on the right side of the page.</li>
+            <li>Enter edits for the selected contact and click <b>Save</b>.</li>
+        </ol>
+        <p><b>Delete Contacts:</b></p>
+        <p>From the Web site, you can delete contacts one at a time, or in batches:</p>
+        <p><b>To delete a single contact:</b></p>
+
+        <ol start="1">
+            <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+            <li>Select the contact to delete.</li>
+            <li>Click the <b>Delete This Contact From Phone & Web</b>  button in the contact details section on the right side of the page.</li>
+        </ol>
+
+        <p><b>To delete multiple contacts:</b></p>
+        <ol start="1">
+               <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+               <li> Click the checkbox next to each contact to delete, and then click <b>Delete Contact(s)</b> on the Manage Contacts panel on the left side of the page.</li>
+        </ol>
+         <%if(window.location.search!="?iphone"){%>
+        <p><b>Delete contacts vs Remove contacts from phone</b></p>
+        <p>You can delete contacts from both phone and Web site, or you can remove them from just the phone and maintain them on the Web site only.</p>
+        <ul class="noStyle">
+            <li><b>• Delete contacts</b> - Removes the contacts from both the phone and the website. You can do this only on the website.</li>
+            <li><b>• Remove contacts from phone</b> -- Removes the contacts from your phone. A copy of it will be saved on the website but set to not sync with your phone.  If you want to permanently delete the contact, use the delete contact option.</li>
+        </ul>
+        <p><b>To remove a contact:</b></p>
+        <ol start="1">
+            <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+        </ol>
+        <ul class="noStyle">
+            <li class="leftIndent">• Select the checkbox next to the contact, and Click the <b>Remove From Phone </b>button to remove the contact from just the phone, and store it on the Web site.</li>
+        </ul>
+        <p>
+            Note: Contacts to be synced with your phone will have the<b> On Phone </b>text under their names. You may perform the same action but choose <b>Add To Phone</b> to reverse the process.
+        </p>
+          <%}%>
+        <p><b>Import contacts:</b></p>
+        <ol start="1">
+            <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+            <li>Click the <b>Import Contact</b> link in the Manage Contacts panel on the left side of the page, and follow the instructions provided.</li>
+        </ol>
+         <p><b>Export contacts:</b></p>
+        <ol start="1">
+            <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+            <li>Click the <b>Export contacts</b> link in the Manage Contacts panel on the left side of the page, and follow the instructions provided.</li>
+        </ol>
+        <p><b>Print contacts:</b></p>
+        <ol start="1">
+            <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+            <li>Click the <b>Print Contacts</b> link in the Manage Contacts panel on the left side of the page.</li>
+            <li>Select <b>File -> Print</b> or hit <b>Ctrl+P</b> to print the page..</li>
+        </ol>
+	<%if(window.location.search!="?iphone"){%>
+        <p><b>Add or remove photos from your phone:</b></p>
+         <%}else{%>
+          <p><b>Add photos to your phone:</b></p>
+           <%}%>
+        <ol start="1">
+          <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+            <li>Click the <b>Photos or Videos</b> tab.</li>
+            <li>Scroll over a photo or video and click the <b>Add To Phone</b><%if(window.location.search!="?iphone"){%> or <b>Remove From Phone </b> <%}%> button</li>
+        </ol>
+        
+	<p>User can perform "Add To Phone" activity when Photos/Videos status on web  is "Web Only". <b>Note</b>: For iOS user cannot perform "Remove From Phone" activity using web.</p>
+       
+       <%if(window.location.search!="?iphone"){%>
+        <p><b>Delete photos or videos from your phone:</b></p>
+        <ol start="1">
+          <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+              <li>Click the <b>Photos or Videos</b> tab.</li>
+           <li>Scroll over a photo or video and click the <b>Delete Photo </b> or <b>Delete Video</b> button</li>
+        </ol>
+	 <%}%>
+        <p><b>Download photos or videos from the website:</b></p>
+        <ol start="1">
+          <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+             <li>Click the <b>Photos or Videos</b> tab.</li>
+          <li>Scroll over a photo or video and click the <b>Download Photo</b> or <b>Download Video</b> button</li>
+        </ol>
+
+        <p><b>Restore Data from Trash</b></p>
+        <ol start="1">
+          <li>Click the <b>Backup </b> tab at the top of the web page.</li>
+            <li>Click the <b>Trash</b> tab at the top of the page.</li>
+            <li>Select a contact and press the <b>Restore Contact</b> button in the contact details, or click <b>Restore All Contacts</b> in the left panel.</li>
+        </ol>
+
+    </div>
+</div>
+<!-- END: help_manage_contacts -->

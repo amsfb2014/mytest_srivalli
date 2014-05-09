@@ -1,0 +1,340 @@
+/* Tabs */
+#app_assist_selector_tab {
+}
+/* END - Tabs */
+
+/* DashboardPane */
+	/* Privacy */
+   #dashboard_privacy .app_usage_title{
+      margin-top: 0;
+   }
+	
+	#applications_monitored {
+		font-size: 12px;
+		font-weight: normal;
+	}
+	
+   #applications_monitored li{
+     margin: 20px 10px;
+     _margin:15px 10px;
+   }
+
+	.dashboard_threat_count{
+		text-align: right;
+		font-weight: bold;
+		width: 20px;
+		color: #2470AA;
+	}
+	
+	.dashboard_threat_title {
+		margin-left: 10px;
+      font-weight: bold;
+	}
+	/* END - Privacy */
+/* END - DashboardPane */
+
+
+/* Privacy Pane */
+#privacy {
+	background:#EEE;
+	height:100%;
+	min-height: 555px;
+	width:auto;
+}
+
+#privacy_left {
+	float:left;
+	height:100%;
+	padding-left:11px;
+	position:relative;
+	width:186px;
+}
+
+#privacy_left .lp_info .last_backup {
+	display:none;
+}
+
+#privacy_right {
+	float: left;
+    height: 100%;
+    margin-top: 20px;
+    position: absolute;
+    _position: relative;
+    right: 10px;
+    width: auto;
+}
+
+.privacy_column{
+	background: none repeat scroll 0 0 white;
+   border: 1px solid #B7B5B6;
+   float: left;
+   height: 500px;
+   _height:477px;
+   padding: 10px 0 10px 10px;
+   width: 570px;
+}
+
+.privacy_go {
+	position: relative;
+	cursor: pointer;
+	float: right;
+	margin-right: 5px;
+}
+
+.privacy_details_column {
+	width: 360px;
+   _width:360px;
+   _height:385px;
+}
+
+#privacy .privacy_header {
+	background: none repeat scroll 0 0 #EEEEEE;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px;
+    margin: 10px 0;
+    height: 13px;
+}
+
+#privacy .privacy_title {
+	font-size: 13px;
+    font-weight: 700;
+    padding: 6px;
+}
+
+#privacy .privacy_note {
+	margin: 0 5px 10px 6px;
+   _margin: 0 5px;
+}
+
+	/* Threat Category List */
+	#privacy_app_container .privacy_category {
+		width: 100%;
+		cursor: pointer;
+	}
+
+	#privacy_app_container .active {
+		background: none repeat scroll 0 0 #48ADD7;
+	}
+
+   #privacy_app_container .rt_row{
+		height: 57px;
+      _height:55px;
+   }
+
+	#privacy_app_container .threat_count{
+		color: #2470AA;
+		float: left;
+		font-size: 20px;
+		font-weight: bold;
+		margin-top: 5px;
+		text-align: center;
+		width: 40px;
+	}
+
+	#privacy_app_container .threat_count_title{
+		float:left;
+		width: 130px;
+	}
+	/* END - Threat Category List */
+	
+	/* Privacy Records Table */
+	#privacy_rowbox {
+		overflow-y: auto;
+      height: 379px;
+      _height: 335px;
+      position: relative;
+      *width:190px;
+      _width:175px;
+	}
+	
+	#privacy_rowbox .rt_rowindicated {
+		background:url(../img/background_arrow.png) no-repeat scroll 525px 20px #EEEEEE;
+	}
+	
+   #privacy .rs_searchinput {
+      margin: 0;
+      font-size:11px;
+   }
+   
+   .privacy_sort_and_filter {
+		background: none repeat scroll 0 0 #B4B4B4;
+    	color: white;
+    	height: 22px;
+    	margin: 10px 0;
+    	padding: 5px;
+   }
+
+   .privacy_sort_and_filter div
+   {
+      float:left;
+   }
+   
+   .privacy_filter {
+   		margin-right:7px;
+   }
+   
+   .privacy_sort_and_filter select
+   {
+		background: none repeat scroll 0 0 #B4B4B4;
+    	color: white;
+   }
+
+   #privacy .rt_batchselect{
+      width: 135px;
+   }
+
+	.rt_rowthreat {
+		color: #000000;
+		font-size: 11px;
+		height: 50px;
+		line-height: 15px;
+		position: relative;
+		cursor: pointer;
+      _width:175px;
+	}
+	
+	.rt_rowthreatname {
+		font-weight: bold;
+		font-size: 13px;
+      line-height: 13px;
+      padding: 5px 0;
+	}
+	
+	#privacy_rowbox .rt_column {
+		height:50px;
+      	margin:0 0 0 10px;
+	}
+
+   #privacy_rowbox .rt_row{
+      height:55px;
+   }
+   #privacy_rowbox .divider{
+      /* IE7 shows a horizontal scrollbar so lessen the width*/
+      *width:90%;
+      _width: 100%;
+   }
+	/* END - Privacy Records Table */
+	
+	/* Privacy Details Pane */
+	#privacy_details .details_indented {
+		color: #000000;
+		height: 360px;
+		line-height:15px;
+		overflow: auto;
+      _width:300px;
+	}
+	
+	#privacy_details .details_bigtext {
+		color: #000000;
+		font-size: 15px;
+		font-weight: bold;
+		height: 40px;
+		line-height:20px;
+	}
+	
+	#privacy_details .details_namebox {
+		font-size: 20px;
+		padding: 5px 0;
+	}
+	
+	#privacy_details .details_buttonholder {
+		height: 20%;
+      	margin: 10px 0;
+      	border: medium none;
+	}
+	
+	#privacy_details  .details_threat_access_details{
+		padding: 5px 0;
+	}
+	
+	.details_trustThreatApp {
+		background: url("../img/security/btn_trust_this_app.png") repeat scroll 0 0 transparent;
+		height: 22px;
+		width: 147px;
+		cursor: pointer;
+		margin: 5px;
+	}
+	
+	.details_unTrustThreatApp {
+		background: url("../img/security/btn_untrust_this_app.png") repeat scroll 0 0 transparent;
+		height: 22px;
+		width: 147px;
+		cursor: pointer;
+		margin: 5px;
+	}
+	
+	.details_flagThreatAppAsSuspicious {
+		background: url("../img/security/btn_flag_app.png") repeat scroll 0 0 transparent;
+		height: 23px;
+		width: 273px;
+		cursor: pointer;
+		margin: 5px;
+	}
+	
+	.details_unflagThreatAppAsSuspicious {
+		background: url("../img/security/btn_unflag_app.png") repeat scroll 0 0 transparent;
+		height: 23px;
+		width: 273px;
+		cursor: pointer;
+		margin: 5px;
+	}
+	/* END - Privacy Details Pane */
+	/**
+	refactor sprite:
+	**/
+    .global_impact_indicator {
+        background: url("../img/security/app_usage.png") no-repeat scroll transparent;
+        float: left;
+        height: 22px;
+        width: 60px;
+    }
+    .gi_0 { background-position:0 3px ; }
+    .gi_1 { background-position:0 -22px ; }
+    .gi_2 { background-position:0 -72px ; }
+    .gi_3 { background-position:0 -97px; }
+    .gi_4 { background-position:0 -122px; }
+    .gi_5 { background-position:0 -147px; }
+    .gi_6 { background-position:0 -172px; }
+    .gi_7 { background-position:0 -197px; }
+    .gi_8 { background-position:0 -222px; }
+    .gi_9 { background-position:0 -247px; }
+    .gi_10 { background-position:0 -47px; }
+#privacy_details {
+    min-height: 360px;
+}
+	
+	
+/* END - Privacy Pane */
+
+
+/* Dialogs */
+.reportapp_dialog .header {
+	background:url(../img/dialog_header.png) no-repeat 0 -698px;
+}
+
+#reportappdialog textarea{
+   width:450px;
+   height:50px;
+   outline:none;
+}
+
+#reportappdialog .main{
+   text-align:inherit;
+   padding:20px 30px;
+}
+
+#reportappdialog .main .buttons{
+   margin: 20px 0 0 0;
+}
+
+#reportappdialog .instructions .error{
+   color: #990000;
+   line-height:13px;
+}
+
+.btn_submit {
+	background:url(../img/btn_dialog_accept.png) no-repeat 0 0;
+   width:62px;
+}
+/* END - Dialogs */

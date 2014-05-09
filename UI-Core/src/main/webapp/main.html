@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="expires" content="0">
+
+	<link rel="shortcut icon" href="img/pageicon.ico">
+	<title>Asurion Mobile Security Demo</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.ui-min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui-timepicker-min.css">
+
+	<!-- debugger css loaded for ALL carriers -->
+	<!-- link rel="stylesheet" type="text/css" href="css/debugger.css"-->
+
+	<!-- base css loaded for ALL carriers -->
+	<link rel="stylesheet" type="text/css" href="css/base-min.css">
+
+	<!-- dashboard base css loaded for ALL dashboard enabled carriers -->
+	<link rel="stylesheet" type="text/css" href="css/dashboardbase-min.css">
+
+	<!-- backup base css loaded for ALL backup enabled carriers -->
+	<link rel="stylesheet" type="text/css" href="css/prettyPhoto-min.css">
+	<link rel="stylesheet" type="text/css" href="css/backupbase-min.css">
+
+	<!-- recovery base css loaded for ALL recovery enabled carriers -->
+	<link rel="stylesheet" type="text/css" href="css/recoverybase-min.css">
+
+	<!-- security base css loaded for ALL security enabled carriers -->
+	<link rel="stylesheet" type="text/css" href="css/securitybase-min.css">
+	
+	<!-- add bing map common style sheet -->
+	<link rel="stylesheet" type="text/css" href="css/bingmap-min.css">
+
+	<!-- privacy -->
+	<link rel="stylesheet" type="text/css" href="css/privacybase-min.css">
+
+	<!-- tech support -->
+	<link rel="stylesheet" type="text/css" href="css/my_jquery.dataTables-min.css">
+	<link rel="stylesheet" type="text/css" href="css/techsupportbase-min.css">
+
+	<!-- safe browsing-->
+	<link rel="stylesheet" type="text/css" href="css/safebrowsingbase-min.css">
+
+	<!-- replace -->
+	<!-- link rel="stylesheet" type="text/css" href="css/replacebase.css"-->
+
+	<!-- override css loaded for carrier specific css ONLY -->
+	<link rel="stylesheet" type="text/css" href="css/override-min.css">
+
+	<link rel="stylesheet" type="text/css" rev="stylesheet" href="css/mapdelay-min.css">
+	<link rel="stylesheet" type="text/css" rev="stylesheet" href="css/mapcontrol-min.css">
+	
+	<style id="antiClickjack" type="text/css">
+		body {display: none !important;}
+	</style>
+	<script type="text/javascript">
+		if (self === top) {
+			var antiClickjack = document.getElementById("antiClickjack");
+			antiClickjack.parentNode.removeChild(antiClickjack);
+		} else {
+			top.location = self.location;
+		}
+	</script>
+	
+	<script src="js/jquerybase-min.js"></script>
+
+</head>
+<body id="_body" screen_capture_injected="true" class="body_color">
+	<div id="page_loading" style="display: none;">
+		<img width="141" height="32" src="img/loading.gif">
+	</div>
+
+	<!-- The all-encompassing div -->
+	<div id="page_container" style="display: block;">
+	</div>
+
+	<!-- upload file iframe -->
+	<div style="display: none;">
+		<iframe name="hiddenUploadResponse" id="uploadHiddenframe" src="javascript:false;">
+		</iframe>
+	</div>
+	
+	<!-- This section is the survey dialog section currently used for Core AMA, and latter other carriers can use this by enabling Skin.surveyEnabled -->
+	<div id="surveydialog" style="display: none;">
+		<div class="header">
+			<div class="title">Feedback</div><div id="survey_close" class="closeBtn"></div>
+		</div>
+		<div id="sv_dialog1" class="fb_text">
+
+			<!-- As general practice, rating kind of question should always come at top of survey screen. hence keeping this place holder.
+				Also Assuming that there should be 1 start rating type of question in survey to fit into survey screen .
+			-->
+			<div id="sv_star">
+				<!-- generated dynamically-->
+			</div>
+			<div id="survey_error"></div>
+			<div id="text_question" class="sv_text_question">
+			<!-- generated dynamically-->
+			</div>
+			<div id="survey_send_feedback">
+				<a href='javascript:void(0)' id="submit" class='submit surveyBtn'>Send Feedback</a>
+				<a href='javascript:void(0)' id="cancel" class="cancel surveyBtn">No Thanks</a>
+			</div>
+	</div>
+	<div id="sv_dialog2" class="sv_text">
+		<div class="surveyquestion">
+		    Thank you for sharing your feedback.<br>
+		</div>
+		<div id="sv_text_close_div">
+		    <a href='javascript:void(0)' id="close" class="surveyBtn">Close</a>
+		</div>
+	</div>
+ </div>
+
+	<!-- <script src="js/ie8support.js"></script>
+ -->
+	<script type="text/javascript" src="js/amabase-min.js"></script>
+	<script type="text/javascript" src="js/dashboard-min.js"></script>
+	<script type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1"></script>
+	<script type="text/javascript" src="js/postdashboard-min.js"></script>
+
+	<script type="text/javascript" src="js/start.js"></script>
+
+</body></html>

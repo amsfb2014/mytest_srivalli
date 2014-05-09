@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta http-equiv="expires" content="0">
+
+    <link rel="shortcut icon" href="img/pageicon.ico">
+    <title>Asurion Mobile Security Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/blueimp-gallery.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/page.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/location.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/settings.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/appassist.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/security.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/data.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/contacts.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/photos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/videos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/trash.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/support.css" rel="stylesheet">
+	
+	<style id="antiClickjack" type="text/css">
+		body {display: none !important;}
+	 </style>
+	<script type="text/javascript">
+		if (self === top) {
+			var antiClickjack = document.getElementById("antiClickjack");
+			antiClickjack.parentNode.removeChild(antiClickjack);
+		} else {
+			top.location = self.location;
+		}
+	 </script>	
+</head>
+<!--[if IE 9]>      <body id="_body" screen_capture_injected="true" class="body_color no-js ie9"> <![endif]-->
+<!--[if IE 10]>         <body id="_body" screen_capture_injected="true" class="body_color no-js ie10"> <![endif]-->
+<!--[if IE 11]>         <body id="_body" screen_capture_injected="true" class="body_color no-js ie11"> <![endif]-->
+<!--[if gt IE 11]><!-->
+<body id="_body" screen_capture_injected="true" class="body_color">
+<!--<![endif]-->
+
+    <div id="page_container" style="display: block;" class="">
+    </div>
+
+
+    <script type="text/javascript" src="../js/lib/lodash.underscore.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <!-- DEPRICATING -->
+    <script type="text/javascript" src="../js/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.prettyPhoto.js"></script>
+
+    <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.blueimp-gallery.min.js"></script>
+
+    <script type="text/javascript" src="../js/lib/jquery.json-2.4.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.webpurify.js"></script>
+    <!-- DEPRICATING -->
+    <script type="text/javascript" src="../js/lib/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.form.js"></script>
+
+
+    <script type="text/javascript" src="../js/lib/backbone.js"></script>
+    <script type="text/javascript" src="../js/lib/backbone.crossdomain.js"></script>
+    <script type="text/javascript" src="../js/lib/TableMaker.js"></script>
+    <script type="text/javascript" src="../js/lib/xssValidator.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.timeago.js"></script>
+    <script type="text/javascript" src="../js/lib/CryptoJS/core.js"></script>
+    <script type="text/javascript" src="../js/lib/CryptoJS/enc-base64.js"></script>
+    <script type="text/javascript" src="../js/lib/CryptoJS/md5.js"></script>
+    <script type="text/javascript" src="../js/lib/CryptoJS/evpkdf.js"></script>
+    <script type="text/javascript" src="../js/lib/CryptoJS/cipher-core.js"></script>
+    <script type="text/javascript" src="../js/lib/CryptoJS/aes.js"></script>
+    <script type="text/javascript" src="../js/ama/AMA.js"></script>
+    <script type="text/javascript" src="../js/ama/Envs.js"></script>
+    <script type="text/javascript" src="../js/ama/Util.js"></script>
+    <script type="text/javascript" src="../js/ama/Config.js"></script>
+    <script type="text/javascript" src="../js/ama/Session.js"></script>
+
+    <script type="text/javascript" src="../js/ie8support.js"></script>
+    <script type="text/javascript" src="../js/model/BaseData.js"></script>
+    <script type="text/javascript" src="../js/model/Capabilities.js"></script>
+    <script type="text/javascript" src="../js/model/UserData.js"></script>
+    <script type="text/javascript" src="../js/model/Contacts.js"></script>
+    <script type="text/javascript" src="../js/model/ContactDetails.js"></script>
+    <script type="text/javascript" src="../js/model/Files.js"></script>
+    <script type="text/javascript" src="../js/model/Photos.js"></script>
+    <script type="text/javascript" src="../js/model/Videos.js"></script>
+    <script type="text/javascript" src="../js/model/Trash.js"></script>
+    <script type="text/javascript" src="../js/model/Locations.js"></script>
+    <script type="text/javascript" src="../js/model/Endpoints.js"></script>
+    <script type="text/javascript" src="../js/model/DashboardData.js"></script>
+    <script type="text/javascript" src="../js/model/SyncSettings.js"></script>
+    <script type="text/javascript" src="../js/model/SyncHistory.js"></script>
+    <script type="text/javascript" src="../js/model/LocateSettings.js"></script>
+    <script type="text/javascript" src="../js/model/DeviceSettings.js"></script>
+    <script type="text/javascript" src="../js/model/EndpointHistory.js"></script>
+    <script type="text/javascript" src="../js/model/Threats.js"></script>
+    <script type="text/javascript" src="../js/model/ScanSettings.js"></script>
+    <script type="text/javascript" src="../js/model/LegacyApiSupport.js"></script>
+    <script type="text/javascript" src="../js/model/Privacy.js"></script>
+    <script type="text/javascript" src="../js/model/DiagnosticScanResourceData.js"></script>
+    <script type="text/javascript" src="../js/model/DiagnosticScanAppsData.js"></script>
+    <script type="text/javascript" src="../js/model/SafeBrowsing.js"></script>
+    <script type="text/javascript" src="../js/model/StorageInfo.js"></script>
+    <!--
+        SUMMARY Models
+    -->
+    <script type="text/javascript" src="../js/model/ContactsSummary.js"></script>
+    <script type="text/javascript" src="../js/model/PhotoSummary.js"></script>
+    <script type="text/javascript" src="../js/model/VideoSummary.js"></script>
+
+    <script type="text/javascript" src="../js/view/BaseView.js"></script>
+    <script type="text/javascript" src="../js/view/ListView.js"></script>
+    <script type="text/javascript" src="../js/view/GridView.js"></script>
+    <script type="text/javascript" src="js/view/Modal.js"></script>
+    <script type="text/javascript" src="../js/view/Dialog.js"></script>
+    <script type="text/javascript" src="js/view/StandardDialogs.js"></script>
+    <script type="text/javascript" src="js/view/Wizard.js"></script>
+
+    <script type="text/javascript" src="../js/view/plugin/Switcher.js"></script>
+    <script type="text/javascript" src="../js/view/plugin/Paginator.js"></script>
+    <script type="text/javascript" src="../js/view/plugin/ApiPaginator.js"></script>
+    <script type="text/javascript" src="js/view/plugin/ListScrollLoader.js"></script>
+    <script type="text/javascript" src="js/view/plugin/ApiListScrollLoader.js"></script>
+    <script type="text/javascript" src="../js/view/plugin/ApiSearch.js"></script>
+    <script type="text/javascript" src="../js/view/plugin/Search.js"></script>
+    <script type="text/javascript" src="../js/view/plugin/InputPlaceholder.js"></script>
+    <script type="text/javascript" src="../js/view/plugin/MultiAction.js"></script>
+    <script type="text/javascript" src="../js/view/plugin/MultiSelector.js"></script>
+    <script type="text/javascript" src="../js/view/plugin/Breakdown.js"></script>
+    <script type="text/javascript" src="../js/view/plugin/Tooltip.js"></script>
+    <script type="text/javascript" src="../js/view/plugin/PageViewedTracker.js"></script>
+    <script type="text/javascript" src="../js/view/plugin/TimeSpentTracker.js"></script>
+    <script type="text/javascript" src="js/view/plugin/ModalGallery.js"></script>
+
+    <script type="text/javascript" src="js/view/Page.js"></script>
+    <script type="text/javascript" src="js/view/Header.js"></script>
+    <script type="text/javascript" src="js/view/Content.js"></script>
+	<script type="text/javascript" src="js/view/backup/DataTab.js"></script>
+    <script type="text/javascript" src="../js/view/dashboard/DashboardSupportView.js"></script>
+    <script type="text/javascript" src="../js/view/dashboard/Dashboard.js"></script>
+    <script type="text/javascript" src="../js/view/dashboard/DashboardLocation.js"></script>
+    <script type="text/javascript" src="../js/view/dashboard/DashboardData.js"></script>
+    <script type="text/javascript" src="../js/view/dashboard/DashboardSecurity.js"></script>
+    <script type="text/javascript" src="../js/view/dashboard/DashboardSecuritySettings.js"></script>
+
+    <!-- Settings -->
+    <script type="text/javascript" src="js/view/settings/Settings.js"></script>
+    <script type="text/javascript" src="js/view/settings/SettingsDialog.js"></script>
+    <script type="text/javascript" src="../js/view/settings/SettingsIntroView.js"></script>
+    <script type="text/javascript" src="../js/view/settings/BackupSettingsView.js"></script>
+    <script type="text/javascript" src="js/view/settings/LocationSettingsView.js"></script>
+    <script type="text/javascript" src="js/view/settings/ProfileSettingsView.js"></script>
+    <script type="text/javascript" src="js/view/settings/SecuritySettingsView.js"></script>
+    <!-- End Settings -->
+
+    <!-- Feedback -->
+    <script type="text/javascript" src="../js/view/feedback/Feedback.js"></script>
+    <script type="text/javascript" src="js/view/feedback/AppRatingDialog.js"></script>
+    <script type="text/javascript" src="../js/view/feedback/ShareFeedbackWizard.js"></script>
+    <script type="text/javascript" src="js/view/feedback/SurveyDialog.js"></script>
+    <!-- End Feedback -->
+
+    <!-- toolbar -->
+    <script type="text/javascript" src="../js/view/toolbar/accountStatusToolset.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/AlarmToolset.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/EndpointToolset.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/TipsToRecover.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/LearnMore.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/TipsToRecover.js"></script>
+    <script type="text/javascript" src="js/view/toolbar/LocateToolset.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/LockToolset.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/SecurePhoneToolset.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/StorageCapacityToolset.js"></script>
+    <script type="text/javascript" src="js/view/toolbar/SyncDialog.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/SyncToolset.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/TransferDataToolset.js"></script>
+    <script type="text/javascript" src="js/view/toolbar/TransferDataWizard.js"></script>
+    <script type="text/javascript" src="js/view/toolbar/WipePhoneDialog.js"></script>
+    <script type="text/javascript" src="js/view/toolbar/WipeToolset.js"></script>
+    <script type="text/javascript" src="js/view/toolbar/SecurePhoneDialog.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/RecentActivityToolset.js"></script>
+    <script type="text/javascript" src="js/view/toolbar/SyncDetailsDialog.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/ScanToolset.js"></script>
+    <script type="text/javascript" src="js/view/toolbar/DiagnosticScanToolset.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/Toolbar.js"></script>
+    <script type="text/javascript" src="../js/view/toolbar/AppAssistToolset.js"></script>
+    <!-- end toolbar -->
+
+    <script type="text/javascript" src="../js/view/backup/SettingsSummaryView.js"></script>
+    <script type="text/javascript" src="js/view/backup/ContactsView.js"></script>
+    <script type="text/javascript" src="js/view/backup/ContactsListView.js"></script>
+    <script type="text/javascript" src="js/view/backup/ContactDetailsView.js"></script>
+    <script type="text/javascript" src="../js/view/backup/ContactsImportView.js"></script>
+	<script type="text/javascript" src="../js/view/backup/ContactsImportListView.js"></script>
+	<script type="text/javascript" src="../js/view/backup/ContactsImportDetailsView.js"></script>
+    <script type="text/javascript" src="js/view/backup/ContactEditor.js"></script>
+
+<script type="text/javascript" src="js/view/backup/PhotosView.js"></script>
+<script type="text/javascript" src="js/view/backup/PhotosGridView.js"></script>
+<script type="text/javascript" src="js/view/backup/PhotoDetailsView.js"></script>
+
+    <script type="text/javascript" src="js/view/backup/VideosView.js"></script>
+    <script type="text/javascript" src="js/view/backup/VideosGridView.js"></script>
+    <script type="text/javascript" src="js/view/backup/VideoDetailsView.js"></script>
+
+    <script type="text/javascript" src="js/view/backup/TrashView.js"></script>
+    <script type="text/javascript" src="js/view/backup/TrashListView.js"></script>
+    <script type="text/javascript" src="js/view/backup/TrashDetailsView.js"></script>
+
+    <script type="text/javascript" src="../js/view/backup/LessIsMoreDialog.js"></script>
+
+    <script type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1"></script>
+    <script type="text/javascript" src="js/view/recovery/LocationTab.js"></script>
+    <script type="text/javascript" src="js/view/recovery/LocationHistoryListView.js"></script>
+    <script type="text/javascript" src="js/view/recovery/LocationMapView.js"></script>
+    <script type="text/javascript" src="../js/view/recovery/LocationsSettingsSummaryView.js"></script>
+
+    <script type="text/javascript" src="js/view/security/SecurityTab.js"></script>
+    <script type="text/javascript" src="js/view/security/ScanSettingsView.js"></script>
+    <script type="text/javascript" src="../js/view/security/ThreatProtectionView.js"></script>
+    <script type="text/javascript" src="../js/view/security/ThreatHistoryListView.js"></script>
+
+    <script type="text/javascript" src="js/view/appassist/AppAssistTab.js"></script>
+    <script type="text/javascript" src="../js/view/appassist/AppAssistListView.js"></script>
+    <script type="text/javascript" src="js/view/appassist/AppAssistDetailsView.js"></script>
+
+    <script type="text/javascript" src="../js/view/supportTab/SupportTabView.js"></script>
+    <script type="text/javascript" src="../js/view/supportTab/SupportTabResourceView.js"></script>
+    <script type="text/javascript" src="../js/view/supportTab/SupportTabAppsListView.js"></script>
+
+    <script type="text/javascript" src="js/view/security/SafeBrowsingView.js"></script>
+
+    <!-- Download app tab for factory reset logged in page -->
+    <script type="text/javascript" src="../js/view/downloadapp/DownloadAppTab.js"></script>
+
+    <!-- action -->
+    <script type="text/javascript" src="../js/action/BaseWorkflow.js"></script>
+    <script type="text/javascript" src="../js/action/AlarmWorkflow.js"></script>
+    <script type="text/javascript" src="../js/action/LocateWorkflow.js"></script>
+    <script type="text/javascript" src="../js/action/LockWorkflow.js"></script>
+    <script type="text/javascript" src="../js/action/SyncWorkflow.js"></script>
+    <script type="text/javascript" src="../js/action/WipeWorkflow.js"></script>
+    <script type="text/javascript" src="../js/action/DiagnosticScanWorkflow.js"></script>
+    <script type="text/javascript" src="../js/action/ScanWorkflow.js"></script>
+    <script type="text/javascript" src="../js/action/SecurePhoneWorkflow.js"></script>
+    <script type="text/javascript" src="../js/action/ActionManager.js"></script>
+    <!-- end action -->
+
+    <!-- reporting -->
+    <script type="text/javascript" src="../js/reporting/ReportingManager.js"></script>
+    <!-- end reporting -->
+
+    <script type="text/javascript" src="../js/router/Router.js"></script>
+    <script type="text/javascript">
+    	AMA.config.defaultView = "location";
+        AMA.config.legacyApiBaseUrl = "../../core/jebber";
+    </script>    
+    <script type="text/javascript" src="../js/start.js"></script>
+</body>
+</html>

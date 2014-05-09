@@ -1,0 +1,92 @@
+/** switch **/
+#settings_dialog {
+	display: none;
+    background: #FFF;
+    /*position: relative;*/
+    position: absolute;
+    /*top: -173px;*/
+    top:50px;
+    /*border-radius: 9px;*/
+    border-radius: 0;
+    padding-top: 10px;
+    width: 100%;
+    z-index: 1;
+    padding-bottom: 100px;
+}
+#settings_dialog .settings_edit_safeBrowser{
+    display:block;
+}
+#settings_dialog #safebrowsingpane {
+    display:none;
+}
+#settings_dialog .tab-content {
+    overflow:hidden;
+    min-height: 250px;
+}
+#settings_dialog .nav .open > a {
+	color: #333;
+}
+#settings_dialog .nav li.dropdown.open .caret {
+	border-top-color: #333;
+	border-bottom-color: #333;
+}
+#settings_dialog .settings-save-btn, 
+#settings_dialog .settings-cancel-btn {
+	width: 30%;
+}
+#settings_dialog .settings-save-btn{
+	margin-right: 1%;
+}
+#settings_dialog .connecting {
+	display:none;
+}
+#account_settings_link.active {
+    /*padding: 5px 10px 15px;
+    margin-top: 10px;
+    background: #FFF;
+    border-radius: 6px 6px 0 0;*/
+}
+#account_settings_link.active a {
+    font-weight:bold;
+    background: none;
+    color:#CCC;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow:none;
+}
+
+#settings_submit {
+    display: block !important;
+}
+#settings_dialog .nav-tabs {
+    position:relative;
+    margin: 0 auto 15px;
+}
+.settings-close {
+    position: absolute !important;
+    float: none !important;
+    top: 4px;
+    right: 10px;
+    color: #999;
+    display: block !important;
+    z-index: 300000;
+    width: 21px;
+    height: 20px;
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    #settings_dialog {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+    #settings_dialog {
+        /*top: -185px;*/
+    }
+	#settings_dialog .settings-save-btn, 
+	#settings_dialog .settings-cancel-btn {
+		width: 48%;
+	}    
+}

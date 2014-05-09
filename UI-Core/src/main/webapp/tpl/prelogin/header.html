@@ -1,0 +1,81 @@
+<!-- BEGIN: header -->
+<div id="header">
+    <a id="logo" href="#index"><img src="img/logo.png" alt="Asurion Labs" title="Asurion Labs" /></a>
+    <div class="headerLogin">
+        <form name="login" method="POST" action="#" id="loginform">
+            <div class="frmFieldCont">
+                <input name="username" id="username1" value="Email Address" type="text" size="22" /> 
+                <input type="password" value="Password" id="actualPassword" name="actualPassword" class="fltRight" style="display:none" /> 
+                <input id="password_text" name="password_text" type="text" class="inputtext fltRight" value="Password" size="22" />
+                <input type="hidden" name="password" id="password" value="" />
+                <input type="hidden" name="secrethandle" id="secrethandle" value="" />
+                <a href="#retrieve_pin">Forgot your Password?</a>
+                <input type="submit" id="btnSignup" value="Sign In" alt="Sign in" class="btnSignup"></input>
+            </div>
+            <div class="frmlabelCont">
+                <label>Login:</label> 
+                <label class="errorMsgIcon">Invalid login. Please Try Again.</label> 
+                <label class="errorMsgIcon errorMsg">Note:This is your 10th and final attempt. If unsuccessful your account will be block</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="mainNav">
+    <ul id="login_header">
+        <li id="index_li"><a href="#index" title="Home">Home</a></li>
+        <li id="learnmore_li"><a href="#learnmore" title="Learn More">Learn More</a></li>
+        <li id="get_started_li"><a href="#get_started" title="Download Mobile App">Download
+                Mobile App</a></li>
+        <li class="separator"><img src="img/top_menu_divider.gif"
+                                   alt="divider" title="" /></li>
+        <li class="topLinks"><span>Links:</span> <a
+                href="http://www.phoneclaim.com" target="_blank" class="link">File A Claim</a></li>
+    </ul>
+    <ul id="factory_reset_header" class="hide">
+    	<li id="factory_reset_li"><a href="" title="Download Mobile App">Download
+                Mobile App</a></li>
+    </ul>
+</div>
+
+<input type="hidden" id="msgTitle" value="Login validation failed" />
+<input type="hidden" id="msgTitleEmail" value="Email validation failed" />
+<input type="hidden" id="msgValidateEmail" value="Please input a valid email address!<br/>" />
+<input type="hidden" id="msgValidateEmptyPassword" value="Please input a valid Password!<br/>" />
+<input type="hidden" id="msgValidatePasswordLength" value="Password must be between 6 and 15 characters.<br/>" />
+<input type="hidden" id="msgValidateSpecialChars" value="Password cannot contain special characters.<br/>" />
+<input type="hidden" id="msgValidateConfirmPassword" value="Confirmation Password does not match your new Password.<br/>" />
+<input type="hidden" id="msgRetrievePin" value="Retrieve PIN failed.<br/>" />
+<input type="hidden" id="validationMessageSecurityAnswer" value= 'Please enter a security answer.<br/>' />
+
+
+<script>
+  $(document).ready(function(){
+    $("#username1").on({
+      focus: function(){
+        clearInput(this, 'Email Address');
+      },
+      blur: function(){
+        restoreInput(this, 'Email Address');
+      }
+    });
+
+    $("#actualPassword").on({
+      focus: function(){
+        clearInput(this, 'Password');
+      },
+      blur: function(){
+        restoreInput(this, 'Password');
+      }
+    });
+
+    $("#password_text").on({
+      focus: function(){
+        clearInput(this, 'Password');
+      },
+      blur: function(){
+        restoreInput(this, 'Password');
+      }
+    });
+  });
+</script>
+<!-- END: header -->

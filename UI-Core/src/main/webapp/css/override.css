@@ -1,0 +1,930 @@
+
+#page_panes > .tab_container {
+    min-height:300px;
+    background:url(../img/transparent_loading_circle_blue.gif) no-repeat center 120px;
+}
+#page_panes .lp_endpointsection {
+    display: none;
+}
+
+/* Tabs */
+
+#tab_selected_border{ top: 174px; }
+.dashboard_tab_selected_border{width: 100px; left: 13px;}
+.backup_tab_selected_border{width: 100px; left: 227px;}
+.content_tab_selected_border{width: 127px; left: 281px;}
+.security_tab_selected_border{width: 100px; left: 334px;}
+.privacy_tab_selected_border{width: 127px; left: 281px;}
+.location_tab_selected_border{width: 100px; left: 120px;}
+.sagebrowsing_tab_selected_border{ left:441px; }
+.settings_tab_selected_border{width: 127px; left: 549px;}
+/* END - Tabs */
+
+
+/* Header */
+#header .logo {
+    background: url("../img/logo.png") no-repeat scroll 0 0 transparent;
+    width: 300px;
+}
+
+#header_userinfo {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 55px;
+    color: #2470AA;
+    position: relative;
+}
+
+#header_userinfo a {
+    color: #2470AA;
+}
+
+/* END - Header */
+
+
+/* Account Settings Pane */
+.settings_content .name_row input {
+    border: none;
+    background: #FFFFFF;
+}
+/* END - Account Settings Pane*/
+
+
+/* DashboardTab */
+    /* Backup Pane */
+    #dashboard .after_save_message {
+        float: none;
+        color: #2470aa;
+        cursor: default;
+        height: auto;
+    }
+    
+    #dashboard .pane_floatingbuttons {
+        float: none;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        right: auto;
+        top: auto;
+        height: 40px;
+        width: 100%;
+    }
+    
+#dashboard_support li { margin-bottom: 10px;}
+
+    /* END - Backup Pane */
+/* END - DashboardTab*/
+
+/* logged in download app */
+
+#tabs li#download_tab {
+   background: url(../img/common/common_page_tabs_extended.png) no-repeat 0 -43px;
+   height:32px;
+   width: 190px;
+   margin: 0 5px 0 0;
+}
+
+/* testing css */
+
+  /*
+   div,p,span,h1{margin:0; padding:0; font-family:verdana, arial, sans-serif; font-size:12px; /*color:#666;*/ 
+   
+  /* color:#4b4b4b;}
+
+   */
+#wrapper{width:1000px; margin:0 -33px;}
+
+#header{display:block;}
+/*
+#logo{float:left;}
+.linktext, a.linktext, a:link.linktext, #mainContent p.linktext, 
+a:hover.linktext {color:#f66f02; text-decoration:none;}
+*/
+
+/*===== Content Wrapper, Side Nav, Main Content =====*/
+#contentWrapper{overflow:hidden; padding:-40px 0 25px 0; line-height:16px;}
+#mainContent{float:right; width:755px; padding-right:11px;}
+.fullWidth{width:1000px; padding:0;}
+#mainContent h1{font-size:16px; color:#333; font-weight:bold; border-bottom:1px solid #cacaca; margin-bottom:17px; padding:0 0 5px 5px;}
+#mainContent h1.brdBotNone{border-bottom:none; padding-left:0; margin-bottom:8px;}
+.border{border-bottom:1px solid #cacaca;}
+#mainContent p{padding-bottom:16px; color:#333;}
+
+
+/*===== Download App =====*/
+.downloadAppWrapper {
+    font-family: verdana, arial, sans-serif;
+    font-size: 12px;
+    background: url(../img/download_bg_1.png) no-repeat;
+    width: 601px;
+    height: 427px;
+    padding: 33px 345px 0 54px;
+    margin-top: 33px;
+}
+#mainContent .downloadAppWrapper h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0067a6;
+    padding: 0 0 12px 0;
+    border: none;
+    margin-bottom: 0px;
+}
+
+#mainContent .downloadAppWrapper p {
+    padding: 0 82px 30px 0;
+}
+
+.downloadAppWrapper label {
+    padding: 4px 4px 0 0;
+    float: left;
+}
+
+.downloadAppWrapper input {
+    border: 1px solid #5f849a;
+    color: #888;
+    background: url(../img/bg.gif) repeat-x 0 0;
+    width: 147px;
+    padding: 6px 9px;
+}
+
+.downloadAppWrapper input[type="image"] {
+    display: block;
+    margin: 10px 0 0 140px;
+    border: 0;
+    width: auto;
+    background: none;
+    padding: 0;
+}
+
+.downloadAppWrapper span.message {
+    display: block;
+    padding-top: 20px;
+}
+
+.eligible {
+    background: url(../img/download_bg_2.png) no-repeat;
+}
+
+.eligible p {
+    padding-bottom: 15px;
+}
+
+.downloadAppWrapper ol {
+    margin: 0;
+    padding: 0 89px 0 18px;
+    list-style-position: outside;
+}
+
+.downloadAppWrapper ol li {
+    padding-bottom: 30px;
+}
+
+.downloadAppWrapper a, .downloadAppWrapper a:link {
+    color: #0067a6;
+    text-decoration: underline;
+}
+
+.downloadAppWrapper a:hover {
+    color: #f66f02;
+    text-decoration: none;
+}
+
+.mobileMarkets a {
+    background: url(../img/download_app_platforms.gif) 0 0 no-repeat;
+    height: 79px;
+    display: inline-block;
+}
+
+a.icoAndroid {
+    background-position: 0 0;
+    width: 131px;
+    margin-right: 5px;
+}
+
+a.icoBlackberry {
+    background-position: -290px 0;
+    margin-right: 5px;
+    width: 161px;
+}
+
+a.icoIphone {
+    background-position: -145px 0;
+    margin-right: 5px;
+    width: 133px;
+}
+
+/*===== Common Classes =====*/
+.dispBlock{display:block;}
+.fntBold{font-weight:bold; color:#666; }
+.padRightNone{padding-right:0;}
+/*a, a:link{color:#666; text-decoration:none; font-size:12px;} */
+.grayText{color:#999;}
+.clrAll{clear:both; height:1px; overflow:hidden;}
+.clrBoth{clear:both; display:block;}
+/*a.link{color:#0063a6;}
+a.link:hover{color:#f66f02;} */
+.spaceVLarge{padding-bottom:200px;}
+.fltRight{float:right;}
+.fullWidth{width:100% !important;}
+.floatNone{float:none !important;}
+.margnTopSmall,#mainContent #helpSections p.margnTopSmall{margin-top:20px;}
+.mrgncolOne{margin-right:30px;}
+.padTB{padding:10px 0 20px 0;}
+.padTZero{padding-top:0px;}
+.tblBMrgnSmall{margin-bottom:15px;}
+
+.clear {
+    clear:both; 
+}
+
+/* END - logged in download app */
+
+/* Location Pane */
+#location_right .get_directions {
+    display:none;   
+}
+#location_history .item {
+    border-bottom: 1px solid #B7B5B6;
+    width: 184px;
+}
+
+#location_history_0 .item {
+    border: none;
+} 
+/* END - LocationPane*/
+
+/* LegendPane */
+.lp_box{
+    padding:1px 0 10px;
+}
+
+.file_claim{
+   display:block;
+}
+/* END - LegendPane */
+
+
+/* Dialogs */
+.warning {
+    background: none;
+    padding-left: 0px;
+}
+.locate_dialog .header {
+    background:url(../img/common/dialog_header.png) no-repeat 0 -174px;
+}
+
+.alarm_dialog .header {
+    background:url(../img/common/dialog_header.png) no-repeat 0 -435px;
+}
+
+.lock_dialog .header {
+    background:url(../img/common/dialog_header.png) no-repeat 0 -261px;
+}
+
+#wipephonedialog .header {
+    background:url("../img/dialog_header.png") no-repeat 0 -87px;
+}
+
+.msgfamily_dialog .header {
+    background:url(../img/common/dialog_header.png) no-repeat 0 -174px;
+}
+
+.newphone_dialog .header {
+    background:url(../img/common/dialog_header.png) no-repeat 0 -348px;
+}
+
+.ui-dialog .header .title{
+  margin-left: 77px;
+  color: #0070aa;
+}
+
+.dialog_buttons .btn_logout {
+    margin-left: -273px;
+}
+/* END - Dialogs */
+
+/* Contacts Tool tip */
+
+
+/* Contacts Tool tip */
+
+
+/* Console */
+#new_phone {
+   display:none;
+}
+
+#contact_breakdown {
+   display:block;
+}
+/* END - Console */
+
+
+/* Records Pane */
+
+.records_middlehalf{
+   height:738px;
+}
+
+.contacts_vertical_scroll{
+   height:611px;
+}
+
+#contact_resource{
+   display:block;
+   background: url("../img/common/common_btn_cloud_contacts.png") no-repeat;
+   height:49px;
+   width: 229px;
+   padding: 0;
+}
+
+#contact_resource div.less_is_more_link{
+    font-size: 12px;
+    padding: 12px;
+    font-weight: bold;
+    line-height: 14px;
+}
+
+.cc_image{
+   background: url("../img/common/common_cloud_contacts_diagram.png") no-repeat;
+   height: 167px;
+   margin: 10px 102px;
+}
+
+.cc_image div {
+    position:absolute;
+    text-align:center;
+    width:95px;
+}
+
+.cc_image div.cc_imagetext1 {
+    padding:115px 150px 0 0;
+}
+
+.cc_image div.cc_imagetext2 {
+    padding:130px 0 0 320px;
+}
+/* END - Records Pane */
+
+
+/* Footer */
+.footer{background:none;}
+#footer{    
+    background: #eaeaea;
+    margin-top: 26px;
+    border-top: 1px solid #bbb;
+}
+#records_mainhalf, #safebrowsing, #safebrowsing{
+    height:760px
+}
+#security{min-height:409px;}
+#privacy{height:558px}
+
+
+/*END - Footer */
+
+#warningdialog .message {
+    margin-top: 2px;
+}
+
+#warningdialog .warning {
+    background: url("../img/common/warning.png") no-repeat scroll 18px 0px transparent;
+    float: left;
+    min-height: 0;
+    padding-left: 0;
+    width: 30px;
+}
+.sync_stat_detail {
+    line-height: 15px;
+}
+#syncphonedialog .success .successdetails .divider {
+    display: block;
+    margin: 6px 0;
+}
+
+/* Survey dialog */
+#survey_dialog #survey_stars {
+    margin-bottom: 50px;
+}
+
+#survey_dialog #survey_error {
+    margin-bottom: 25px;
+    color: #B63331;
+    display: none;
+}
+
+#survey_dialog .ratingdiv {
+    float: left;
+    width: 100%;
+}
+
+#survey_dialog .ratingdiv p {
+    clear: both;
+    display: block;
+    text-align: center;
+    line-height: 15px;
+}
+
+#survey_dialog .starrating {
+    background: url("../img/common/survey_star_rating.png") no-repeat scroll -20px 0 transparent;
+    display: inline-block;
+    height: 17px;
+    margin: 0 11px 8px;
+    width: 17px;
+}
+
+#survey_dialog #survey_stars span {
+    cursor: pointer;
+}
+
+#survey_dialog .starratingselected {
+    background: url("../img/common/survey_star_rating.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 17px;
+    margin: 0 11px 8px;
+    width: 17px;
+}
+
+#survey_dialog {
+    text-align: left;
+}
+
+#survey_dialog textarea {
+    resize: none;
+    overflow: auto;
+    width: 99%;
+}
+
+#survey_dialog .header {
+    background: url("../img/common/header_dialog.png") repeat-x scroll 0 0 transparent;
+    height: 64px;
+    margin:-14px -12px 17px;
+}
+
+#survey_dialog .header .title {
+    padding: 15px;
+    text-align: left;
+    margin: 14px -2px;
+    color: #0070AA;
+    font-size: 20pt;
+}
+
+#survey_dialog .closeBtn{
+    background: url("../img/common/btn_close.png") no-repeat scroll 0 0 transparent;
+    float: right;
+    margin: -60px 5px;
+    padding: 14px;
+    cursor: pointer;
+}
+
+#survey_dialog #sv_radio {
+    text-align: left;
+}
+#survey_dialog .surveyquestion {
+    text-align: left;
+    margin: 17px 0 13px;
+}
+
+#survey_dialog a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+#survey_dialog label {
+    margin: 4px 125px;
+    position: absolute;
+}
+#survey_dialog #survey_step1 .surveyquestion {
+    font-weight: bold;
+}
+#survey_dialog #cancel {
+    margin: 10px;
+}
+#survey_dialog a.surveyBtn {
+    background: url("../img/common/standard_btn.png") repeat-x scroll 0 0 transparent;
+    font-weight: bold;
+    padding: 5px 12px;
+    text-align: center;
+    line-height: 40px;
+}
+
+#survey_dialog .sv_text_question {
+    line-height: 10px;
+}
+/* End Survey dialog */
+
+#data_contacts_tab .actionbar {
+    margin-top:10px;
+}
+
+#data_contacts_tab .recordstable {
+    top: 145px;
+    height: 593px;
+}
+
+#data_contacts_tab .rt_rowbox {
+    height: 595px;
+}
+
+#data_trash_tab .recordstable {
+    height: 628px;
+}
+
+#data_trash_tab .rt_rowbox {
+    height: 630px;
+}
+
+.records_tablehalfimage #contact_resource, .records_tablehalfvideo #contact_resource, .records_tablehalftrash #contact_resource
+{
+    display:none;
+}
+
+.records_tablehalfimage .recordstable, .records_tablehalfvideo .recordstable
+{
+    top: 65px;
+}
+
+.records_tablehalftrash .actionbar { margin-top:26px; }
+.records_tablehalftrash .recordstable { top: 105px; }
+
+#records_tablehalf .iphoneNote a {
+    color: #0070AA;
+}
+
+#learnMoreDiv .header {
+    background-color: #C9C9C9;
+    height: 60px;
+    margin-left: -13px;
+    margin-top: -6px;
+    width: 671px;
+}
+
+#learnMoreDiv .header .title {
+    margin-left: 20px;  
+    font-size: 20pt;
+    height: 35px;
+    padding-top: 20px;
+    text-align: left;
+    color:black;
+}
+
+#learnMoreDiv .main{
+    padding: 20px 20px 10px 10px;
+    text-align: left;
+}
+
+#learnMoreDiv li {
+    list-style-type: disc;
+    padding-top: 10px;
+}
+
+#learnMoreDiv ul {
+    padding-left: 21px;
+}
+
+.lp_info .lp_image_default{
+    margin-top:0;
+}
+
+#dashboard_activity .icon_announce_success {
+        background:url(../img/common/dashboard/icon_security_success_sm.png) no-repeat 2px 0;
+
+      _background-image: none;
+      _filter:
+      progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/dashboard/icon_alarm_success_sm.png, sizingMethod='crop');
+}
+
+#dashboard_activity .icon_announce_failure{
+        background:url(../img/common/dashboard/icon_security_failed_sm.png) no-repeat;
+
+      _background-image: none;
+      _filter:
+      progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/dashboard/icon_alarm_failed_sm.png, sizingMethod='crop');
+}
+
+#dashboard_backup .backup_incompleteMsg{
+    color: red;
+    margin-top: 10px;
+}
+
+Label.errorMsgIcon{
+
+    background: url(../img/icon_warning_small.png) 0 1px no-repeat;
+    padding-left: 24px;
+    margin-bottom: 5px;
+  }  
+  
+  .errorMsgIcon{
+  display: none;
+  }
+
+.tooltip .progressbar{
+width: 105px!important;
+margin-top: -12px;
+margin-left: 114px;
+height: 15px;
+background-color: white;
+}
+.tooltip .contacts, .tooltip .photos, .tooltip .videos{
+    margin-bottom: 10px;
+}
+.tooltip .ui-widget-header{
+    height: 15px;
+}
+
+/* App Rating dialog */
+#app_rating_dialog .header {
+    height: 42px;
+    margin: -16px -76px 38px;
+}
+
+#app_rating_dialog .divider {
+    display: block;
+}
+
+#app_rating_dialog {
+    text-align:left;
+}
+
+#app_rating_dialog a.surveyBtn {
+    background: url("../img/common/standard_btn.png") repeat-x scroll 0 0 transparent;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-align: center;
+    line-height: 40px;
+}
+
+#app_rating_dialog a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#app_rating_dialog  p {
+    margin: 15px 0 12px 0;
+    text-align: left;
+}
+/* End App Rating dialog */
+
+#backup_tab.android{
+background: url("../img/page_tabs.png") no-repeat scroll 0 -817px transparent;
+height: 32px;
+width: 102px;
+margin: 0 5px 0 0;
+_background-image: none;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/page_tabs.png,
+ sizingMethod='crop');
+_height: 548px;
+_margin: -473px 5px 0 0;
+}
+
+#backup_tab.android.selected {
+background: url("../img/page_tabs.png") no-repeat scroll 0 -774px transparent;
+height: 32px;
+width: 102px;
+margin: 0 5px 0 0;
+_background-image: none;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/page_tabs.png,
+ sizingMethod='crop');
+_height: 591px;
+_margin: -430px 5px 0 0;
+}
+.button_sync.outcome.syncing .total_progress {
+margin-top: -32px;
+margin-left: 66px;
+width: 55px!important;
+height: 7px;
+}
+.button_sync.outcome.syncing .outcome_text {
+margin-left: -26px!important
+}
+
+
+/* Comment iPhone 
+
+.iphone #location_right .note{margin:4px 12px;}
+.iphone #location_right .note p{
+    margin-left: 215px; 
+    width: auto;
+    line-height:16px;
+}
+
+.iphone #location_right .note div.btnTipsRecover{
+    background: url('../img/common/common_btn_recovery_tips.png') no-repeat 0 0;
+    display: inline-block;
+    height: 51px;
+    width: 182px; 
+    float: left;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.iphone #location_right .note div div.textTipsRecover {
+    padding: 0 8px 0 52px;
+    text-align: center;
+    color: #0070AA;
+    font: normal normal bold 15px/18px Helvetica,Arial,Verdana,sans-serif;
+}
+
+.iphone{height:734px!important;}
+
+#tipstorecover li {
+    list-style-type: disc;
+    padding-top: 10px;
+}
+
+#tipstorecover ul {
+    padding-left: 21px;
+}
+
+#tipstorecover a{
+    text-decoration: none;
+    color: #0070aa;
+}
+
+ .recordspane_nav_button.selected a {
+      color: #0070AA;
+      font-weight: bold;
+   }
+   
+   
+   .settings_nav_button.selected a
+   {
+   color: #0070AA;
+   font-weight: bold;
+   }
+   
+  #data_trash_tab  .console {
+height:738px;
+}
+   
+ #data_trash_tab .recordstable{
+ height: 636px;
+ }
+ 
+ 
+ #data_trash_tab .rt_rowbox {
+height: 637px;
+ }
+
+#data_trash_tab #contactdetailsbox {
+height: 744px;
+}
+ 
+ #data_contacts_tab .console 
+ {
+height: 160px;
+    
+}
+
+
+
+#data_contacts_tab .recordstable   {
+height:593px;
+}
+
+.ios #data_contacts_tab .recordstable {
+height: 628px;
+}
+
+
+#data_contacts_tab .rt_rowbox {
+height: 596px;
+}
+ 
+.ios #data_contacts_tab .rt_rowbox {
+height: 628px;
+}
+ 
+ 
+ 
+ #data_photos_tab .console {
+height:140px;
+}
+
+
+.records_tablehalfimage .recordstable, .records_tablehalfvideo .recordstable{height:674px;}
+
+#data_videos_tab .console {
+height:140px;
+}
+
+
+#data_contacts_tab .sync_settings .content, .sync_settings .link {
+margin: 10px 12px;
+}
+
+#data_videos_tab  .sync_settings .content, .sync_settings .link {
+margin: 10px 12px;
+}
+
+#data_photos_tab .sync_settings .content, .sync_settings .link {
+margin: 10px 12px;
+} 
+
+/* Shared Feedback Link*/
+#header_userinfo div#share_feedback_link{
+    display: inline-block;
+}
+
+.feedbackmain {
+    padding:20px 25px 20px 62px;
+    text-align:left;
+}
+
+.fb_note {
+    clear: both;
+    margin:8px 0 0 0;
+}
+
+.fb_note a {
+    text-decoration: underline;
+}
+
+#survey_q1{
+    margin-bottom: 10px;
+}
+
+#feedback_reason_error {
+    color: red;
+    margin-top: 5px;
+}
+
+#feedback_validation_error{
+    color: red;
+    margin-top: 34px;
+    text-align: center;
+}
+
+#fb_radio {
+    height:50px;
+    text-align:center;
+    line-height:15px;
+}
+
+.fb_text {
+}
+
+#fb_radio span {
+    float:left;
+    width:112px
+}
+
+#fb_radio input {
+    margin-bottom:10px
+}
+
+#fb_reason {
+    overflow-y:auto;
+    width:545px;
+    margin-top:5px;
+}
+
+.fb_radio_submit {
+    padding:45px 17px 10px 0;
+    text-align:center;
+}
+
+.feedbackmain .btn {
+    left:40%;
+    bottom:30px;   
+}
+
+.fb_radio_submit_btn {
+}
+
+.fb_text_submit_btn {
+}
+
+.feedbackmain .close {
+    position:absolute;
+    background-image: url(../img/common/common_btn_default.png);
+    height:29px;
+    right:inherit;
+    top:inherit;
+    width:149px;
+    cursor:pointer;
+}
+
+#sharefeedbackdialog .header {
+    background: url(../img/dialog_header.png) no-repeat 0  -612px;
+}
+
+.rt_columnmedia{
+height: 193px;
+}
+
+.cancel_locate {
+    background:url(../img/btn_cancel.png) no-repeat;
+    width:165px;
+    height:23px;
+    float: left;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+#location_progress_note .time_remaining{
+    overflow: hidden;
+    width: 100%;   
+}
+
+.ios .records_lefthalf {
+ height: 708px;
+}

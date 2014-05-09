@@ -1,0 +1,99 @@
+.customInfoBox-body{position:relative;top:0px;left:19px;padding:8px;border:1px solid #000000;background-color:#FFFFFF;}
+.customInfoBox-shadow{position:relative;background-color:transparent;}
+.customInfoBox-previewArea, .customInfoBox-actionsBackground{}
+.customInfoBox-actions, .customInfoBox-paddingHack{display:none;}
+.customInfoBox-beak, .customInfoBox-progressAnimation{visibility:hidden;}
+.sv_link{padding:0px 0px 7px 0px;text-align:left;}
+.sv_link a{text-decoration:underline;cursor:pointer;color:#7777CC;}
+.totledistance{text-align:right;padding:0px 3px 4px 0px;}
+.MSVE_PoweredByLogo{width:93px;height:29px;}
+#text_route .index{border-top:1px dashed #CDCDCD;margin:0;padding:0.3em 3px;text-align:right;vertical-align:top;}
+#text_route .text{border-top:1px dashed #CDCDCD;margin:0;padding:0.3em 3px;vertical-align:top;width:111px;}
+#text_route .mile{border-top:1px dashed #CDCDCD;margin:0;padding:0.3em 2px 0.3em 0px;text-align:right;vertical-align:top;width:30px;}
+.map_pin_current{width:17px;height:42px;position:relative;top:-30px;left:4px;background:url('../img/recovery/locationmarkers.png') 0px 0px;}
+.locationmarkers div{background-image:url('../img/recovery/locationmarkers.png');background-repeat:no-repeat;width:23px;height:47px;position:relative;top:-32px;}
+.map_pin_history_1{background-position:0px -52px;}
+.map_pin_history_2{background-position:0px -109px;}
+.map_pin_history_3{background-position:0px -166px;}
+.map_pin_history_4{background-position:0px -223px;}
+.map_pin_history_5{background-position:0px -280px;}
+.map_pin_history_6{background-position:0px -337px;}
+.map_pin_history_7{background-position:0px -394px;}
+.map_pin_history_8{background-position:0px -451px;}
+.map_pin_history_9{background-position:0px -508px;}
+.map_pin_history_10{background-position:0px -565px;}
+#location_history .index div{background-image:url('../img/recovery/locationmarkers.png');width:15px;height:31px;margin-top:2px;cursor:pointer;}
+#location_history .index .mini_1{background-position:15px 0px;}
+#location_history .index .mini_2{background-position:15px -41px;}
+#location_history .index .mini_3{background-position:15px -82px;}
+#location_history .index .mini_4{background-position:15px -123px;}
+#location_history .index .mini_5{background-position:15px -164px;}
+.VE_Pushpin_Popup_Title{text-align:left}
+.VE_Pushpin_Popup_Body{text-align:left; line-height: 20px;}
+
+/* Bing Map 7 */
+
+#bing_map .infobox{
+   background: url(../img/recovery/location_bubble.png) no-repeat;
+   padding:10px;
+   width:202px;
+   height:149px;
+   font-size:8pt;
+   color: #676767;
+   cursor:default;
+   position:relative;
+}
+
+#bing_map span{
+   position:absolute;
+   right:15px;
+   color:#676767;
+   font-size:8pt;
+}
+
+#bing_map .NavBar_checkControls span{
+   position:relative;
+   right:0px;
+   color:#676767;
+   font-size:8pt;
+}
+
+
+#bing_map .markertitle{
+   font-size:10pt;
+   font-weight:bold;
+   color: #067ab4;
+   margin-bottom:10px;
+}
+
+#bing_map .infoTitle {
+	display: none;
+}
+
+#bing_map .infoTitle.show {
+	display: inline;
+}
+
+#bing_map .markerline{
+   margin-top:10px;
+}
+
+#bing_map .markerline.file_claim_wrapper {
+   margin-top: -5px;
+}
+
+#bing_map .markerline.refresh_location_wrapper {
+   margin-top: 2px;
+}
+
+#bing_map .accuracy{
+   font-weight:bold;
+   font-size: 12px;
+}
+
+#bing_map .markerline.accuracyInfo {
+   font-weight: bold;
+   margin-top: 38px;
+   margin-left: -23px;
+   width: 100px;
+}

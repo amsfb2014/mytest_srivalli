@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>UI-Core JS Unit Test Runner</title>
+	
+	<link rel="stylesheet" href="../resources/qunit/qunit.css">	
+</head>
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+	<script src="../resources/qunit/qunit.js"></script>
+	<script src="../../main/webapp/js/lib/jquery.js"></script>
+	<script src="../../main/webapp/js/lib/jquery-ui.js"></script>
+	<script src="../../main/webapp/js/lib/jquery.prettyPhoto.js"></script>
+	<!-- FIXME: $.msie is undefined -->
+	<!-- <script src="../../main/webapp/js/lib/jquery.maskedinput-1.2.2.js"></script> -->
+	<script src="../../main/webapp/js/lib/xssValidator.js"></script>	
+	<script src="../../main/webapp/js/lib/lodash.underscore.js"></script>
+	<script src="../../main/webapp/js/lib/backbone.js"></script>
+
+    <!--
+    //FIXME: figure out how to properly load require dependent JS modules (main.js)
+	//saga generates errors: Error: Mismatched anonymous define() module
+    <script src="../../main/webapp/js/require.js"></script>
+    -->
+
+	<script src="../../main/webapp/js/ama/AMA.js"></script>
+	<script src="ama/AMATest.js"></script>
+    <script src="../../main/webapp/js/ama/Envs.js"></script>
+	<script src="../../main/webapp/js/ama/Config.js"></script>
+	<script src="../../main/webapp/js/ama/Util.js"></script>
+	<script src="ama/UtilTest.js"></script>
+
+	<script src="../../main/webapp/js/model/BaseData.js"></script>
+	<script src="../../main/webapp/js/model/UserData.js"></script>
+	<script src="../../main/webapp/js/model/Contacts.js"></script>
+	<script src="../../main/webapp/js/model/DashboardData.js"></script>
+	<script src="../../main/webapp/js/model/DeviceSettings.js"></script>
+	<script src="../../main/webapp/js/model/EndpointHistory.js"></script>
+	<script src="../../main/webapp/js/model/Endpoints.js"></script>
+	<script src="../../main/webapp/js/model/LocateSettings.js"></script>
+	<script src="../../main/webapp/js/model/Locations.js"></script>
+    <script src="../../main/webapp/js/model/Files.js"></script>
+	<script src="../../main/webapp/js/model/Photos.js"></script>
+	<script src="../../main/webapp/js/model/SyncSettings.js"></script>
+	<script src="../../main/webapp/js/model/Trash.js"></script>
+	<script src="../../main/webapp/js/model/Videos.js"></script>
+	<script src="../../main/webapp/js/model/Threats.js"></script>
+	<script src="model/ThreatsTest.js"></script>
+	<script src="../../main/webapp/js/model/ScanSettings.js"></script>
+	<script src="model/ScanSettingsTest.js"></script>
+
+	<script src="../../main/webapp/js/action/BaseWorkflow.js"></script>
+	<script src="../../main/webapp/js/action/AlarmWorkflow.js"></script>
+	<script src="../../main/webapp/js/action/LocateWorkflow.js"></script>
+	<script src="../../main/webapp/js/action/LockWorkflow.js"></script>
+	<script src="../../main/webapp/js/action/SecurePhoneWorkflow.js"></script>
+	<script src="../../main/webapp/js/action/SyncWorkflow.js"></script>
+	<script src="../../main/webapp/js/action/WipeWorkflow.js"></script>
+	<script src="../../main/webapp/js/action/ActionManager.js"></script>
+	<script src="action/ActionManagerTest.js"></script>
+
+	<script src="../../main/webapp/js/reporting/ReportingManager.js"></script>
+
+	<script src="../../main/webapp/js/view/BaseView.js"></script>
+    <!-- restore these once unit tests are fixed
+        <script src="view/BaseViewTest.js"></script>
+    -->
+        <script src="../../main/webapp/js/view/ListView.js"></script>
+    <!-- restore these once unit tests are fixed
+        <script src="view/ListViewTest.js"></script>
+    -->
+	<script src="../../main/webapp/js/view/Content.js"></script>
+	<script src="../../main/webapp/js/view/Dialog.js"></script>
+	<script src="view/DialogTest.js"></script>
+        <script src="../../main/webapp/js/view/GridView.js"></script>
+    <!-- restore these once unit tests are fixed
+            <script src="view/GridViewTest.js"></script>
+    -->
+        <script src="../../main/webapp/js/view/Header.js"></script>
+        <script src="../../main/webapp/js/view/Page.js"></script>
+        <script src="../../main/webapp/js/view/StandardDialogs.js"></script>
+        <script src="../../main/webapp/js/view/Wizard.js"></script>
+        <script src="../../main/webapp/js/view/plugin/Breakdown.js"></script>
+        <script src="../../main/webapp/js/view/plugin/InputPlaceholder.js"></script>
+        <script src="../../main/webapp/js/view/plugin/MultiAction.js"></script>
+        <script src="../../main/webapp/js/view/plugin/MultiSelector.js"></script>
+        <script src="../../main/webapp/js/view/plugin/Paginator.js"></script>
+        <script src="../../main/webapp/js/view/plugin/Search.js"></script>
+        <script src="../../main/webapp/js/view/plugin/Switcher.js"></script>
+        <script src="../../main/webapp/js/view/plugin/Tooltip.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/Toolbar.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/accountStatusToolset.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/AlarmToolset.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/EndpointToolset.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/LocateToolset.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/LockToolset.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/RecentActivityToolset.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/SecurePhoneDialog.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/SecurePhoneToolset.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/StorageCapacityToolset.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/SyncDetailsDialog.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/SyncDialog.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/SyncToolset.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/TransferDataToolset.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/TransferDataWizard.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/WipePhoneDialog.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/WipeToolset.js"></script>
+        <script src="../../main/webapp/js/view/backup/DataTab.js"></script>
+        <script src="../../main/webapp/js/view/backup/ContactDetailsView.js"></script>
+        <script src="../../main/webapp/js/view/backup/ContactEditor.js"></script>
+        <script src="../../main/webapp/js/view/backup/ContactsImportView.js"></script>
+        <script src="../../main/webapp/js/view/backup/ContactsListView.js"></script>
+        <script src="../../main/webapp/js/view/backup/ContactsView.js"></script>
+        <script src="../../main/webapp/js/view/backup/LessIsMoreDialog.js"></script>
+        <script src="../../main/webapp/js/view/backup/PhotoDetailsView.js"></script>
+        <script src="../../main/webapp/js/view/backup/PhotosGridView.js"></script>
+        <script src="../../main/webapp/js/view/backup/PhotosView.js"></script>
+        <script src="../../main/webapp/js/view/backup/SettingsSummaryView.js"></script>
+        <script src="../../main/webapp/js/view/backup/TrashDetailsView.js"></script>
+        <script src="../../main/webapp/js/view/backup/TrashListView.js"></script>
+        <script src="../../main/webapp/js/view/backup/TrashView.js"></script>
+        <script src="../../main/webapp/js/view/backup/VideoDetailsView.js"></script>
+        <script src="../../main/webapp/js/view/backup/VideosGridView.js"></script>
+        <script src="../../main/webapp/js/view/backup/VideosView.js"></script>
+        <script src="../../main/webapp/js/view/dashboard/Dashboard.js"></script>
+        <script src="../../main/webapp/js/view/dashboard/DashboardData.js"></script>
+        <script src="../../main/webapp/js/view/dashboard/DashboardLocation.js"></script>
+   <!--
+        <script src="../../main/webapp/js/view/help/HelpAppAssistView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpEraseContactsView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpFaqsView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpIndexView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpLocatePhoneView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpLockPhoneView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpManageContactsView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpSafeBrowsingView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpSecurityView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpSideNavView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpSoundAlarmView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpSyncContactsView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpTransferContactsView.js"></script>
+        <script src="../../main/webapp/js/view/help/HelpView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/AccountCanceledView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/AccountDeniedView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/AccountLockedView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/ContactUsView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/DownloadMobileAppEligibleView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/DownloadMobileAppNotEligibleView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/DownloadMobileAppView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/FaqsView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/FooterView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/GetStartedView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/HeaderView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/IndexView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/LearnMoreView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/LoginFailedView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/LoginInvalidView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PageNotAvailableView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PasswordFailedLockedAccountView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PasswordFailedNoAccountView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PasswordFailedNoEmailView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PasswordFailedView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PasswordResetFailedView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PasswordResetSuccessfulView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PasswordResetView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PasswordRetrieveOptionView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PasswordRetrieveSecureWrongView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PasswordRetrieveSecureView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PasswordSentEmailView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PhonesSupportedView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/PrivacyView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/RetrievePinView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/SiteErrorView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/SiteUnderConstructionView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/SiteUnderMaintenanceView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/SmsDisclosureView.js"></script>
+        <script src="../../main/webapp/js/view/prelogin/TermsView.js"></script>
+    -->
+        <script src="../../main/webapp/js/view/recovery/LocationHistoryListView.js"></script>
+        <script src="../../main/webapp/js/view/recovery/LocationMapView.js"></script>
+        <script src="../../main/webapp/js/view/recovery/LocationTab.js"></script>
+        <script src="../../main/webapp/js/view/security/SecurityTab.js"></script>
+        <script src="../../main/webapp/js/view/security/ThreatProtectionView.js"></script>
+        <script src="../../main/webapp/js/view/security/ScanSettingsView.js"></script>
+        <script src="view/security/SecurityTabTest.js"></script>
+        <script src="../../main/webapp/js/view/security/ThreatHistoryListView.js"></script>
+        <script src="view/security/ThreatHistoryListViewTest.js"></script>
+        <script src="../../main/webapp/js/view/settings/BackupSettingsView.js"></script>
+        <script src="../../main/webapp/js/view/settings/EmergencySettingsView.js"></script>
+        <script src="../../main/webapp/js/view/settings/LocationSettingsView.js"></script>
+        <script src="../../main/webapp/js/view/settings/ProfileSettingsView.js"></script>
+        <script src="../../main/webapp/js/view/settings/SecuritySettingsView.js"></script>
+        <script src="../../main/webapp/js/view/settings/Settings.js"></script>
+        <script src="../../main/webapp/js/view/settings/SettingsDialog.js"></script>
+        <script src="../../main/webapp/js/view/settings/SettingsIntroView.js"></script>
+        <script src="../../main/webapp/js/view/toolbar/WipeToolset.js"></script>
+        <script src="view/toolbar/WipeToolsetTest.js"></script>
+
+        <!-- Router is being excluded for now, because it's too dependent on bootstrap markup -->
+	<!-- <script src="../../main/webapp/js/router/Router.js"></script> -->
+	<!-- <script src="../../main/webapp/js/main.js"></script> -->
+
+</body>
+</html>

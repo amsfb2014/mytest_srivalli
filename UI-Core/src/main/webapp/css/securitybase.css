@@ -1,0 +1,347 @@
+/* Header */
+#header_link .button_security_scan {
+	height:72px;
+	margin:16px 10px 0;
+	background: url('../img/common/common_header.png') no-repeat 0 -1026px;
+}
+
+#header_link .button_security_scan.connecting, 
+#header_link .button_security_scan.outcome,
+#header_link .button_security_scan.scanning {
+	background: url('../img/common/common_header.png') no-repeat 0 -534px;
+}
+
+#header_link .button_security_scan.scanned .tooltip_icon.outcome {
+	/* top: 0; */
+}
+
+/* END - Header */
+
+
+/* Tabs */
+#security_selector_tab {
+}
+/* END - Tabs */
+
+
+/* DashboardPane */
+	/* Security */
+   #dashboard_security .scan_for_threats{
+      bottom:0;
+	}
+
+   #dashboard_security .panel_left li{
+   	 list-style: disc inside none;
+	 margin: 0;
+     padding: 5px 0;
+   }
+
+   #dashboard_security .row{
+     margin: 14px 0 0;
+   }
+
+   #dashboard_security .label{
+     float: left;
+     padding:3px 8px 0 0;
+     text-align:right;
+     width:95px;
+   }
+
+   #dashboard_security .field{
+     float: left;
+   }
+
+   #dashboard_security select{
+     width:96px;
+   }
+
+   #dashboard_security .pane_floatingbuttons .rs_save{
+   }
+   
+   #dashboard_security .pane_floatingbuttons .loader{
+		width:100%;
+		text-align: center;
+		display:none;
+   }
+	
+	
+	#dashboard_security .working {
+		margin: 100px auto;
+		display: block;
+	}
+	#dashboard_security .pane_floatingbuttons .working{
+		margin-top: 0px;
+   }
+	
+	#dashboard_security_settings .working {
+		margin-top: 80px;
+	}
+
+	/* END - Security */
+
+
+	/* Recent Activities */
+	#dashboard_activity .icon_security_success {
+		background:url(../img/dashboard/icon_security_success_sm.png) no-repeat;
+	}
+   
+	#dashboard_activity .icon_app_advisor_success {
+		background:url(../img/dashboard/icon_app_advisor_success_sm.png) no-repeat;
+	}
+   
+	#dashboard_activity .icon_threat_protection_success {
+		background:url(../img/dashboard/icon_threat_protection_success_sm.png) no-repeat;
+	}
+	/* END - Recent Activities*/
+/* END - DashboardPane */
+
+		
+/* Account Settings */
+	/* Security Settings */
+	.settings .row {
+		width: auto;
+	}
+	
+	.settings_content .autoThreatScans .note {
+		margin-left: 25px;
+	}
+	
+	.settings .security_settings select {
+		width: 90px;
+	}
+
+   .security_settings .note{
+	   margin-left: 30px;
+   }
+	/* END - Security Settings */
+/* END - Account Settings */
+
+
+/* Security Pane */
+#security {
+	background:#EEE;
+	min-height:500px;
+   _height:500px;
+	width:auto;
+}
+
+#security_left {
+	float:left;
+	height:100%;
+	padding-left:11px;
+	position:relative;
+	width:186px;
+}
+
+#security_left .lp_info .last_backup {
+	display:none;
+}
+
+#security_right {
+	float:left;
+	height:100%;
+	margin-top:20px;
+    position: absolute;
+    right: 2px;
+    width: auto;
+    _position: relative;
+}
+
+#security .working {
+	margin: 140px auto;
+	display: block;
+}
+
+#security .filename {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Hide threat news */
+#security_threat_news{ display:none; }
+/* END - Hide threat news */
+
+#security_threat_scan, #security_threat_history, #security_threat_news, #security_security_settings {
+	background: none repeat scroll 0 0 white;
+    border: 1px solid #B7B5B6;
+    float: left;
+    height: 350px;
+    margin: 0 45px;
+    _margin: 0 10px;
+    /*margin: 0 5px;
+    _margin: 0 4px;*/
+    padding: 10px;
+    width: 210px;
+    position:relative;
+}
+
+.security_title {
+	font-size:13px;
+	font-weight:700;
+	background: #EEEEEE;
+	padding: 5px 0 5px 10px;
+}
+
+   /* Threat Scan Panel */
+   #security_threat_scan #threat_scan {
+      margin:10px;
+      font-weight: bold;
+	}
+
+	.last_threat_scan {
+      font-weight: normal;
+      margin: 5px 0;
+      line-height: 20px;
+	}
+	
+	.last_threat_scan li.hidden {
+      display:none;
+	}
+	
+	.last_threat_update_info {
+    	font-weight: normal;
+    	line-height: 20px;
+	}
+	
+	.scan_for_threats{
+      background: url("../img/common/common_btn_large.png") no-repeat scroll 0 0 transparent;
+      height: 23px;
+      line-height: 23px;
+      width: 188px;
+      cursor: pointer;
+      position:absolute;
+      bottom:10px;
+      text-align:center;
+      font-size:12px;
+      font-weight:bold;
+      color:#fff;
+	}
+
+	.next_threat_scan {
+     font-weight: normal;
+     margin: 10px 0;
+	}
+   /* END - Threat Scan Panel */
+
+
+   /* Threat Recent Activites Panel */
+	.security_threat_history {
+	   height: 333px;
+      _width:160px;
+      _overflow-x: auto;
+		overflow-y: auto;
+	}
+
+	#security_threats {
+	   margin: 10px;
+		line-height: 12px;
+	}
+
+	#security_threats .divider {
+	  margin: 10px 0;
+     _margin: 5px 0;
+	}
+	
+	#security_activities_view_more {
+		padding-bottom: 10px;
+		display: none;
+	}
+   /* END - Threat Recent Activites Panel */
+
+
+   /* Security Settings */	
+   #security_settings {
+	   	margin: 10px 0;
+	}
+
+   .security_settings_text {
+	   	float: right;
+	   	width: 120px;
+	}
+
+   .security_settings_value {
+	   	float: left;
+		font-weight: bold;
+      	margin: 15px;
+        line-height: 15px;
+      	font-size: 20px;
+      	width: 25px;
+	}
+
+   .security_settings_title {
+      	font-weight: bold;
+      	font-size: 13px;
+      	margin: 5px 0;
+   }
+
+   #security_settings .each_setting{
+      	_height: 45px;
+   }
+
+   #security_settings .divider{
+		margin: 10px 0;
+      	_margin: 5px 0;
+   }
+   
+   #security_settings .mcafee_settings {
+		margin: 0 10px;
+   }
+   
+	.mcafee_settings .security_settings_text {
+   		float: left;
+   		width: auto;
+   		line-height: 20px;
+	}
+   
+	.mcafee_settings .security_settings_value {
+   		float: left;
+      	font-size: 11px;
+      	margin: 5px 0 0 5px;
+   }
+  .settings_text_on {
+    color:#0070AA;
+  }
+
+  .settings_text_off {
+    color:#CCC;
+  }
+   /* END - Security Settings */
+
+
+	/* Threat News Panel */
+   .global_threat_news {
+	   height: 325px;
+      _height: 305px;
+	   overflow-y: auto;
+      *width:162px;
+      _width:145px;
+	}
+
+   #global_threats {
+	   margin-top: 10px;
+	}
+
+   #global_threats .divider {
+	   margin: 10px 0;
+      _margin:5px 0;
+
+      /* IE7 shows a horizontal scrollbar so lessen the width*/
+      *width:89%;
+      _width: 100%;
+	}
+
+   #global_threats .twitter_text{
+      _width:145px;
+   }
+
+   #global_threats .tweet-link,
+   #global_threats .tweet-mention,
+   #global_threats .tweet-hash{
+      color: #46afd5;
+   }
+   /* END - Threat News Panel */
+/* END - Security Pane */
+
+/* Dialogs */
+/* END - Dialogs */

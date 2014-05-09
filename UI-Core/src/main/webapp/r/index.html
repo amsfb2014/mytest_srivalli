@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Asurion Labs</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width">
+
+        <link REL="SHORTCUT ICON" HREF="img/pageicon.ico"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet">       
+    	<link href="css/page.css" rel="stylesheet">
+        <!-- <link href="css/main_css.css" rel="stylesheet"> -->
+        <link href="css/prelogin.css" rel="stylesheet">
+        <link href="../css/jquery.ui.css" rel="stylesheet"/>
+		
+		<style id="antiClickjack" type="text/css">
+			body {display: none !important;}
+		 </style>
+		<script type="text/javascript">
+			if (self === top) {
+				var antiClickjack = document.getElementById("antiClickjack");
+				antiClickjack.parentNode.removeChild(antiClickjack);
+			} else {
+				top.location = self.location;
+			}
+		 </script>
+		 
+        <!-- jquerybase-min.js -->
+        <script src="../js/lib/jquery.js"></script>
+        <script src="../js/lib/jquery-ui.js"></script>
+    </head>
+    <body>
+        <div class="dialog" id="dialog">
+            <div class="dialogMessage"></div>
+            <div class="center">
+                <div id="dialogBtn" class="dialogButton" alt="ok">OK</div>
+            </div>
+        </div>
+
+        <div id="page_container" style="display: block;" class="">
+            <div id="header_container"></div>
+            <div id="body_container" ></div>
+            <div id="footer_container"></div>
+        </div>
+
+        <div id="helpWrapper">
+            <h1 class="title">Asurion LABS Help</h1>
+            <div id="helpContentWrapper">
+                <div id="help_sideNav"></div>
+                <div id="help_Body_Container"></div>
+
+                <div class="clrAll"></div>
+            </div>
+        </div>
+
+        <!-- amabase-min.js -->
+        <script src="../js/lib/lodash.underscore.js"></script>
+        <script src="../js/lib/xssValidator.js"></script>
+        <!-- include components from CryptoJS/rollup/aes.js [core, enc-base64, md5, evpkdf, cipher-core, aes] -->
+        <script src="../js/lib/CryptoJS/core.js"></script>
+        <script src="../js/lib/CryptoJS/enc-base64.js"></script>
+        <script src="../js/lib/CryptoJS/md5.js"></script>
+        <script src="../js/lib/CryptoJS/evpkdf.js"></script>
+        <script src="../js/lib/CryptoJS/cipher-core.js"></script>
+        <script src="../js/lib/CryptoJS/aes.js"></script>		
+        <script src="../js/ama/AMA.js"></script>
+        <script src="../js/ama/Envs.js"></script>
+        <script src="../js/ama/Config.js"></script>		
+        <script data-main="js/main.js" src="../js/require.js"></script>
+		<script src="../js/lib/phones_supported.js"></script>
+        <script src="../js/public/landing.js"></script>        
+        <script src="../js/ama/Util.js"></script>
+        <script src="js/lib/bootstrap.min.js"></script>
+    </body>
+</html>

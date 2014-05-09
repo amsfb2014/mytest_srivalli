@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Help</title>
+<link href="css/main_css.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="js/lib/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="js/lib/jquery-ui.js"></script>
+<script language="javascript" type="text/javascript" src="js/public/landing.js"></script>
+<script language="javascript" type="text/javascript" src="js/lib/xssValidator.js"></script>
+<script type="text/javascript">
+	// The same element id has been used in multiple pages which is hidden in main.js hence the workaround
+	$(document).ready(function() {
+		$('#helpWrapper').show();
+	});	
+	function setTitle() 
+	{
+		var title = getQueryValue("title");
+		if(title == "transfer")
+		{
+			title = "Transfer Contacts";
+		}
+		else
+		{
+			title = "Got A New Phone?"
+		}
+		$('#title').html(title);
+	} 
+</script>
+</head>
+<body onload="setTitle();">
+<div id="helpWrapper">
+    <h1 class="title">Asurion LABS - <span id="title" class="title"></span></h1>
+    <div id="helpContentWrapper">
+    	<p class="padTB">To update the phone displayed on the website and transfer saved data to your new phone, follow the instructions below:</p>    	
+        <div id="helpContentNewPhone">
+            <div id="helpContent" class="newPhone mrgncolOne">
+                <h2>First, on your current phone...</h2>            
+                <div id="helpSections">            	
+                    <ol start="1">                	
+                        <li>Be sure to have the Asurion LABS <a target="_blank" href="index.html#get_started" class="link">downloaded and installed</a> on your current phone.</li>
+                        <li>From either the web or the app, perform a sync to be sure you have the most recent version of your contacts saved.</li>
+                        <li>When the sync is complete, proceed to the next set of instructions on your new phone.</li>                    
+                    </ol>                
+                </div>
+            </div>
+            <div id="helpContent" class="newPhone">
+                <h2>Then, on your new phone...</h2>
+                <div id="helpSections">            	
+                    <ol start="1">                	
+                        <li><a href="index.html#get_started" class="link" target="_blank">Download Asurion LABS</a> to your new, <a href="index.html#phones_supported" class="link" target="_blank">supported phone.</a></li>
+                        <li>Launch the Asurion LABS on your phone and complete the simple account setup.</li>
+                        <li>
+                            At the end of the setup process you will be prompted to 'Scan for Threats &amp; Restore Contacts'.
+                            <p class="margnTopSmall">This will transfer your saved contacts to your new phone. You may need to refresh the website to see your new phone listed.</p>
+                        </li>                    
+                    </ol>                
+                </div>
+            </div>
+		</div>            
+        <div class="clrAll"></div>
+    </div>
+</div>
+
+</body>
+</html>

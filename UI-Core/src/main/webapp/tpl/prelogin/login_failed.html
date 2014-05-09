@@ -1,0 +1,67 @@
+<!-- BEGIN: login_failed -->
+<div id="header">
+    <a id="logo" href="#index"><img src="img/logo.png" alt="Asurion Labs" title="Asurion Labs" /></a>
+    <div class="headerLogin">       
+        <form name="login" method="POST" action="#" id="loginform">				
+            <div class="frmFieldCont">
+                <input name="username" id="username1" value="Email Address" type="text" size="22" /> 
+                <input type="password" value="" id="actualPassword" name="actualPassword" class="fltRight" style="display:none" /> 
+                <input id="password_text" name="password_text" type="text" class="inputtext fltRight" value="Password" size="22" />
+                <input type="hidden" name="password" id="password" value="" />
+                <input type="hidden" name="secrethandle" id="secrethandle" value="" />
+                <a href="#retrieve_pin">Forgot your Password?</a>
+                <input type="submit" id="btnSignup" value="Sign In" alt="Sign in" class="btnSignup"></input>
+            </div>
+            <div class="frmlabelCont">
+                <label class="errorMsgIcon" id="errMsgBld">Invalid login. Final Attempt.</label>
+                <label class="errorMsg" id="errMsg">If you enter invalid login credentials one more time, your account will be locked for 24 hours.</label>
+            </div>              
+        </form>
+    </div>
+</div>
+<div id="mainNav">
+    <ul>
+        <li id="index_li"><a href="#index" title="Home">Home</a></li>
+        <li id="learnmore_li"><a href="#learnmore" title="Learn More">Learn More</a></li>
+        <li id="get_started_li"><a href="#get_started" title="Download Mobile App">Download
+                Mobile App</a></li>
+        <li class="separator"><img src="img/top_menu_divider.gif"
+                                   alt="divider" title="" /></li>
+        <li class="topLinks"><span>Links:</span> <a
+                href="http://www.phoneclaim.com" target="_blank">File A Claim</a></li>
+    </ul>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $("#username1").on({
+      focus: function(){
+    	
+        clearInput(this, 'Email Address');
+      },
+      blur: function(){
+        restoreInput(this, 'Email Address');
+      }
+    });
+
+    $("#actualPassword").on({
+      focus: function(){
+        clearInput(this, 'Password');
+      },
+      blur: function(){
+        restoreInput(this, 'Password');
+      }
+    });
+
+    $("#password_text").on({
+      focus: function(){
+    	 
+        clearInput(this, 'Password');
+      },
+      blur: function(){
+        restoreInput(this, 'Password');
+      }
+    });
+  });
+</script>
+<!-- END: login_failed -->

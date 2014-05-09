@@ -1,0 +1,307 @@
+/* Dashboard */
+/* Tabs*/
+#dashboard_tab {
+}
+/*END - Tabs*/
+
+
+.dashboard {
+	background:#EEE;
+	min-height: 555px;
+	width:auto;
+   padding: 20px;
+}
+
+.dashboard_twopanel{
+   min-height: 290px;
+}
+
+#dashboard_endpoint {
+	color:#666;
+	font-size:10px;
+	height:89px;
+	width:100%;
+}
+
+
+/* DashboardTab Panels */
+.dashboard_panel {
+	background: #f9f9f9;
+	float:left;
+   /*background: url(../img/attmpp/dashboard/dashboard_box.png) no-repeat;*/
+   background: url(../img/dashboard/dashboard_box.png) no-repeat;
+   border-style:none;
+	height: 225px;
+   _height:250px;
+	margin: 10px 5px 5px 0;
+	padding: 20px;
+	width: 420px;
+   _position:relative;
+}
+
+#dashboard_privacy{
+  display:none;
+}
+
+#dashboard_faqs{
+  display:none;
+  position:relative;
+}
+
+#dashboard .dashboard_settings {
+   /* necessary for absolutely positioning the buttons */
+   height:185px;
+   position:relative;
+}
+
+#dashboard .dashboard_settings .after_save_message {
+	display:none;
+}
+
+#dashboard .pane_floatingbuttons{
+  float:none;
+  text-align:center;
+  position: absolute;
+  bottom:0;
+  right:auto;
+  top:auto;
+  height:50px;
+  width:100%;
+}
+
+#dashboard .pane_floatingbuttons ul{
+  margin:0;
+}
+
+#dashboard .pane_floatingbuttons .rs_save{
+  margin:0 0 0 25px;
+  float:none;
+}
+
+#dashboard .after_save_message{
+  float:none;
+  height:15px;
+  color: #2470aa;
+  cursor:default;
+  margin-top:7px;
+}
+
+#dashboard .scan_phone {
+	text-decoration:none;
+}
+
+/* DashboardTab Panels Inner Elements */
+.dashboard_title {
+	font-size:18px;
+	font-weight:700;
+	margin:0 0 10px 0;
+}
+
+.dashboard_content_title {
+	font-size:12px;
+	font-weight:700;
+	margin:5px 0;
+   _margin:10px 0;
+}
+
+#dashboard .panel_left{
+   float: left;
+   width: 165px;
+   /* necessary for absolutely positioning the buttons */
+   position:relative;
+   height:228px;
+}
+
+#dashboard .panel_right{
+   float: right;
+   background: #fff;
+   border: solid 1px #e3e3e3;
+   width: 200px;
+   height: 185px;
+   padding: 20px;
+}
+
+#dashboard .panel_full{
+   /* necessary for absolutely positioning the buttons */
+   position:relative;
+   height:228px;
+}
+
+.dashboard_sync_msg, .dashboard_sync_error_msg_user, .dashboard_sync_error_msg{
+   height: 30px;
+   margin-top: 18px;
+}
+.dashboard_sync_error_msg_user, .dashboard_sync_error_msg {
+    color: #b81900;
+}
+.dashboard_sync_error_msg:before {
+    display: block;
+    width: 20px;
+    height: 20px;
+    content: "Incomplete";
+    background: url(../img/icon_warning_small.png) 0 1px no-repeat;
+    padding: 0px 0 0px 30px;
+    color: #000;
+    font-size: 14px;
+}
+
+.panel_full .link_container{
+   margin: 15px 0;
+}
+
+#dashboard .view_details {
+	text-decoration: none;
+}
+
+#dashboard_safebrowsing .panel_right{
+  _width:auto;
+}
+
+#dashboard .panel_right .dashboard_content_title{
+   margin: 0;
+}
+
+#dashboard .panel_right .divider{
+  margin: 10px 0;
+  _margin:0;
+}
+
+	/*Status Panel*/
+   #header_link .dashboard_status div{
+     cursor:default;
+     margin: 3px 0;
+   }
+
+   #header_link .dashboard_status{
+     height: 80px;
+     margin: 10px 0;
+     padding: 0 170px 0 20px;
+     _width: 100px;
+   }
+
+   .dashboard_status .title{
+     margin: 0;
+   }
+
+   .dashboard_status .greentick{
+      height:16px;
+      padding: 3px 0 0 20px;
+		background:url(../img/green_tick_sm.png) no-repeat;
+
+      _background-image: none;
+      _filter:
+      progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/green_tick_sm.png, sizingMethod='crop');
+   }
+
+   .dashboard_status .redx{
+      height:16px;
+      padding: 3px 0 0 20px;
+		background:url(../img/redX.png) no-repeat;
+
+      _background-image: none;
+      _filter:
+      progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/redX.png, sizingMethod='crop');
+   }
+
+   .dashboard_status .unlocked{
+      height:16px;
+      padding: 3px 0 0 20px;
+		background:url(../img/dashboard/icon_unlock_success_sm.png) no-repeat;
+
+      _background-image: none;
+      _filter:
+      progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../img/dashboard//icon_unlock_success_sm.png, sizingMethod='crop');
+   }
+
+   .dashboard_status .locked{
+      height:16px;
+      padding: 3px 0 0 20px;
+		background:url(../img/dashboard/icon_lock_success_sm.png) no-repeat;
+
+      _background-image: none;
+      _filter:
+      progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../img/dashboard//icon_lock_success_sm.png, sizingMethod='crop');
+   }
+	/*END - Status Panel*/
+
+
+	/* Recent Activity Panel */
+   #header_link .dashboard_activity{
+     border: none;
+     height: 80px;
+     margin: 10px 0;
+     padding: 0 20px;
+     width: 320px;
+   }
+
+   #header_link .dashboard_activity div{
+     cursor:default;
+   }
+
+   #dashboard_activity .each_activity{
+     *height: 17px;
+   }
+
+   #dashboard_activity .link_text{
+     *position:relative;
+     *top: -13px;
+   }
+
+   #dashboard_activity .icon_profile_update_success {
+		background:url(../img/dashboard/icon_profile_update_success_sm.png) no-repeat;
+
+      _background-image: none;
+      _filter:
+      progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../img/dashboard//icon_profile_update_success_sm.png, sizingMethod='crop');
+   }
+
+   #dashboard_activity .activity_image {
+      float:left;
+      margin:0 6px 0 0;
+      width:16px;
+ 	   height: 16px;
+   }
+   
+   #dashboard_activity .activity_text {
+      float:left;
+      margin:3px 0;
+   }
+
+   #dashboard_activity .activitytime{
+     color: #888;
+   }
+
+   #dashboard_activity .dashboard_more_content{
+     display:none;
+     background: #fff;
+     border: solid 1px #e3e3e3;
+     padding: 10px;
+     _width:300px;
+   }
+	/* END - Recent Activity Panel */
+
+/* END - DashboardTab Panels */
+
+#dashboard_backup .loading {
+    background:url(../img/transparent_loading_circle_blue.gif) center center no-repeat;
+    width: 165px;
+    height: 63px;
+}
+#dashboard_main_tab .dashboard_panel_loading:before {
+    background:url(../img/transparent_loading_circle_blue.gif) center center no-repeat;
+    width:420px;
+    content:"loading";
+    height:225px;
+    display:block;
+    position:relative;
+    top:0px;
+    bottom:0px;
+    text-indent:100%;
+    overflow:hidden;
+}
+/**
+ * start IOS styles
+ **/
+.ios #dashboard_backup .btn_sync {
+    display:none;
+}

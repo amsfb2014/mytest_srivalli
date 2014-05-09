@@ -1,0 +1,1018 @@
+/*
+
+ @FileName: recoverybase.css
+  Base file for recovery carriers.
+
+*/
+
+
+/* Header */
+#header_link .button .soundagain{
+}
+
+#header_link .button_wipe .restoresteps{
+}
+
+#header_link .button .sendanother{
+	background: url('../img/recovery/btn_takeover_send_another.png') no-repeat 0 0;
+	height:17px;
+   	width:91px;
+   	margin-left:27px;
+}
+
+#header_link .button .locateagain{
+}
+
+/* height and margin cannot go in "#header_link .button div" because they need to
+be overridden */
+
+#header_link .button_locate {
+	background: url('../img/common/common_header.png') no-repeat 0 -124px;
+	height:72px;
+	margin:16px 10px 0;
+}
+
+#header_link .button_locate.connecting,
+#header_link .button_locate.outcome{
+	background: url('../img/common/common_header.png') no-repeat 0 -534px;
+}
+
+#header_link .button_alarm {
+	background: url('../img/common/common_header.png') no-repeat 0 -288px;
+	height:72px;
+	margin:16px 10px 0;
+}
+
+.mr_lite_view #header_link .button_alarm {
+   	cursor:default;
+}
+
+#header_link .button_alarm.connecting,
+#header_link .button_alarm.sounding,
+#header_link .button_alarm.outcome {
+	background: url('../img/common/common_header.png') no-repeat 0 -534px;
+}
+
+#header_link .button_lock {
+	height:72px;
+	margin:16px 10px 0;
+	background: url('../img/common/common_header.png') no-repeat 0 -452px;
+}
+
+.mr_lite_view #header_link .button_lock{
+   	cursor:default;
+}
+
+#header_link .button_lock.locked {
+	background: url('../img/common/common_header.png') no-repeat 0 -616px;
+   	opacity:1;
+   	cursor:default;
+}
+#header_link .button_lock.locked .button_title {
+	color: #ccc;
+}
+#header_link .button_lock.locked .details {
+	display:none;
+}
+
+#header_link .button_lock.connecting,
+#header_link .button_lock.randomlocked,
+#header_link .button_lock.outcome {
+	background: url('../img/common/common_header.png') no-repeat 0 -534px;
+}
+
+#header_link .button_lock.randomlocked,
+#header_link .button_lock.randomlocked .button_title{
+  color: #999;
+  cursor:default;
+}
+
+#header_link .button_lock.randomlocked .button_title{
+  font-size:16px;
+  padding: 19px 5px 0;
+  width:115px;
+}
+
+#header_link .button_lock.randomlocked .details{
+  cursor:default;
+  font-weight: bold;
+  font-size:14px;
+  height:28px;
+  margin-left: 7px;
+  width:115px;
+}
+
+#header_link .button_lock.locked .tooltip_icon.outcome {
+	top: 24px;
+}
+
+#header_link .button_lock.randomlocked .tooltip_icon.outcome {
+	top: -12px;
+}
+
+#header_link .button_wipe {
+	height:72px;
+	margin:16px 10px 0;
+	background: url('../img/common/common_header.png') no-repeat 0 -1355px; /*erase contacts -698px*/
+}
+
+.mr_lite_view #header_link .button_wipe {
+   	cursor:default;
+}
+#locate_toolset .refining .tooltip_icon {
+    top: 0;
+}
+#header_link .button_wipe.connecting,
+#header_link .button_wipe.syncing,
+#header_link .button_wipe.outcome {
+	background: url('../img/common/common_header.png') no-repeat 0 -534px;
+}
+
+#header_link .button_wipe.locked {
+	background: url('../img/common/common_header.png') no-repeat 0 -2093px;
+   	opacity:1;
+   	cursor:default;
+}
+
+#header_link .button_claim {
+	display:none;
+	height: 72px;
+    margin: 16px 10px 0;
+}
+
+#header_link .button_msgfamily {
+	display:none;
+}
+
+#header_link .button_announce {
+   height:72px;
+   margin: 16px 10px 0;
+	background: url('../img/common/common_header.png') no-repeat 0 -1847px;
+}
+
+#header_link .button_announce.connecting,
+#header_link .button_announce.outcome{
+	background: url('../img/common/common_header.png') no-repeat 0 -1929px;
+}
+
+#header_link .button_securephone {
+   height:72px;
+   margin: 16px 10px 0;
+	background: url('../img/common/common_header.png') no-repeat 0 -2257px;
+}
+
+#header_link .button_securephone.announcing,
+#header_link .button_securephone.connecting,
+#header_link .button_securephone.retrying,
+#header_link .button_securephone.outcome{
+	background: url('../img/common/common_header.png') no-repeat 0 -1929px;
+}
+
+#header_link .button_securephone.connecting,
+#header_link .button_securephone .button_countdown{
+   cursor: pointer;
+}
+/* END - Header */
+
+
+/* Tabs */
+#locate_tab {
+}
+/* END - Tabs */
+
+
+/* Console */
+#new_phone {
+	display:block;
+}
+/* END - Console*/
+
+
+/* Dialogs */
+#wipephonedialog .instructions li div{
+  margin: 10px 0;
+}
+
+#wipephonedialog .instructions label{
+  position: relative;
+  top: -2px;
+  font-weight: bold;
+  margin-right:10px;
+}
+
+/* Wipe vs factory reset */
+#wipephonedialog .instructions .syncbefore{
+  margin-left: -4px;
+}
+
+#wipephonedialog .instructions .wipephone_option{
+  margin: 10px 0 3px;
+}
+
+#wipephonedialog .instructions .description{
+  margin: 0 20px;
+}
+
+/* Just Wipe */
+#wipephonedialog .dataselect{
+  font-weight:bold;
+}
+
+#wipephonedialog .wipe_status{
+	line-height: 20px;
+}
+
+#profiledialog .button_cancel {
+	cursor:pointer;
+	margin-left:5px;
+}
+
+#announcedialog textarea{
+   width:450px;
+   height:50px;
+   outline:none;
+}
+
+#announcedialog .instructions .error{
+   color: #cc0000;
+   line-height:13px;
+}
+
+.announce_dialog .inline_error{
+  color: #cc0000;
+  margin-bottom: 5px;
+}
+
+#securephonedialog{
+   padding: 0;
+}
+
+#securephonedialog .main{
+   padding: 30px;
+}
+
+#securephonedialog .header{
+   background: #ccc;
+   height: auto;
+   margin: 0;
+   width: auto;
+}
+
+#securephonedialog .header .title{
+   color: #222;
+   margin-left: 30px;
+   padding-top: 15px;
+}
+
+#securephonedialog .header .title .retry{
+   display:none;
+}
+
+#securephonedialog .divider{
+   display:block;
+}
+
+#securephonedialog .step1>div{
+   margin: 10px 0;
+}
+
+#securephonedialog .description{
+   margin-bottom: 20px;
+}
+
+#securephonedialog .inline_error{
+  color: #cc0000;
+  margin-bottom: 5px;
+}
+
+#securephonedialog .announce_edit{
+   margin: 0 0 5px 85px;
+   line-height:1.5em;
+}
+
+#securephonedialog .announce textarea{
+   height: 65px;
+   width: 400px;
+   margin-left: 83px;
+}
+
+#securephonedialog .announce .charcounttext{
+   margin-left: 83px;
+}
+
+#securephonedialog .dialog_buttons{
+   left: -85%;
+}
+
+#securephonedialog .waiting .countdown_text, #securephonedialog .step2 .countdown_text{
+   background: #0067a6;
+   padding: 5px;
+   color: #fff;
+   margin: 20px 0;
+}
+
+#securephonedialog .feature{
+   margin: 20px 0 20px 20px;
+}
+
+#securephonedialog .featurename{
+   font-weight: bold;
+}
+
+#securephonedialog .status{
+   color: #0067a6;
+}
+/* END - Dialogs */
+
+
+/* Recovery sms dialogs */
+.locate_dialog .header {
+	background:url(../img/dialog_header_recovery.png) no-repeat 0 -174px;
+}
+
+.alarm_dialog .header {
+	background:url(../img/dialog_header_recovery.png) no-repeat 0 -435px;
+}
+
+.lock_dialog .header {
+	background:url(../img/dialog_header_recovery.png) no-repeat 0 -261px;
+}
+
+.wipe_dialog .header {
+	background:url(../img/dialog_header_recovery.png) no-repeat 0 -87px;
+}
+
+.msgfamily_dialog .header {
+	background:url(../img/dialog_header_recovery.png) no-repeat 0 -174px;
+}
+
+.announce_dialog .header {
+	background: url(../img/dialog_header_recovery.png) no-repeat 0 -435px transparent;
+}
+
+#msgfamily_lostphonelabel{
+  width: 400px;
+  position: relative;
+  top: -17px;
+  left: 25px;
+  margin-bottom: -10px;
+}
+
+#msgfamily_altphone{
+   *height:13px;
+   *position: relative;
+   *top: -3px;
+}
+
+#msgfamily_foundphonelabel{
+   *position: relative;
+   *top: 3px;
+}
+
+.dialog_buttons .btn_sendmsgtophone {
+	background:url(../img/recovery/btn_send_message.png) no-repeat;
+	width:223px;
+	height:23px;
+}
+
+.dialog_buttons .btn_locate, .btn_locate {
+}
+
+.dialog_buttons .btn_locate_success {
+	background:url(../img/recovery/btn_see_location.gif) no-repeat;
+	width:181px;
+	height:29px;
+}
+
+.dialog_buttons .btn_alarm {
+	background:url(../img/recovery/btn_alarm.png) no-repeat;
+	width:141px;
+	height:29px;
+}
+
+.dialog_buttons .btn_lock {
+	background:url(../img/recovery/btn_lock.png) no-repeat;
+	width:141px;
+	height:29px;
+}
+
+.dialog_buttons .btn_erase {
+	background:url(../img/recovery/btn_erase_data.png) no-repeat;
+	width:118px;
+	height:23px;
+}
+
+.dialog_buttons .btn_erase_and_lock {
+	background:url(../img/recovery/btn_erase_data_and_lock_phone.png) no-repeat;
+	width:200px;
+	height:23px;
+}
+
+.dialog_buttons .btn_sync_then_wipe{
+   background:url(../img/recovery/btn_sync_then_erase.png) no-repeat;
+   width:166px;
+   height:23px;
+}
+
+.dialog_buttons .btn_nosync_then_wipe{
+   background:url(../img/recovery/btn_erase_without_sync.png) no-repeat;
+   width:190px;
+   height:23px;
+}
+
+.dialog_buttons .btn_sync_then_reset{
+   background:url(../img/recovery/btn_sync_then_reset.png) no-repeat;
+   width:165px;
+   height:23px;
+}
+.dialog_buttons .btn_nosync_then_reset{
+   background:url(../img/recovery/btn_reset_without_sync.png) no-repeat;
+   width:190px;
+   height:23px;
+}
+.dialog_buttons .btn_factory_reset_device{
+   background:url(../img/recovery/btn_factory_reset_device.png) no-repeat;
+   width:165px;
+   height:23px;
+}
+/* END - Dialog */
+
+
+/* Location Pane */
+#location_tab{
+  height:730px;
+}
+
+#location {
+	background:#EEE;
+	height:100%;
+	min-height: 555px;
+	width:auto;
+   position: relative;
+}
+
+	/* Location Pane - Left*/
+	#location_left {
+		float:left;
+		height:100%;
+		padding-left:11px;
+		position:relative;
+		width:186px;
+	}
+
+	#location_left .lp_info .last_backup {
+		display:none;
+	}
+
+	#location_left .title {
+	    border-bottom: 1px solid #B7B5B6;
+       background:#eee;
+       padding:3px;
+	    font-size: 13px;
+	    font-weight: 700;
+	    margin: 10px 10px 0;
+		font-size:13px;
+		font-weight:700;
+	}
+
+   #location_left .location_history_top,
+   #location_left .location_history_bottom{
+      display:none;
+   }
+
+	#location_history {
+		color:#666;
+      background: #fff;
+      border-style: solid solid none solid;
+      border-width:1px;
+      border-color:#cacaca;
+      margin-top: 11px;
+      width:183px;
+	}
+
+	#location_history .selected{
+		background: url(../img/recovery/location_selected_arrow.png) no-repeat;
+      height:100px;
+      width:212px;
+	}
+
+	#location_history .item {
+		clear: both;
+	    height: 100px;
+	    width: 100%;
+	    cursor: pointer;
+	}
+
+	#location_history .index {
+		float:left;
+		font-weight:700;
+		height:33px;
+		width:15px;
+      display:none;
+	}
+
+	#location_history .info {
+		float:left;
+		font-weight:400;
+		margin:15px 0 8px 30px;
+		width:142px;
+      _color: #666666;
+	}
+
+	#location_history .address {
+        line-height:16px;
+        padding-bottom:2px;
+        padding-right:4px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+	}
+
+	#location_history .time {
+		line-height:16px;
+		padding-bottom:2px;
+		padding-right:4px;
+	}
+
+	#location_history .accuracy {
+		line-height:16px;
+		padding-bottom:2px;
+		padding-right:4px;
+		font-weight: bold;
+	}
+
+	#clear_location_history{
+		margin: 10px 10px 0;
+	}
+
+	#location_left .location_settings {
+		color: #666666;
+    	padding: 10px 0 10px;
+      width:183px;
+      border-style: none solid solid;
+      border-width: 1px;
+      border-color: #cacaca;
+      background: #fff;
+	}
+
+	#location_left .location_settings .content{
+	   margin: 5px 10px 0;
+	}
+
+	#location_left .location_settings .link{
+	   margin: 5px 10px 0;
+	}
+
+	#text_directions {
+		margin-left:4px;
+	}
+
+	#text_directions .change {
+		padding:8px 0 8px 5px;
+	}
+
+	#text_directions .change img {
+		height:17px;
+		width:17px;
+	}
+
+	#text_directions .change a {
+		color:#48ADD7;
+		cursor:pointer;
+		font-size:12px;
+		text-decoration:underline;
+	}
+
+	#text_directions .changeaddress{
+	   float: left;
+	   left:5px;
+	   position:relative;
+	   top:3px;
+	}
+
+	#text_directions .closedirections{
+	   float: right;
+	   background:url(../img/btn_close_directions.png) no-repeat 0 0;
+	   width:17px;
+	   height:17px;
+
+	   _background-image: none;
+	   _filter:
+	   progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/common/btn_close_directions.png,sizingMethod='scale');
+	}
+
+	#text_route {
+		height:248px;
+		overflow-x:hidden;
+		overflow-y:auto;
+	   /* IE6-7 */
+	   position:relative;
+	}
+
+	#get_direction {
+		color:#666;
+		padding-bottom:10px;
+		padding-left:9px;
+		padding-top:13px;
+	}
+
+	#location_current .history a,#location_history .current a,#location_current_address a,#location_history .title a {
+		color:#48ADD7;
+		cursor:pointer;
+		font-size:12px;
+		padding-left:1px;
+		text-decoration:underline;
+	}
+
+	#location_history .title a {
+		margin-left:13px;
+	}
+
+	#location_history .current {
+		padding-top:5px;
+	}
+
+	.fromwhere, .towhere {
+		padding: 3px 0 5px 0;
+	}
+
+	.fromwhere input, .towhere input {
+		background:#EEE;
+		border:1px solid #B7B5B6;
+		color:#666;
+		width:172px;
+	}
+
+	#location_current .address {
+		padding-left:2px;
+	}
+/* END - Location Pane - Left*/
+#feedback {
+	bottom:14px;
+	padding-left:8px;
+	position:absolute;
+}
+
+#location_right {
+	float:left;
+	height:100%;
+	position:absolute;
+	right:2px;
+	width:755px;
+}
+
+
+#location_right #message {
+	background:#FFF;
+	border:2px solid #B7B5B6;
+	color:#666;
+	display:none;
+	height:auto;
+	left:282px;
+	line-height:14px;
+	padding:15px;
+	position:absolute;
+	top:184px;
+	width:153px;
+	z-index:999;
+}
+
+#location_right .note {
+	color:#666;
+	font-style:italic;
+	margin:4px 17px;
+}
+
+#location_failed_note {
+	background:#FFF;
+	border:2px solid #B7B5B6;
+	color:#666;
+	display:none;
+	height:auto;
+	left:210px;
+	line-height:14px;
+	padding:15px;
+	position:absolute;
+	top:200px;
+	width:340px;
+	z-index:999;
+}
+
+#location_failed_note h3 {
+	color: #0066CC;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#location_failed_note span {
+	font-weight: bold;
+}
+
+#location_right #location_progress_note{
+	background: url("../img/transparent_loading_circle_blue.gif") no-repeat transparent;
+	color: #0066CC;
+    font-size: 25px;
+    font-weight: bold;
+    height: auto;
+    min-height: 100px;
+    left: 215px;
+    line-height: 25px;
+    position: absolute;
+    top: 225px;
+    width: auto;
+    z-index: 1000;
+	display: none;
+}
+
+#location_right #location_progress_note .accuracy{
+	font-weight: normal;
+	text-align: center;
+	padding-top: 26px;
+}
+
+#location_right #location_progress_note .text {
+	padding: 0 0 15px 50px;
+}
+
+.sv_link {
+	margin-top:6px;
+}
+
+.sv_link a {
+	color:#77C;
+	cursor:pointer;
+	text-decoration:underline;
+}
+
+.infotime {
+	padding-top:10px;
+}
+/* END - Location Pane */
+
+
+/* Account Settings */
+	/* Location Settings */
+	.settings .location_settings select{
+		width:110px;
+	}
+
+	.settings .locationbatterynote .field{
+      width:70%;
+	}
+	/* END - Location Settings */
+/* END - Account Settings */
+
+
+/* DashboardTab Pane */
+
+	/* Location Panel */
+   #dashboard_location .panel_right{
+      width:auto;
+      height:auto;
+      padding:0;
+   }
+
+	.dashboard_address {
+		margin-bottom:10px;
+	}
+
+	#dashboard_location .btn_locate {
+	}
+
+   #dashboard_location .map_description{
+     text-align: center;
+     margin: -10px 0 0 160px;
+     *margin: -30px 0 0 160px;
+     color: #555;
+   }
+	/* END - Location Panel */
+
+
+	/* Recent Activities */
+   #dashboard_activity .icon_alarm_failed, #dashboard_activity .icon_soundalert_failed {
+		background:url(../img/dashboard/icon_alarm_failed_sm.png) no-repeat;
+   }
+
+   #dashboard_activity .icon_alarm_success, #dashboard_activity .icon_soundalert_success {
+		background:url(../img/dashboard/icon_alarm_success_sm.png) no-repeat 2px 0;
+   }
+
+   #dashboard_activity .icon_lock_failed {
+		background:url(../img/dashboard/icon_lock_failed_sm.png) no-repeat 2px 0;
+   }
+
+   #dashboard_activity .icon_lock_success {
+		background:url(../img/dashboard/icon_lock_success_sm.png) no-repeat;
+   }
+
+   #dashboard_activity .icon_unlock_success {
+		background:url(../img/dashboard/icon_unlock_success_sm.png) no-repeat;
+   }
+   #dashboard_activity .icon_unlock_failed {
+		background:url(../img/dashboard/icon_unlock_failed_sm.png) no-repeat;
+   }
+
+   #dashboard_activity .icon_locate_failed {
+		background:url(../img/dashboard/icon_locate_failed_sm.png) no-repeat;
+   }
+
+   #dashboard_activity .icon_locate_success {
+		background:url(../img/dashboard/icon_locate_success_sm.png) no-repeat;
+   }
+
+   #dashboard_activity .icon_wipe_failed {
+		background:url(../img/dashboard/icon_wipe_failed_sm.png) no-repeat;
+   }
+
+   #dashboard_activity .icon_wipe_success {
+		background:url(../img/dashboard/icon_wipe_success_sm.png) no-repeat;
+   }
+    #dashboard_activity .icon_sync_success {
+        background:url(../img/dashboard/icon_sync_success_sm.png) no-repeat;
+    }
+    #dashboard_activity .icon_sync_failed {
+        background:url(../img/dashboard/icon_sync_failed_sm.png) no-repeat;
+		background-size: 16px 15px;
+    }
+
+    #dashboard_activity .icon_scanFinished_failed {
+        background:url(../img/dashboard/icon_security_failed_sm.png) no-repeat;
+    }
+    #dashboard_activity .icon_announce_failed {
+        background:url(../img/dashboard/icon_security_failed_sm.png) no-repeat;
+    }
+    #dashboard_activity .icon_announce_success {
+        background:url(../img/dashboard/icon_security_success_sm.png) no-repeat;
+    }
+
+    #dashboard_activity .icon_scanStarted_failed {
+        background:url(../img/dashboard/icon_security_failed_sm.png) no-repeat;
+    }
+    #dashboard_activity .icon_startScan_failed {
+        background:url(../img/dashboard/icon_security_failed_sm.png) no-repeat;
+
+    }
+    #dashboard_activity .icon_scanFinished_success {
+        background:url(../img/dashboard/icon_security_success_sm.png) no-repeat;
+    }
+
+    #dashboard_activity .icon_scanStarted_success {
+        background:url(../img/dashboard/icon_security_success_sm.png) no-repeat;
+    }
+    #dashboard_activity .icon_startScan_success {
+        background:url(../img/dashboard/icon_security_success_sm.png) no-repeat;
+    }
+
+    #dashboard_activity .icon_wipefactory_failed {
+        background:url(../img/dashboard/icon_wipe_failed_sm.png) no-repeat;
+    }
+    #dashboard_activity .icon_wipefactory_success {
+        background:url(../img/dashboard/icon_wipe_success_sm.png) no-repeat;
+    }
+
+    #dashboard_activity .icon_errorLog_failed {
+        background:url(../img/dashboard/icon_app_advisor_failed_sm.png) no-repeat;
+    }
+    #dashboard_activity .icon_errorLog_success {
+        background:url(../img/dashboard/icon_app_advisor_success_sm.png) no-repeat;
+    }
+
+
+    #dashboard_activity .icon_GPS_BATTERY_failed {
+        background:url(../img/dashboard/icon_locate_failed_sm.png) no-repeat;
+    }
+    #dashboard_activity .icon_GPS_BATTERY_success {
+        background:url(../img/dashboard/icon_locate_success_sm.png) no-repeat;
+    }
+
+    #dashboard_activity .icon_GPS_INTERVAL_failed {
+        background:url(../img/dashboard/icon_locate_failed_sm.png) no-repeat;
+    }
+    #dashboard_activity .icon_GPS_INTERVAL_success {
+        background:url(../img/dashboard/icon_locate_success_sm.png) no-repeat;
+    }
+
+    #dashboard_activity .icon_LOCATIONCHECK_ON_failed {
+        background:url(../img/dashboard/icon_locate_failed_sm.png) no-repeat;
+    }
+    #dashboard_activity .icon_LOCATIONCHECK_ON_success {
+        background:url(../img/dashboard/icon_locate_success_sm.png) no-repeat;
+    }
+
+
+
+/* END - Recent Activities */
+/* END - DashboardTab Pane */
+
+
+/* Bing map - why is this here... shouldn't it go into bingmap.css? */
+#bing_map {
+	border: 2px solid #cacaca;
+	margin:11px;
+	overflow:hidden;
+}
+
+#bing_map_dialog {
+	-moz-opacity:0.5;
+	background:#000;
+	display:none;
+	filter:alpha(opacity=50);
+	height:630px;
+	left:11px;
+	opacity:0.5;
+	position:absolute;
+	top:11px;
+	width:735px;
+	z-index:899;
+}
+/* END - Bing map */
+
+
+/* JQuery blockUI */
+.blockUI {
+	border-radius: 5px;
+}
+/* END - JQuery blockUI */
+
+#tipstorecover {
+	padding:0;
+}
+
+#tipstorecover .icon {
+	background:url("../img/dialog_header.png") no-repeat 0 -348px;
+	height: 80px;
+	width: 600px;
+}
+
+#tipstorecover .header {
+    background-color: #C9C9C9;
+    /*background:url("../img/dialog_header.png") no-repeat 0 -348px;*/
+    height: auto;
+    margin-left: 0;
+    margin-top: 0;
+    width: 650px;
+}
+
+#tipstorecover .close {
+	margin-top: 0;
+}
+
+#tipstorecover .header .title {
+    margin-left: 0;  
+	font-size: 16pt;
+    height: auto;
+    padding: 15px;
+    text-align: left;
+    color:black;
+}
+
+#tipstorecover .main{
+    padding: 25px;
+    text-align: left;
+}
+
+#tipstorecover li {
+    list-style-type: disc;
+    padding-top: 10px;
+}
+
+#tipstorecover ul {
+    padding-left: 21px;
+}
+
+#tipstorecover a{
+    text-decoration: none;
+    color: #0070aa;
+}
+
+#location_right .note .location_recovery_tip {
+	margin-right: 0;
+}
+
+.iphone #location_right .note .location_recovery_tip {
+	width: auto; 
+	float: left;
+	margin-right: 20px;
+}
+
+#location_right #tip_link {
+	display: none;
+}
+
+.iphone #location_right #tip_link {
+	display: block;
+	width: 202px;
+	height: 71px;
+	cursor: pointer;
+	background:url("../img/tips_to_recover_lost_device.png") no-repeat 0 0;
+}
+
+#location_right #tip_note {
+	width: auto;
+}
+
+.iphone #location_right #tip_note {	
+	width: 470px;
+	height: 100%;
+}

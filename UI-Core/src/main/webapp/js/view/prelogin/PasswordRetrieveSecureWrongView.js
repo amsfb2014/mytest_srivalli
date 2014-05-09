@@ -1,0 +1,38 @@
+/*! PasswordRetrieveSecureWrongView */
+define([
+    "jquery",
+    "underscore",
+    "backbone",
+    "text!tpl/prelogin/password_retrieve_secure_wrong.html"
+], function($, _, Backbone, Template) {
+
+    var View = Backbone.View.extend({
+
+        el: '#body_container',
+
+        template: _.template(Template),
+
+        initialize: function() {
+            $('#sideNav_privacy_policy').siblings().removeAttr('class');
+        },
+
+        render: function() {
+            var self = this;
+                
+            this.$el.html(this.template);
+
+            return this;
+        },
+        
+		events: {
+			"submit #sendpasswd": "btn_submit"
+		},
+
+		btn_submit: function(e) {
+			return checkSecurityAnswer(document.sendpasswd);
+		}
+    });
+
+    return View;
+
+});

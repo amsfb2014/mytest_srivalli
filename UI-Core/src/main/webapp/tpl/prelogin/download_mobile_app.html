@@ -1,0 +1,17 @@
+<!-- BEGIN: download_mobile_app -->
+<form name="frm_eligeble" id="frm_eligeble" method="POST" action="">
+    <div id="contentWrapper">    	
+        <div id="mainContent" class="fullWidth floatNone" >
+            <div class="downloadAppWrapper">
+                <h1>WHO'S ELIGIBLE:</h1>
+                <p>The Asurion LABS is currently available exclusively to Walmart customers who have purchase handset protection and/or digital protection within the last 30 days.</p>
+                <h1>CHECK ELIGIBILITY AND GET STARTED:</h1>
+                <p>To confirm your eligibility and ensure you have a supported handset, enter your mobile number below. If eligible, a text message* will be sent to your phone to  begin the download process.</p>
+                <label>Enter Mobile Number:</label> <input type="text" value="Ex: 5551234567" id="phonenumber" name="phonenumber" size="22" onFocus="clearInput(this, 'Ex: 5551234567');" onBlur="restoreInput(this, 'Ex: 5551234567')" maxlength="20" />
+                <div class="btnSignup" onclick="return validatePhoneNumber(frm_eligeble)">Confirm My Eligibility</div>
+                <span class="message grayText">Standard message rates apply. Your phone number will not be used for any other purposes.</span>              
+            </div>         
+        </div>
+    </div>
+</form>
+<!-- END: download_mobile_app -->

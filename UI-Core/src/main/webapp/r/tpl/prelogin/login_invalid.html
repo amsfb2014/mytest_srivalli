@@ -1,0 +1,133 @@
+<!-- BEGIN: header -->
+<div id="loginHeader" class="navbar navbar-static-top">
+ 
+	<div class="navbar-inner" style="background:#222222">
+		<a class="btn navbar-btn hidden-md hidden-lg" href="tel:5555555555" id="callsupport">
+    		<span data-icon="&#59404;" class="icon"></span>
+    	</a>           
+        <div class="container">
+            <div class="navbar-brand logo">
+                <div class="icon webbycons-logo" style="padding-left: 15px;"></div>
+            </div>
+        </div>
+    </div>
+    <div id="tabs">
+    	<h3 class="hidden-md hidden-lg hidden-sm toggle-menu" id="menu-tab-sm-btn" data-toggle="modal" data-target="#menu-tab-sm-full">
+            <span class="submenu-left"></span>
+            <span class="selected"></span>
+        </h3>
+        <div id="menu-tab-sm-full" class="modal fade ama-submenu ama-menu hidden-md hidden-sm hidden-lg">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></div>
+                    <div class="modal-body">
+                            <ul class="menu" id="mymenu">
+                                <li id="index_modal_tab" class="report_event" tag="index" data-dismiss="modal" ref="index">
+                                    Home
+                                </li>
+                                <li id="learnmore_modal_tab" class="report_event " tag="learnmore" data-dismiss="modal" ref="learnmore">
+                                    About App <span class="pull-right" data-icon="&#59418;"></span>
+                                </li>
+                                <li id="faqs_modal_tab" class="report_event" tag="faqs" data-dismiss="modal" ref="faqs">
+                                    FAQs <span class="pull-right" data-icon="&#59418;"></span>
+                                </li>
+                                <li id="download_modal_tab" class="report_event" tag="get_started" data-dismiss="modal" ref="download">
+                                    Download App <span class="pull-right" data-icon="&#59418;"></span>
+                                </li>
+                                <li id="claim_modal_tab" class="report_event" tag="http://www.phoneclaim.com" data-dismiss="modal" ref="">
+                                    <!-- <a class="preloginLinks" href="http://www.phoneclaim.com/">File a Claim</a> <span class="pull-right" data-icon="&#59418;"></span> -->
+                                    File a Claim
+                                </li>                           
+                            </ul>
+                    </div>
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+            <div class="modal-footer">
+                <a class="" data-dismiss="modal"><span class="glyphicon glyphicon-chevron-up"></span><br/>Close Menu</a>
+            </div>
+        </div>
+        <ul class="container menu hidden-xs" id="logincontainer" style="padding-left:30px;">
+            <li id="index_tab" class="report_event pull-left" tag="index" ref="index">
+              <!-- <a class="preloginLinksSelected" id="home_prelogin_menu" href="#index">Home</a>  -->
+                Home
+            </li>
+            <li id="learnmore_tab" class="report_event pull-left" tag="learnmore" ref="learnmore">
+            	<!-- <a class="preloginLinks" id="learnmore_prelogin_menu" href="#learnmore">About App</a> -->
+                About App
+            </li>
+            <!-- <li id="phones_prelogin" class="report_event pull-left" tag="phones_supported">
+            	<a class="preloginLinks" id="phones_prelogin_menu" href="#phones_supported">Supported Devices</a>
+                Supported Devices
+            </li> -->
+            <li id="faqs_tab" class="report_event pull-left" tag="faqs" ref="faqs">
+            	<!-- <a class="preloginLinks" id="faqs_prelogin_menu" href="#faqs">FAQs</a> -->
+            	FAQs
+               
+            </li>
+            <li id="download_tab" class="report_event pull-left" tag="get_started" ref="download">
+                <!-- <a class="preloginLinks" id="download_prelogin_menu" href="#get_started">Download Mobile App</a> -->
+                Download App
+            </li>
+            <li id="claim_tab" class="report_event pull-left" tag="http://www.phoneclaim.com" ref="">
+                <!-- <a class="preloginLinks" id="claim_prelogin_menu" target="_blank" href="http://www.phoneclaim.com/">File a Claim</a> -->
+                File a Claim
+            </li>
+        </ul>
+    </div>
+    </div>
+	<div class="container">
+ <div id="LoginForm">
+ <div class="row">
+	<div id="tabLogin">
+		<div><span>Subscriber Login</span></div>
+		<div class="tabletheaderLogin">
+			<form name="login" method="POST" action="#" id="loginform">
+				<div >
+					<input name="username" id="username1" value="Email Address" type="text" size="22" /> 
+					<input type="password" value="Password" id="actualPassword" name="actualPassword" class="fltRight" style="display:none" /> 
+					<input id="password_text" name="password_text" type="text" class="inputtext fltRight" value="Password" size="22" />
+					<input type="hidden" name="password" id="password" value="" />
+					<input type="hidden" name="secrethandle" id="secrethandle" value="" />
+					<input type="submit" id="btnSignup" value="Sign In" alt="Sign in" class="btnSignup"></input>
+					<a href="#retrieve_pin">Forgot your Password?</a>
+				</div>
+				<div class="validation_message validation_accountinfoInvalid">
+                    <p class="bs-callout bs-callout-danger validation_text email_empty">Invalid login. Please Try Again.</p>
+                </div>
+			</form>
+		</div>
+	</div>
+</div> 
+</div>   
+<script>
+  $(document).ready(function(){
+    $("#username1").on({
+      focus: function(){
+        clearInput(this, 'Email Address');
+      },
+      blur: function(){
+        restoreInput(this, 'Email Address');
+      }
+    });
+
+    $("#actualPassword").on({
+      focus: function(){
+        clearInput(this, 'Password');
+      },
+      blur: function(){
+        restoreInput(this, 'Password');
+      }
+    });
+
+    $("#password_text").on({
+      focus: function(){
+        clearInput(this, 'Password');
+      },
+      blur: function(){
+        restoreInput(this, 'Password');
+      }
+    });
+  });
+</script>
+<!-- END: header -->

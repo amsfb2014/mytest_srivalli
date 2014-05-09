@@ -1,0 +1,668 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.asurion.web</groupId>
+		<artifactId>web-core</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+    <artifactId>UI-LABS</artifactId>
+	
+	<packaging>war</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- NOTE: developmentBuild controls JS obfuscation behavior -->
+		<!-- developmentBuild=true sets YUI compressor properties: nocompress=true, nomunge=false -->
+		<!-- developmentBuild=false sets YUI compressor properties: nocompress=false, nomunge=true -->
+		<!-- madden TRUNK is set to developmentBuild=true for easier debugging -->
+		<developmentBuild>true</developmentBuild>
+	</properties>
+
+	<dependencies>
+		<!-- COMPILE -->
+		<dependency>
+			<groupId>com.asurion.web</groupId>
+			<artifactId>UI-Core</artifactId>
+			<type>war</type>
+		</dependency>
+
+		<!-- TEST -->
+
+		<!-- THIRD-PARTY -->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.9.v20130131</version>
+			</plugin>
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>yuicompressor-maven-plugin</artifactId>
+				<version>1.3.3</version>
+				<executions>
+					<execution>
+						<id>compressyui</id>
+						<goals>
+							<goal>compress</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<sourceDirectory>${project.build.directory}/${project.build.finalName}-work</sourceDirectory>
+					<webappDirectory>${project.build.directory}/${project.build.finalName}-work</webappDirectory>
+					<warSourceDirectory>${project.build.directory}/${project.build.finalName}-work</warSourceDirectory>
+					<preProcessAggregates>true</preProcessAggregates>
+					<nocompress>${developmentBuild}</nocompress>
+					<nomunge>${!developmentBuild}</nomunge>
+					<jswarn>false</jswarn>
+					<include>js/*.js</include>
+					<aggregations>
+						<aggregation>
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}-work/js/loader-min.js</output>
+							<includes>
+								<include>ama/Loader.js</include>
+							</includes>
+						</aggregation>
+						<aggregation>
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}-work/js/jquerybase.js</output>
+							<includes>
+								<include>lib/jquery.js</include>
+								<include>lib/jquery-ui.js</include>
+							</includes>
+						</aggregation>
+						<aggregation>
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}-work/js/amabase.js</output>
+							<includes>
+								<include>lib/lodash.underscore.js</include>
+								<include>lib/jquery.json-2.4.js</include>
+								<include>lib/jquery.webpurify.js</include>
+								<include>lib/jquery.dataTables.js</include>
+								<include>lib/jquery.form.js</include>
+                                <include>lib/jquery.idletimer.js</include>
+
+								<include>lib/backbone.js</include>
+								<include>lib/backbone.crossdomain.js</include>
+								<include>lib/xssValidator.js</include>
+
+								<!-- include components from CryptoJS/rollup/aes.js [core, enc-base64, md5, evpkdf, cipher-core, aes] -->
+								<include>lib/CryptoJS/core.js</include>
+								<include>lib/CryptoJS/enc-base64.js</include>
+								<include>lib/CryptoJS/md5.js</include>
+								<include>lib/CryptoJS/evpkdf.js</include>
+								<include>lib/CryptoJS/cipher-core.js</include>
+								<include>lib/CryptoJS/aes.js</include>
+
+								<include>ama/AMA.js</include>
+								<include>ama/Envs.js</include>
+								<include>ama/Util.js</include>
+								<include>ama/Config.js</include>
+								<include>ama/Session.js</include>
+								<include>lib/phones_supported.js</include>
+								<include>model/BaseData.js</include>
+								<include>model/Capabilities.js</include>
+								<include>model/UserData.js</include>
+								<include>view/BaseView.js</include>
+								<include>view/ListView.js</include>
+								<include>view/GridView.js</include>
+								<include>view/Dialog.js</include>
+								<include>view/StandardDialogs.js</include>
+								<include>view/Wizard.js</include>
+								<include>view/Page.js</include>
+								<include>view/Header.js</include>
+								<include>view/Content.js</include>
+
+								<include>view/plugin/Switcher.js</include>
+								<include>view/plugin/ApiPaginator.js</include>
+								<include>view/plugin/Paginator.js</include>
+								<include>view/plugin/ApiSearch.js</include>
+								<include>view/plugin/Search.js</include>
+								<include>view/plugin/InputPlaceholder.js</include>
+								<include>view/plugin/MultiAction.js</include>
+								<include>view/plugin/MultiSelector.js</include>
+								<include>view/plugin/Breakdown.js</include>
+								<include>view/plugin/Tooltip.js</include>
+
+								<include>reporting/ReportingManager.js</include>
+								<include>router/Router.js</include>
+							</includes>
+						</aggregation>
+						<aggregation>
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}-work/js/dashboard.js</output>
+							<includes>
+								<include>lib/jquery.prettyPhoto.js</include>
+								<include>lib/TableMaker.js</include>
+
+								<include>model/Endpoints.js</include>
+								<include>model/DashboardData.js</include>
+								<include>model/DeviceSettings.js</include>
+								<include>model/LegacyApiSupport.js</include>
+								
+								<include>model/StorageInfo.js</include>
+								<include>model/ContactsSummary.js</include>
+								<include>model/PhotoSummary.js</include>
+								<include>model/VideoSummary.js</include>
+								<include>model/LocateSettings.js</include>
+								<include>model/SyncHistory.js</include>
+								<include>model/SyncSettings.js</include>
+								<include>model/ScanSettings.js</include>
+								<include>model/EndpointHistory.js</include>
+								<include>view/dashboard/DashboardSupportView.js</include>
+								<include>view/dashboard/Dashboard.js</include>
+								<include>view/dashboard/DashboardLocation.js</include>
+								<include>view/dashboard/DashboardData.js</include>
+								<include>view/dashboard/DashboardSecurity.js</include>
+								<include>view/dashboard/DashboardSecuritySettings.js</include>
+								<include>view/downloadapp/DownloadAppTab.js</include>
+
+								<include>view/settings/Settings.js</include>
+								<include>view/settings/SettingsDialog.js</include>
+								<include>view/settings/SettingsIntroView.js</include>
+								<include>view/settings/BackupSettingsView.js</include>
+								<include>view/settings/LocationSettingsView.js</include>
+								<include>view/settings/ProfileSettingsView.js</include>
+								<include>view/settings/SecuritySettingsView.js</include>
+
+								<include>view/feedback/Feedback.js</include>
+								<include>view/feedback/AppRatingDialog.js</include>
+								<include>view/feedback/ShareFeedbackWizard.js</include>
+								<include>view/feedback/SurveyDialog.js</include>
+
+								<include>view/toolbar/accountStatusToolset.js</include>
+								<include>view/toolbar/AlarmToolset.js</include>
+								<include>view/toolbar/EndpointToolset.js</include>
+								<include>view/toolbar/LearnMore.js</include>
+								<include>view/toolbar/LocateToolset.js</include>
+								<include>view/toolbar/LockToolset.js</include>
+								<include>view/toolbar/SecurePhoneToolset.js</include>
+								<include>view/toolbar/StorageCapacityToolset.js</include>
+								<include>view/toolbar/SyncDialog.js</include>
+								<include>view/toolbar/SyncToolset.js</include>
+								<include>view/toolbar/TransferDataToolset.js</include>
+								<include>view/toolbar/TransferDataWizard.js</include>
+								<include>view/toolbar/WipePhoneDialog.js</include>
+								<include>view/toolbar/WipeToolset.js</include>
+								<include>view/toolbar/SecurePhoneDialog.js</include>
+								<include>view/toolbar/RecentActivityToolset.js</include>
+								<include>view/toolbar/SyncDetailsDialog.js</include>
+								<include>view/toolbar/ScanToolset.js</include>
+								<include>view/toolbar/DiagnosticScanToolset.js</include>
+								<include>view/toolbar/Toolbar.js</include>
+								<include>view/toolbar/AppAssistToolset.js</include>
+								<include>view/toolbar/TipsToRecover.js</include>
+							</includes>
+						</aggregation>
+						<aggregation>
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}-work/js/postdashboard.js</output>
+							<includes>
+								<include>model/Contacts.js</include>
+								<include>model/ContactDetails.js</include>
+								<include>model/Files.js</include>
+								<include>model/Photos.js</include>
+								<include>model/Videos.js</include>
+								<include>model/Trash.js</include>
+
+								<include>model/Locations.js</include>
+								<include>model/Threats.js</include>
+								<include>model/Privacy.js</include>
+								<include>model/SafeBrowsing.js</include>
+								<include>model/DiagnosticScanResourceData.js</include>
+								<include>model/DiagnosticScanAppsData.js</include>
+
+								<include>view/backup/DataTab.js</include>
+								<include>view/backup/SettingsSummaryView.js</include>
+								<include>view/backup/ContactsView.js</include>
+								<include>view/backup/ContactsListView.js</include>
+								<include>view/backup/ContactDetailsView.js</include>
+								<include>view/backup/ContactsImportView.js</include>
+								<include>view/backup/ContactsImportListView.js</include>
+								<include>view/backup/ContactsImportDetailsView.js</include>
+								<include>view/backup/ContactEditor.js</include>
+
+								<include>view/backup/PhotosView.js</include>
+								<include>view/backup/PhotosGridView.js</include>
+								<include>view/backup/PhotoDetailsView.js</include>
+
+								<include>view/backup/VideosView.js</include>
+								<include>view/backup/VideosGridView.js</include>
+								<include>view/backup/VideoDetailsView.js</include>
+
+								<include>view/backup/TrashView.js</include>
+								<include>view/backup/TrashListView.js</include>
+								<include>view/backup/TrashDetailsView.js</include>
+
+								<include>view/backup/LessIsMoreDialog.js</include>
+
+								<include>view/recovery/LocationTab.js</include>
+								<include>view/recovery/LocationHistoryListView.js</include>
+								<include>view/recovery/LocationMapView.js</include>
+								<include>view/recovery/LocationsSettingsSummaryView.js</include>
+
+								<include>action/BaseWorkflow.js</include>
+								<include>action/AlarmWorkflow.js</include>
+								<include>action/LocateWorkflow.js</include>
+								<include>action/LockWorkflow.js</include>
+								<include>action/SyncWorkflow.js</include>
+								<include>action/WipeWorkflow.js</include>
+								<include>action/DiagnosticScanWorkflow.js</include>
+								<include>action/ScanWorkflow.js</include>
+								<include>action/SecurePhoneWorkflow.js</include>
+								<include>action/ActionManager.js</include>
+
+								<include>view/security/SecurityTab.js</include>
+								<include>view/security/ScanSettingsView.js</include>
+								<include>view/security/ThreatProtectionView.js</include>
+								<include>view/security/ThreatHistoryListView.js</include>
+
+								<include>view/appassist/AppAssistTab.js</include>
+								<include>view/appassist/AppAssistListView.js</include>
+								<include>view/appassist/AppAssistDetailsView.js</include>
+
+								<include>view/safeBrowsingTab/SafeBrowsingTabView.js</include>
+								<include>view/supportTab/SupportTabView.js</include>
+								<include>view/supportTab/SupportTabResourceView.js</include>
+								<include>view/supportTab/SupportTabAppsListView.js</include>
+							</includes>
+						</aggregation>
+						<aggregation>
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}-work/js/mobile-base.js</output>
+							<includes>
+								<include>model/BaseData.js</include>
+								<include>model/Capabilities.js</include>
+								<include>model/UserData.js</include>
+								<include>model/Contacts.js</include>
+								<include>model/ContactDetails.js</include>
+								<include>model/Files.js</include>
+								<include>model/Photos.js</include>
+								<include>model/Videos.js</include>
+								<include>model/Trash.js</include>
+								<include>model/Locations.js</include>
+								<include>model/Endpoints.js</include>
+								<include>model/DashboardData.js</include>
+								<include>model/SyncSettings.js</include>
+								<include>model/LocateSettings.js</include>
+								<include>model/DeviceSettings.js</include>
+								<include>model/EndpointHistory.js</include>
+								<include>model/Threats.js</include>
+								<include>model/ScanSettings.js</include>
+								<include>model/LegacyApiSupport.js</include>
+								<include>model/Privacy.js</include>
+								<include>model/DiagnosticScanResourceData.js</include>
+								<include>model/DiagnosticScanAppsData.js</include>
+								<include>model/SafeBrowsing.js</include>
+								<include>model/SyncHistory.js</include>
+								<include>model/StorageInfo.js</include>
+								<include>model/ContactsSummary.js</include>
+								<include>model/PhotoSummary.js</include>
+								<include>model/VideoSummary.js</include>
+
+								<include>view/BaseView.js</include>
+								<include>view/ListView.js</include>
+								<include>view/GridView.js</include>
+
+								<include>view/plugin/Switcher.js</include>
+								<include>view/plugin/Paginator.js</include>
+								<include>view/plugin/Search.js</include>
+								<include>view/plugin/InputPlaceholder.js</include>
+								<include>view/plugin/MultiAction.js</include>
+								<include>view/plugin/MultiSelector.js</include>
+								<include>view/plugin/Breakdown.js</include>
+								<include>view/plugin/Tooltip.js</include>
+							</includes>
+						</aggregation>
+						<aggregation>
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}-work/js/mobile-lib.js</output>
+							<includes>
+								<include>lib/lodash.underscore.js</include>
+								<include>lib/jquery.js</include>
+								<include>lib/jquery.json-2.4.js</include>
+								<include>lib/jquery.webpurify.js</include>
+								<include>lib/backbone.js</include>
+								<include>lib/backbone.crossdomain.js</include>
+								<include>lib/TableMaker.js</include>
+								<include>lib/xssValidator.js</include>
+								<include>ama/AMA.js</include>
+								<include>ama/Envs.js</include>
+								<include>ama/Util.js</include>
+								<include>ama/Config.js</include>
+								<include>ama/Session.js</include>
+								<include>ie8support.js</include>
+							</includes>
+						</aggregation>
+						<aggregation>
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}-work/js/mobile-actions.js</output>
+							<includes>
+								<include>view/downloadapp/DownloadAppTab.js</include>
+
+								<include>action/BaseWorkflow.js</include>
+								<include>action/AlarmWorkflow.js</include>
+								<include>action/LocateWorkflow.js</include>
+								<include>action/LockWorkflow.js</include>
+								<include>action/SyncWorkflow.js</include>
+								<include>action/WipeWorkflow.js</include>
+								<include>action/DiagnosticScanWorkflow.js</include>
+								<include>action/ScanWorkflow.js</include>
+								<include>action/SecurePhoneWorkflow.js</include>
+								<include>action/ActionManager.js</include>
+								<include>reporting/ReportingManager.js</include>
+							</includes>
+						</aggregation>
+						<!-- RWD aggregations - outputs to webapp/r/js folder -->
+						<aggregation>
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}-work/r/js/dashboard.js</output>
+							<inputDir>${project.build.directory}/${project.build.finalName}-work/js</inputDir>
+							<includes>
+								<include>lib/jquery.prettyPhoto.js</include>
+								<include>lib/TableMaker.js</include>
+
+								<include>model/Endpoints.js</include>
+								<include>model/DashboardData.js</include>
+								<include>model/DeviceSettings.js</include>
+								<include>model/LegacyApiSupport.js</include>
+
+								<include>model/StorageInfo.js</include>
+								<include>model/ContactsSummary.js</include>
+								<include>model/PhotoSummary.js</include>
+								<include>model/VideoSummary.js</include>
+								<include>model/LocateSettings.js</include>
+								<include>model/SyncHistory.js</include>
+								<include>model/SyncSettings.js</include>
+								<include>model/ScanSettings.js</include>
+								<include>model/EndpointHistory.js</include>
+								<include>view/dashboard/DashboardSupportView.js</include>
+								<include>view/dashboard/Dashboard.js</include>
+								<include>view/dashboard/DashboardLocation.js</include>
+								<include>view/dashboard/DashboardData.js</include>
+								<include>view/dashboard/DashboardSecurity.js</include>
+								<include>view/dashboard/DashboardSecuritySettings.js</include>
+								<include>view/downloadapp/DownloadAppTab.js</include>
+
+								<include>view/settings/Settings.js</include>
+								<include>view/settings/SettingsDialog.js</include>
+								<include>view/settings/SettingsIntroView.js</include>
+								<include>view/settings/BackupSettingsView.js</include>
+								<include>view/settings/LocationSettingsView.js</include>
+								<include>view/settings/ProfileSettingsView.js</include>
+								<include>view/settings/SecuritySettingsView.js</include>
+
+								<include>view/feedback/Feedback.js</include>
+								<include>view/feedback/AppRatingDialog.js</include>
+								<include>view/feedback/ShareFeedbackWizard.js</include>
+								<include>view/feedback/SurveyDialog.js</include>
+
+								<include>view/toolbar/accountStatusToolset.js</include>
+								<include>view/toolbar/AlarmToolset.js</include>
+								<include>view/toolbar/EndpointToolset.js</include>
+								<include>view/toolbar/LearnMore.js</include>
+								<include>view/toolbar/LocateToolset.js</include>
+								<include>view/toolbar/LockToolset.js</include>
+								<include>view/toolbar/SecurePhoneToolset.js</include>
+								<include>view/toolbar/StorageCapacityToolset.js</include>
+								<include>view/toolbar/SyncDialog.js</include>
+								<include>view/toolbar/SyncToolset.js</include>
+								<include>view/toolbar/TransferDataToolset.js</include>
+								<include>view/toolbar/TransferDataWizard.js</include>
+								<include>view/toolbar/WipePhoneDialog.js</include>
+								<include>view/toolbar/WipeToolset.js</include>
+								<include>view/toolbar/SecurePhoneDialog.js</include>
+								<include>view/toolbar/RecentActivityToolset.js</include>
+								<include>view/toolbar/SyncDetailsDialog.js</include>
+								<include>view/toolbar/ScanToolset.js</include>
+								<include>view/toolbar/DiagnosticScanToolset.js</include>
+								<include>view/toolbar/Toolbar.js</include>
+								<include>view/toolbar/AppAssistToolset.js</include>
+								<include>view/toolbar/TipsToRecover.js</include>
+							</includes>
+						</aggregation>
+						<aggregation>
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}-work/r/js/postdashboard.js</output>
+							<inputDir>${project.build.directory}/${project.build.finalName}-work/js</inputDir>
+							<includes>
+								<include>model/Contacts.js</include>
+								<include>model/ContactDetails.js</include>
+								<include>model/Files.js</include>
+								<include>model/Photos.js</include>
+								<include>model/Videos.js</include>
+								<include>model/Trash.js</include>
+
+								<include>model/Locations.js</include>
+								<include>model/Threats.js</include>
+								<include>model/Privacy.js</include>
+								<include>model/SafeBrowsing.js</include>
+								<include>model/DiagnosticScanResourceData.js</include>
+								<include>model/DiagnosticScanAppsData.js</include>
+
+								<include>view/backup/DataTab.js</include>
+								<include>view/backup/SettingsSummaryView.js</include>
+								<include>view/backup/ContactsView.js</include>
+								<include>view/backup/ContactsListView.js</include>
+								<include>view/backup/ContactDetailsView.js</include>
+								<include>view/backup/ContactsImportView.js</include>
+								<include>view/backup/ContactEditor.js</include>
+
+								<include>view/backup/PhotosView.js</include>
+								<include>view/backup/PhotosGridView.js</include>
+								<include>view/backup/PhotoDetailsView.js</include>
+
+								<include>view/backup/VideosView.js</include>
+								<include>view/backup/VideosGridView.js</include>
+								<include>view/backup/VideoDetailsView.js</include>
+
+								<include>view/backup/TrashView.js</include>
+								<include>view/backup/TrashListView.js</include>
+								<include>view/backup/TrashDetailsView.js</include>
+
+								<include>view/backup/LessIsMoreDialog.js</include>
+
+								<include>view/recovery/LocationTab.js</include>
+								<include>view/recovery/LocationHistoryListView.js</include>
+								<include>${project.build.directory}/${project.build.finalName}-work/r/js/view/recovery/LocationMapView.js</include>
+								<include>view/recovery/LocationsSettingsSummaryView.js</include>
+
+								<include>action/BaseWorkflow.js</include>
+								<include>action/AlarmWorkflow.js</include>
+								<include>action/LocateWorkflow.js</include>
+								<include>action/LockWorkflow.js</include>
+								<include>action/SyncWorkflow.js</include>
+								<include>action/WipeWorkflow.js</include>
+								<include>action/DiagnosticScanWorkflow.js</include>
+								<include>action/ScanWorkflow.js</include>
+								<include>action/SecurePhoneWorkflow.js</include>
+								<include>action/ActionManager.js</include>
+
+								<include>view/security/SecurityTab.js</include>
+								<include>view/security/ScanSettingsView.js</include>
+								<include>view/security/ThreatProtectionView.js</include>
+								<include>view/security/ThreatHistoryListView.js</include>
+
+								<include>view/appassist/AppAssistTab.js</include>
+								<include>view/appassist/AppAssistListView.js</include>
+								<include>view/appassist/AppAssistDetailsView.js</include>
+
+								<include>view/safeBrowsingTab/SafeBrowsingTabView.js</include>
+								<include>view/supportTab/SupportTabView.js</include>
+								<include>view/supportTab/SupportTabResourceView.js</include>
+								<include>view/supportTab/SupportTabAppsListView.js</include>
+							</includes>
+						</aggregation>
+						<aggregation>
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}-work/r/js/amabase.js</output>
+							<inputDir>${project.build.directory}/${project.build.finalName}-work/js</inputDir>
+							<includes>
+								<include>lib/lodash.underscore.js</include>
+								<include>lib/jquery.json-2.4.js</include>
+								<include>lib/jquery.webpurify.js</include>
+								<include>lib/jquery.dataTables.js</include>
+								<include>lib/jquery.form.js</include>
+
+								<include>lib/backbone.js</include>
+								<include>lib/backbone.crossdomain.js</include>
+								<include>lib/xssValidator.js</include>
+
+								<include>lib/CryptoJS/core.js</include>
+								<include>lib/CryptoJS/enc-base64.js</include>
+								<include>lib/CryptoJS/md5.js</include>
+								<include>lib/CryptoJS/evpkdf.js</include>
+								<include>lib/CryptoJS/cipher-core.js</include>
+								<include>lib/CryptoJS/aes.js</include>
+
+								<include>${project.build.directory}/${project.build.finalName}-work/r/js/lib/bootstrap.min.js</include>
+
+								<include>ama/AMA.js</include>
+								<include>ama/Envs.js</include>
+								<include>ama/Util.js</include>
+								<include>ama/Config.js</include>
+								<include>ama/Session.js</include>
+								<include>lib/phones_supported.js</include>
+								<include>model/BaseData.js</include>
+								<include>model/Capabilities.js</include>
+								<include>model/UserData.js</include>
+								<include>view/BaseView.js</include>
+								<include>view/ListView.js</include>
+								<include>view/GridView.js</include>
+								<include>view/Dialog.js</include>
+								<include>view/StandardDialogs.js</include>
+								<include>view/Wizard.js</include>
+								<include>view/Page.js</include>
+								<include>view/Header.js</include>
+								<include>view/Content.js</include>
+
+								<include>view/plugin/Switcher.js</include>
+								<include>view/plugin/ApiPaginator.js</include>
+								<include>view/plugin/Paginator.js</include>
+								<include>view/plugin/ApiSearch.js</include>
+								<include>view/plugin/Search.js</include>
+								<include>view/plugin/InputPlaceholder.js</include>
+								<include>view/plugin/MultiAction.js</include>
+								<include>view/plugin/MultiSelector.js</include>
+								<include>view/plugin/Breakdown.js</include>
+								<include>view/plugin/Tooltip.js</include>
+
+								<include>reporting/ReportingManager.js</include>
+								<include>router/Router.js</include>
+							</includes>
+						</aggregation>
+					</aggregations>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.skwakman.nodejs-maven-plugin</groupId>
+				<artifactId>nodejs-maven-plugin</artifactId>
+				<version>1.0.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>extract</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<targetDirectory>
+						${project.build.directory}/nodejs/
+					</targetDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.mcheely</groupId>
+				<artifactId>requirejs-maven-plugin</artifactId>
+				<version>2.0.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>optimize</goal>
+						</goals>
+						<phase>prepare-package</phase>
+						<configuration>
+							<filterConfig>true</filterConfig>
+							<configFile>
+								${basedir}/src/main/config/requirejs/app.build.js
+							</configFile>
+							<nodeExecutable>${project.build.directory}/nodejs/node</nodeExecutable>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>parent-resources</id>
+						<configuration>
+							<overlays></overlays>
+							<webappDirectory>${project.build.directory}/${project.build.finalName}-work</webappDirectory>
+						</configuration>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>exploded</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>final-package</id>
+						<configuration>
+							<warSourceDirectory>${project.build.directory}/${project.build.finalName}-work</warSourceDirectory>
+							<attachClasses>false</attachClasses>
+							<archive>
+								<addMavenDescriptor>false</addMavenDescriptor>
+								<manifest>
+									<classpathPrefix>lib/</classpathPrefix>
+								</manifest>
+							</archive>
+						</configuration>
+						<phase>package</phase>
+						<goals>
+							<goal>war</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Usage: mvn dependency:copy -DmaddenLocalDirectory="path to local filesystem" -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<artifactItems>
+						<artifactItem>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>${project.artifactId}</artifactId>
+							<version>${project.version}</version>
+							<type>war</type>
+							<overWrite>true</overWrite>
+							<outputDirectory>${maddenLocalDirectory}</outputDirectory>
+							<destFileName>${maddenWarFileName}</destFileName>
+						</artifactItem>
+					</artifactItems>
+					<overWriteReleases>true</overWriteReleases>
+					<overWriteSnapshots>true</overWriteSnapshots>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Asurion Labs</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width">
+
+		<!--Code for Responsive Redirection-->
+		<script src="js/ama/LABSConfig-min.js"></script>
+		
+				
+		<!--Code for Responsive Redirection-->
+		<script src="js/ama/LABSConfig.js"></script>	
+			<!--Start Code to Enable Responsive Redirection Flag by Query String -->	
+			<script>
+				/*
+					To Enable Responsive Redirection Flag	::	https://server:port/web/index.html?enableRWD=true 
+					To Disable Responsive Redirection Flag	::	https://server:port/web/index.html?enableRWD=false
+							
+					To Enable Hybrid Responsive Redirection Flag	::	https://server:port/web/index.html?hybridRWD=true 
+					To Disable Hybrid Responsive Redirection Flag	::	https://server:port/web/index.html?hybridRWD=false
+				*/
+				try{
+					var x = location.search;
+					var enableRWD_QueryString=null;
+					var hybridRWD_QueryString=null;
+					
+					if(typeof(x) !== "undefined" ){
+						var res = x.replace("?","");
+						res= res.split("&");
+						for(var i=0;i<res.length;i++){
+							queryPair=res[i].split("=");
+							
+							if(queryPair[0].toUpperCase()=="ENABLERWD"){ //"enableRWD"
+								enableRWD_QueryString=queryPair[1];
+								enableRWD_QueryString=
+										enableRWD_QueryString==="true"?true:false;
+							}
+
+							if(queryPair[0].toUpperCase()=="HYBRIDRWD"){ //"hybridRWD"
+								hybridRWD_QueryString=queryPair[1];
+								hybridRWD_QueryString=
+									hybridRWD_QueryString==="true"?true:false;
+							}
+						}
+					}
+			
+					//to support Carriers who do not have Carrier Object defined. Under "XXXXConfig.js"
+					if( typeof(carrier) !== "undefined" 
+							&& typeof(carrier.config) !== "undefined"){
+						if( typeof(carrier.config.enableRWD) !== "undefined" 
+							&& enableRWD_QueryString !== null){
+							carrier.config.enableRWD = enableRWD_QueryString;
+						}
+						if( typeof(carrier.config.hybridRWD) !== "undefined" 
+							&& hybridRWD_QueryString !== null){
+							carrier.config.hybridRWD = hybridRWD_QueryString;
+						}
+					}
+				}catch(err){
+					console.log(err);
+				}
+				
+			</script>
+			<!--End Code to Enable Responsive Redirection Flag by Query String -->		
+		<script src="js/ama/ResponsiveUtil-min.js"></script>
+		<script>
+			checkForResponsive();
+		</script>		
+		<!--End Code for Responsive Redirection-->
+
+        <link REL="SHORTCUT ICON" HREF="img/pageicon.ico"/>
+        <link href="css/main_css-min.css" rel="stylesheet">
+        <link href="css/jquery.ui-min.css" rel="stylesheet"/>
+
+		<style id="antiClickjack" type="text/css">
+			body {display: none !important;}
+		</style>
+		<script type="text/javascript">
+			if (self === top) {
+				var antiClickjack = document.getElementById("antiClickjack");
+				antiClickjack.parentNode.removeChild(antiClickjack);
+			} else {
+				top.location = self.location;
+			}
+		</script>
+
+        <script src="js/jquerybase-min.js"></script>
+
+    </head>
+    <body>
+        <div class="dialog" id="dialog">
+            <div class="dialogMessage"></div>
+            <div class="center">
+                <img id="dialogBtn" class="dialogButton" alt="ok"
+                src="img/btn_ok.gif" />
+            </div>
+        </div>
+
+        <div id="wrapper">
+            <div id="header_container"></div>
+            <div id="body_container" ></div>
+            <div id="footer_container"></div>
+        </div>
+
+        <div id="helpWrapper">
+            <h1 class="title">Asurion LABS Help</h1>
+            <div id="helpContentWrapper">
+                <div id="help_sideNav"></div>
+                <div id="help_Body_Container"></div>
+
+                <div class="clrAll"></div>
+            </div>
+        </div>
+
+        <script src="js/amabase-min.js"></script>
+        <script data-main="js/main-min.js" src="js/require-min.js"></script>
+        <script src="js/public/landing-min.js"></script>
+    </body>
+</html>
