@@ -476,6 +476,32 @@
                 return false;
             });
             
+			$("#fbsharelocation").on('click', function(e) {
+			
+			imageurl = 'http://dev.virtualearth.net/REST/V1/Imagery/Map/Road/37.5545220618766,-122.29045083103563/15?mapLayer=TrafficFlow&key=Ak8Erl_sptfjAM8CzgqiizN7uLPv8D_gqb4tRPv-gpqWK6JUJL1qCceuNtwcAOOv';
+			   FB.login(function(response) {
+					if (response.authResponse) {
+						var access_token =   FB.getAuthResponse()['accessToken'];
+						FB.api('/me/photos?access_token='+access_token, 'post', { url: imageurl, access_token: access_token , caption: "I just used Asurion app to locate my my device. Visit https://coreqa03-web.amafib.com/"}, function(response) {
+							if (!response || response.error) {
+								$(".fbsharestatus").text("Problem Sharing your picture");
+								$(".fbsharestatus").css('color',"red");
+
+								//fbsharestatus
+								//alert('Error occured: ' + JSON.stringify(response.error));
+							} else {
+							$(".fbsharestatus").text("Shared on your wall.");
+							$(".fbsharestatus").css('color',"green");
+							}
+						});
+					} else {
+						console.log('User cancelled login or did not fully authorize.');
+					}
+				}, {scope: 'publish_actions',
+					return_scopes: true
+				   });
+			});
+			
             this._resizeMap();
         },
 

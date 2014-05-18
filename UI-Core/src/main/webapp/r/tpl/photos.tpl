@@ -146,15 +146,18 @@
             <a class="btn btn-primary btn-default details_deletefromtrashbutton details_button standard_button report_event" id="permanent_delete_photo_btn" uid="<%=id%>" role="button">Permanently Delete Photo</a>
         </div>
 
-        <div class="details_filepicture ">
+        <div class="details_filepicture">
             <img border="0" align="middle" src="<%=mediaUrl%>" class="thumbnail">
+			
         </div>
         <div class="col-md-12 col-sm-12 col-lg-12">
             <div class="pull-left">
                 <strong>File Size</strong><br>
                 <span class="details_filesize"><%=fileSizeInBytes%></span>
             </div>
-
+			<div class="fbshare"><img src="/web/r/img/fbshare.png"></img><p class="fbsharestatus"> </p></div>
+			<div class="dropboxSave"><a class="dropbox-saver dropbox-dropin-btn dropbox-dropin-default"><span class="dropin-btn-status"></span>Save to Dropbox</a></div>
+			 
             <div class="pull-right">
                 <strong>Status</strong><br>
 

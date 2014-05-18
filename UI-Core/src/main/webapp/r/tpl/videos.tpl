@@ -87,6 +87,8 @@
             <div id="data_photos_list">
                 <div class="progressing">Loading Data</div>
             </div>
+						<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-width="30px" data-type="button"></div>
+
         </div>
     </div>
 

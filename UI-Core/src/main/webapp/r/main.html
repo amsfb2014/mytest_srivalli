@@ -41,7 +41,26 @@
 <!--[if gt IE 11]><!-->
 <body id="_body" screen_capture_injected="true" class="body_color">
 <!--<![endif]-->
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '248526882016867',
+          xfbml      : true,
+          status     : true,
+          version    : 'v2.0'
+        }, {scope: 'publish_action'});
+      };
 
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk/debug.js";
+         
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    
     <div id="page_container" style="display: block;" class="">
     </div>
 
@@ -260,5 +279,7 @@
         AMA.config.legacyApiBaseUrl = "../../core/jebber";
     </script>    
     <script type="text/javascript" src="../js/start.js"></script>
+	<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="zgzl6s482ek6yom"></script>
+
 </body>
 </html>

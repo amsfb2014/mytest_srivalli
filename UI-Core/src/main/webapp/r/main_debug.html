@@ -41,6 +41,29 @@
 <!--[if gt IE 11]><!-->
 <body id="_body" screen_capture_injected="true" class="body_color">
 <!--<![endif]-->
+<div id="fb-root"></div>
+<script>
+ 
+   window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '248526882016867',
+          xfbml      : true,
+          status     : true,
+          version    : 'v2.0'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk/debug.js";
+         
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+	   
+	   </script>
+
 
     <div id="page_container" style="display: block;" class="">
     </div>

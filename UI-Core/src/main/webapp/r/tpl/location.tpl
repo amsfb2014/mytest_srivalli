@@ -171,10 +171,13 @@
                         Accuracy: <%=accuracy%> meters
                         <br />                        
                         <a class="link_text get_directions" href="http://www.bing.com/maps/default.aspx?v=2&amp;where1=<%=address%>" target="_blank">Get Directions</a>
+						
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div id="refresh_loc_map"><a class="btn btn-primary refresh_loc_btn">Refresh Location</a></div>
+					<div id="fbsharelocation"><img src="/web/r/img/fblike.PNG"> </img> </div>	
+					<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
