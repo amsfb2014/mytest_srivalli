@@ -16,6 +16,7 @@ define([
             $('#index_li').siblings().removeAttr('class');
 			
 			var x = 0;
+			$el = this.$el;
 			this.$el.on("submit", "form[name=retrievePin]", function(e) {
 				e.preventDefault();
 				
@@ -24,12 +25,10 @@ define([
 				var data = JSON.stringify({ email: $(this).find("[name=email]").val() });
 				
 				AMA.debug("Sending AJAX request: " + url);
-
 				var request = createCORSRequest.call(this, 
 						"POST",
 						url
 					);
-
 				if (request) {
 					request.setRequestHeader('Content-type', 'application/json');
 					
@@ -43,10 +42,17 @@ define([
 					request.onreadystatechange  = function() {
 						if(request.readyState === 4 && request.status === 200) {
 							window.location = "#password_sent_email";
+						} else if(request.readyState === 4 && request.status === 500) {
+							var res = JSON.parse(request.responseText);
+							$el.find(".pin_error").html(res.error);
+							AMA.Util.switchLabel(".validation_text", ".email_empty", $el.find(".validation_accountinfo2"));
+							
 						}
 					}
 					
 					request.send(data);
+				} else {
+					alert('test');
 				}
 			});
         },

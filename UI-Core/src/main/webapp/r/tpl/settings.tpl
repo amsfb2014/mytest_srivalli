@@ -1,4 +1,4 @@
-<div id="settings_template" class="template mainStructure">
+<script type="text/template" id="settings_template">
     <ul class="nav nav-tabs container">
         <li class="active settings_nav_button"><a href="#location_settings_tab" data-toggle="tab" class="hidden-xs settings_nav_button_location report_event" >Location</a></li>
         <li class="settings_nav_button"><a href="#backup_settings_tab" class="hidden-xs settings_nav_button_backup  report_event"  data-toggle="tab">Backup</a></li>
@@ -23,7 +23,7 @@
         <div class="tab-pane container" id="security_settings_tab"></div>
         <div class="tab-pane container" id="profile_settings_tab"></div>
     </div>
-</div>
+</script>
 
 <script type="text/template" id="settings_intro_template">
 	<div class="settings_intro">
@@ -72,32 +72,8 @@
             <div class="col-md-6 col-md-offset-2">
                 <!--<button type="button" class="btn btn-primary btnAccountInfoSave">Submit</button>-->
                 <span class="connecting progressing"></span>
-                <div class="validation_message validation_accountinfo">
-                    <p class="bs-callout bs-callout-danger validation_text hidden email_empty">Please enter your email address.<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden email_invalid">Please enter a valid email address.<br /></p>
-                    <p class="bs-callout bs-callout-info validation_text hidden email_unchanged">No changes made.<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden email_taken">The email address provided is already in use. Please try again.<br /></p>
-                    <p class="bs-callout bs-callout-info validation_text hidden email_changed">Email successfully changed. You need to re-login using the new email.<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden email_update_error">An error occurred.  Settings not saved!<br /></p>
-                </div>
-
             </div>
         </div>
-	    <!--
-	    <form class="form-horizontal" method="post" name="retrievePin" class="hidden" role="form">
-	        <div class="form-group hidden">
-	            <div class="col-md-2">
-	                <label for="form-location_check" class="">Send PIN:</label>
-	                <input type="hidden" value="lostpwd" name="command">
-	                <input type="hidden" value="email" name="sendType">
-	                <input id="name2" name="phonenumber" type="hidden" value="">
-	            </div>
-	            <div class="col-md-6">
-	                <input type="button" title="You will receive your PIN at the address you specified above" onclick="AccountSettingsPane.sendPIN();" value="Send PIN To Email">
-	            </div>
-	        </div>
-	    </form>
-	    -->
 	    <h4>Change Password</h4>
 	    <br />
         <div class="form-group">
@@ -133,19 +109,6 @@
                 <!--<br />-->
                 <span class="connecting progressing"></span>
                 <!--<span class="after_save_message"></span>-->
-                <div class="validation_message validation_password">
-                    <p class="bs-callout bs-callout-danger validation_text hidden current_password_empty">Please enter your current password.<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden current_password_has_special_chars">Password cannot contain special characters.<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden new_password_empty">Please enter a new password.<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden new_password_length">New password must be between 6 and 15 characters.<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden new_password_has_special_chars">New password cannot contain special characters.<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden confirm_password_empty">Please confirm your password.<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden confirm_password_mismatch">New password and confirmation password do not match.<br /></p>
-                    <p class="bs-callout bs-callout-info validation_text hidden password_changed">Settings Successfully Saved!<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden password_unchanged">Current password and new password cannot be the same.<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden password_invalid">Information entered did not match our system.  Password was not saved!<br /></p>
-                    <p class="bs-callout bs-callout-danger validation_text hidden password_update_error">An error occurred.  Settings not saved!<br /></p>
-                </div>
             </div>
         </div>
 	    <h4>Security Question</h4>
@@ -156,8 +119,8 @@
             </div>
             <div class="col-md-6">
                 <select name="securityquestion" class="form-control">
-                    <option value="What is your best friend&#39;s birthday(MMDD)?">
-                        What is your best friend&#39;s birthday(MMDD)?
+                    <option value="What is your best friend&#96;s birthday(MMDD)?">
+                        What is your best friend&#96;s birthday(MMDD)?
                     </option>
                     <option value="What was the make (year) of your first car(YYYY)?">
                         What was the make (year) of your first car(YYYY)?
@@ -191,6 +154,11 @@
                 <!--<br />-->
                 <span class="connecting progressing"></span>
                 <!--<span class="after_save_message"></span>-->
+            </div>
+        </div>
+	    <div class="form-group">
+	        <div class="col-md-6 col-md-offset-2">
+	            <button id="btnSubmitProfileSettings" type="button" class="btn btn-primary settings-save-btn">Submit</button>
                 <div class="validation_message validation_securityqa">
                     <p class="bs-callout bs-callout-danger validation_text hidden security_answer_empty">Please enter a security answer.<br /></p>
                     <p class="bs-callout bs-callout-danger validation_text hidden security_answer_invalid">Please enter 4 digits for security answer. No characters or special symbols allowed.<br /></p>
@@ -198,12 +166,30 @@
                     <p class="bs-callout bs-callout-info validation_text hidden security_answer_changed">Settings Successfully Saved!<br /></p>
                     <p class="bs-callout bs-callout-danger validation_text hidden security_answer_update_error">An error occurred.  Settings not saved!<br /></p>
                 </div>
+                <div class="validation_message validation_password">
+                    <p class="bs-callout bs-callout-danger validation_text hidden current_password_empty">Please enter your current password.<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden current_password_has_special_chars">Password cannot contain special characters.<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden new_password_empty">Please enter a new password.<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden new_password_length">New password must be between 6 and 15 characters.<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden new_password_has_special_chars">New password cannot contain special characters.<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden confirm_password_empty">Please confirm your password.<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden confirm_password_mismatch">New password and confirmation password do not match.<br /></p>
+                    <p class="bs-callout bs-callout-info validation_text hidden password_changed">Settings Successfully Saved!<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden password_unchanged">Current password and new password cannot be the same.<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden password_invalid">Information entered did not match our system.  Password was not saved!<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden password_update_error">An error occurred.  Settings not saved!<br /></p>
+                </div>
+                <div class="validation_message validation_accountinfo">
+                    <p class="bs-callout bs-callout-danger validation_text hidden email_empty">Please enter your email address.<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden email_invalid">Please enter a valid email address.<br /></p>
+                    <p class="bs-callout bs-callout-info validation_text hidden email_unchanged">No changes made.<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden email_taken">The email address provided is already in use. Please try again.<br /></p>
+                    <p class="bs-callout bs-callout-info validation_text hidden email_changed">Email successfully changed. You need to re-login using the new email.<br /></p>
+                    <p class="bs-callout bs-callout-danger validation_text hidden email_update_error">An error occurred.  Settings not saved!<br /></p>
+                </div>
+
+
             </div>
-        </div>
-	    <div class="form-group">
-	        <div class="col-md-6 col-md-offset-2">
-	            <button id="btnSubmitProfileSettings" type="button" class="btn btn-primary settings-save-btn">Submit</button>
-	        </div>
 	    </div>        
     </form>
 </script>
@@ -356,13 +342,13 @@
                     <span class="backupDataBreakdown_Photos hidden"><strong>Photos</strong></span>
                     <span class="backupDataBreakdown_Videos hidden"><strong>Videos</strong></span>
                     <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-primary backupDataBreakdown">
+                        <label class="btn btn-primary backupDataBreakdown <%=backupData['syncContactsActive']%>">
                             <input type="checkbox" <%=backupData['syncContacts']%> id="backupDataBreakdownContacts" > Contacts
                         </label>
-                        <label class="btn btn-primary backupDataBreakdown">
+                        <label class="btn btn-primary backupDataBreakdown <%=backupData['syncPhotosActive']%>">
                             <input type="checkbox" <%=backupData['syncPhotos']%> id="backupDataBreakdownImages" > Photos
                         </label>
-                        <label class="btn btn-primary backupDataBreakdown">
+                        <label class="btn btn-primary backupDataBreakdown <%=backupData['syncVideosActive']%>">
                         	<input type="checkbox" <%=backupData['syncVideos']%> id="backupDataBreakdownVideos"> Videos
                         </label>
                     </div>
@@ -405,7 +391,7 @@
                     <div class="validation_message">
                         <p class="bs-callout bs-callout-info hidden validation_text no_changes">No changes made.</p>
                         <p class="bs-callout bs-callout-danger hidden validation_text blank_day">Please select a day of week.<br/></p>
-                        <p class="bs-callout bs-callout-danger hidden validation_text blank_range">Please select a scan between range.<br/></p>
+                        <p class="bs-callout bs-callout-danger hidden validation_text blank_data">Please select a type of data to backup.<br/></p>
                         <p class="bs-callout bs-callout-info hidden validation_text success">Settings Successfully Saved!<br/></p>
                     </div>
                 </div>
@@ -555,6 +541,22 @@
                 </div>
             </div>
             <div class="form-group" id="safe_browsing_settings">
+                <div class="settings_edit_safeBrowser">
+                    <div class="col-md-2" data-toggle="buttons">
+                        <label for="form-backupSchedule" class="">Safe Browsing Settings:</label>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="safeBrowsingToggle btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary on">
+                                <input type="radio" name="safeBrowsing" class="cloudAV" id="" value="true" > On
+                            </label>
+                            <label class="btn btn-primary off">
+                                <input type="radio" name="safeBrowsing" class="cloudAV" id="" value="false" > Off
+                            </label>
+                        </div>
+                        <span class="bs-callout bs-callout-info ">(Protect your phone and privacy from potential threats while you surf the web on your phone)</span>
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
@@ -564,7 +566,13 @@
                 <div id="safebrowsing_submit" class="col-md-6 safebrowsing_settings">
                     <button type="button" class="btn btn-primary btnSafeBrowsingSave settings-save-btn">Save</button>
                     <button type="button" class="btn btn-primary rs_cancel settings-cancel-btn">Cancel</button>
-                    <span class="after_save_message btnSafeBrowsingSaveMsg"></span>
+					<div class="validation_message">
+                        <p class="bs-callout bs-callout-info hidden validation_text no_changes">No changes made.</p>
+                        <p class="bs-callout bs-callout-danger hidden validation_text blank_day">Please select a day of week.<br/></p>
+                        <p class="bs-callout bs-callout-danger hidden validation_text blank_range">Please select a scan between range.<br/></p>
+                        <p class="bs-callout bs-callout-info hidden validation_text settingsSaved">Settings Successfully Saved!<br/></p>
+                    </div>
+
                 </div>
             </div>
 

@@ -8,7 +8,7 @@ define([
 
     var View = Backbone.View.extend({
 
-        el: '#footer_container',
+        el: '#footer_containerarea',
 
         template: _.template(Template),
 

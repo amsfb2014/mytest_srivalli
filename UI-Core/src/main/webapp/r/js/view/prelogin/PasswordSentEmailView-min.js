@@ -1,0 +1,2 @@
+/*! PasswordSentEmailView */
+define(["jquery","underscore","backbone","text!tpl/prelogin/password_sent_email.html"],function(c,a,e,b){var d=e.View.extend({el:"#body_container",template:a.template(b),initialize:function(){c("#sideNav_privacy_policy").siblings().removeAttr("class")},render:function(){var f=this;this.$el.html(this.template);return this}});return d});

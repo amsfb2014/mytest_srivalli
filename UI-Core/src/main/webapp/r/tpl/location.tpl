@@ -110,6 +110,9 @@
                 <p>Remember - safety first. We strongly recommend that you do not attempt to retrieve your device from any location that is not safe, that you do not recognize, or that is not familiar to you. If you believe your device has been stolen or is in an unsafe or unfamiliar location, you should contact your local law enforcement. Asurion is not responsible for any liability resulting from your actions in retrieving your device.</p>
 
             </div>
+            <div class="hidden-lg hidden-md hidden-sm" id="toggleMapLandscape">
+                <button class="btn btn-primary">Display Full Map</button>
+            </div>
         </div>
     </div>
 
@@ -171,13 +174,12 @@
                         Accuracy: <%=accuracy%> meters
                         <br />                        
                         <a class="link_text get_directions" href="http://www.bing.com/maps/default.aspx?v=2&amp;where1=<%=address%>" target="_blank">Get Directions</a>
-						
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div id="refresh_loc_map"><a class="btn btn-primary refresh_loc_btn">Refresh Location</a></div>
-					<div id="fbsharelocation"><img src="/web/r/img/fblike.PNG"> </img> </div>	
-					<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+					<div id="fbsharelocation"><img src="/web/r/img/fblike.PNG"> </img> 
+					<div class="fbsharestatus" style="display :none;"></div>	
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

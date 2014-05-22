@@ -12,6 +12,7 @@
         <!-- <link href="css/main_css.css" rel="stylesheet"> -->
         <link href="css/prelogin.css" rel="stylesheet">
         <link href="../css/jquery.ui.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-blue-theme.css" rel="stylesheet">
 		
 		<style id="antiClickjack" type="text/css">
 			body {display: none !important;}
@@ -23,13 +24,36 @@
 			} else {
 				top.location = self.location;
 			}
-		 </script>
-		 
+		</script>
+
         <!-- jquerybase-min.js -->
         <script src="../js/lib/jquery.js"></script>
         <script src="../js/lib/jquery-ui.js"></script>
     </head>
     <body>
+	
+	<script>
+ 
+   window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '248526882016867',
+          xfbml      : true,
+          status     : true,
+          version    : 'v2.0'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk/debug.js";
+         
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+	   
+	   </script>
+	   
         <div class="dialog" id="dialog">
             <div class="dialogMessage"></div>
             <div class="center">
@@ -37,10 +61,11 @@
             </div>
         </div>
 
-        <div id="page_container" style="display: block;" class="">
+        <div id="wrapper" style="display: block;">
             <div id="header_container"></div>
-            <div id="body_container" ></div>
-            <div id="footer_container"></div>
+            <div id="body_container" >
+            </div>                        
+            <div id="footer_containerarea"></div>
         </div>
 
         <div id="helpWrapper">
@@ -62,13 +87,12 @@
         <script src="../js/lib/CryptoJS/md5.js"></script>
         <script src="../js/lib/CryptoJS/evpkdf.js"></script>
         <script src="../js/lib/CryptoJS/cipher-core.js"></script>
-        <script src="../js/lib/CryptoJS/aes.js"></script>		
+        <script src="../js/lib/CryptoJS/aes.js"></script>
         <script src="../js/ama/AMA.js"></script>
         <script src="../js/ama/Envs.js"></script>
-        <script src="../js/ama/Config.js"></script>		
+        <script src="../js/ama/Config.js"></script>
         <script data-main="js/main.js" src="../js/require.js"></script>
-		<script src="../js/lib/phones_supported.js"></script>
-        <script src="../js/public/landing.js"></script>        
+        <script src="../js/public/landing.js"></script>
         <script src="../js/ama/Util.js"></script>
         <script src="js/lib/bootstrap.min.js"></script>
     </body>

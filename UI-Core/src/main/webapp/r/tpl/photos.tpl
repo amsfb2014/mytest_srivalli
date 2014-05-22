@@ -133,9 +133,15 @@
 </script>
 
 <script type="text/template" id="photo_details_template" class="template">
+    <div class="modal-header"> <!--%=fileName% -->
+        <button type="button" class="close" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"></h4>
+    </div>
     <div class="details_image">
         <div class="btn-group btn-group-justified <%=onTrash%>">
-            <a class="btn btn-primary btn-default btn_downloadphoto details_button standard_button report_event" id="view_photo_btn" uid="<%=id%>" role="button">Download Photo</a>
+<!--
+            <a class="btn btn-primary btn-default  <%=onTrash%> btn_downloadphoto details_button standard_button report_event" id="view_photo_btn" uid="<%=id%>" role="button">Download Photo</a>
+-->
             <a class="btn btn-primary btn-default btn_removefromphone <%=statueText.removeFromPhone%> details_button standard_button report_event" id="remove_photo_btn" uid="<%=id%>" role="button">Remove From Phone</a>
             <a class="btn btn-primary btn-default btn_addtophone <%=statueText.addToPhone%> details_button standard_button report_event" id="remove_photo_btn" uid="<%=id%>" role="button">Add to Phone</a>
             <a class="btn btn-primary btn-default btn_deletephoto details_button standard_button report_event" id="delete_photo_btn" uid="<%=id%>" role="button">Delete From Phone &amp; Web</a>
@@ -146,9 +152,8 @@
             <a class="btn btn-primary btn-default details_deletefromtrashbutton details_button standard_button report_event" id="permanent_delete_photo_btn" uid="<%=id%>" role="button">Permanently Delete Photo</a>
         </div>
 
-        <div class="details_filepicture">
+        <div class="details_filepicture ">
             <img border="0" align="middle" src="<%=mediaUrl%>" class="thumbnail">
-			
         </div>
         <div class="col-md-12 col-sm-12 col-lg-12">
             <div class="pull-left">
@@ -157,12 +162,12 @@
             </div>
 			<div class="fbshare"><img src="/web/r/img/fbshare.png"></img><p class="fbsharestatus"> </p></div>
 			<div class="dropboxSave"><a class="dropbox-saver dropbox-dropin-btn dropbox-dropin-default"><span class="dropin-btn-status"></span>Save to Dropbox</a></div>
-			 
+				
             <div class="pull-right">
                 <strong>Status</strong><br>
 
                 <span class="details_status <%=statueText.addSync%>">Added on next Sync.</span>
-                <span class="details_status <%=statueText.deleteSync%>">Deleted on next Sync.</span>
+                <span class="details_status <%=statueText.deleteSync%>">Removed on next Sync.</span>
                 <span class="details_status <%=statueText.webOnly%>">Web Only</span>
                 <span class="details_status <%=statueText.onDevice%>">On Device</span>
             </div>
@@ -172,7 +177,7 @@
 
 
 <script type="text/template" id="blueimp-gallery-photos_template" class="template">
-    <div id="blueimp-gallery-photos" data-useBootstrapModal="false" useBootstrapModal="false" class="hidden hidden-sm hidden-md hidden-lg blueimp-gallery  blueimp-gallery-display">
+    <div id="blueimp-gallery-photos" data-useBootstrapModal="false" useBootstrapModal="false" class="hidden hidden-sm hidden-md hidden-lg blueimp-gallery ">
         <!-- The container for the modal slides -->
         <div class="slides"></div>
         <!-- Controls for the borderless lightbox -->

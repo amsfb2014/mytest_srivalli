@@ -10,6 +10,7 @@
         <div id="app_assist-menu-tab-sm-full" class="modal fade ama-submenu ama-menu hidden-md hidden-sm hidden-lg">
             <div class="modal-dialog">
                 <div class="modal-content">
+                	<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></div>
                     <div class="modal-body">
                         <ul class="menu">
                             <li id="" class="report_event" data-dismiss="modal">
@@ -35,6 +36,9 @@
             <div class="modal-footer">
                 <a href="javascript:return false;" class="" data-dismiss="modal"><span class="glyphicon glyphicon-chevron-up"></span><br/>Close Menu</a>
             </div>
+             <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
         </div><!-- /.modal -->
 
         <div id="privacy_rowbox_container" batchnumber="0" class="col-sm-6 col-md-3 col-lg-3 list_bordered">
@@ -130,7 +134,7 @@
                         <span class="vulnerabilityRating"><%=vulnerabilityRating%></span>
                     </span>
             </div>
-            <div class="clearfix details-sm hidden-md hidden-sm  hidden-lg" id="set_details<%=id%>">
+            <div class="clearfix details-sm hidden-md hidden-sm  hidden-lg" id="set_details<%=cleanId%>">
 
             </div>
         </td>

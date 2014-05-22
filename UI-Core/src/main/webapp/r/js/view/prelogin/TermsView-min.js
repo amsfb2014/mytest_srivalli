@@ -1,0 +1,2 @@
+/*! TermsView */
+define(["jquery","underscore","backbone","text!tpl/prelogin/terms.html"],function(c,a,e,b){var d=e.View.extend({el:"#body_container",template:a.template(b),initialize:function(){c("#sideNav_terms_and_conditions").siblings().removeAttr("class")},render:function(){var f=this;this.$el.html(this.template);c("#sideNav_terms_and_conditions").addClass("selected");return this},events:{"click #termstext, #termstext":"hideLogin"},hideLogin:function(f){alert("hiding login")}});return d});

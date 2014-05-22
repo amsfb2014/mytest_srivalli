@@ -1,0 +1,2 @@
+/*! IndexView */
+define(["jquery","underscore","backbone","text!tpl/prelogin/index.html","jquery-ui"],function(c,a,e,b){var d=e.View.extend({el:"#body_container",template:a.template(b),initialize:function(){c("#index_li").siblings().removeAttr("class")},render:function(){var f=this;this.$el.html(this.template);c("#index_li").addClass("selected");return this}});return d});

@@ -1,4 +1,52 @@
-#tabs li.selected {font-weight:normal; color:#FFF;}
+/*===== Footer links =====*/
+#header_container > #footerarea {
+    position: fixed;
+    width: 100%;
+    bottom: -1px;
+    z-index: 10;
+}
+#footerarea {
+    background: none repeat scroll 0% 0% #A2AAAD;
+    padding: 10px 0px;
+    overflow: hidden;
+    color: #FFF;
+}
+#footerarea a {
+    color: #FFF;
+}
+#footerarea .webbycons-logo:before {
+    left: 0px;
+    top: -0.5em;
+}
+#footerarea .webbycons-logo {
+    width: 100px;
+    text-shadow: none;
+    display: inline-block;
+}
+#footerarea .footer_right {
+    text-align: right;
+}
+            
+#footer_containerarea {
+    width: 100%;
+    bottom: -1px;
+}
+#footerarea .footer_left, #footerarea .footer_right {
+    text-align: center;
+}
+#footerarea .footer_left .copyright {
+    display: inline-block;
+    margin-right: 5px;
+}
+#footerarea .footer_left {
+    font-size: 0.857em;
+}
+/*===== Menu links =====*/
+
+#tabs li.selected {font-weight:bold; color:#343535 !important;}
+#loginHeader .ama-submenu ul li, #header #tabs .ama-submenu ul li.selected {
+    color: #FFF !important;
+}
 .submenu-left {
     position: relative;
     margin-right: 20px;
@@ -277,6 +325,11 @@ a.icoBlackberry {
     width: 167px;
 }
 
+a.icoApple {
+    background-position: -148px 0;
+    margin-right: 5px;
+    width: 128px;
+}
 #protectedAdv {
     display: block;
     padding-top: 50px;
@@ -300,28 +353,28 @@ h3.preloginPageTitle {
 	border-bottom: 1px solid #CACACA;
 }
 a.preloginLinks {
-    color: #C0B8B6;
+    color: #7C7975;
     cursor: pointer;
     text-decoration: none;
     line-height: 30px;
     padding: 0 15px 0 0;
  }
  #tabs li.report_event.pull-left.preloginLinks {
- 	color: #C0B8B6;
+ 	color: #7C7975;
     cursor: pointer;
     text-decoration: none;
     line-height: 30px;
     padding: 0 15px 0 0;
  }
   #tabs li.report_event.pull-left.preloginLinksSelected {
- 	color: #FFFFFF;
+ 	color: #343535;
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
     line-height: 30px;
  }
  a.preloginLinksSelected {
-    color: #FFFFFF;
+    color: #343535;
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
@@ -364,7 +417,7 @@ H3#menu-tab-sm-btn.hidden-md.hidden-lg.hidden-sm.toggle-menu {
 }
 
 .mobileFeatures {
-    background: url(../../img/features_bg.png) no-repeat 0 0;
+    background: url(../img/features_bg.png) no-repeat 0 0;
     margin-bottom:15px;
     padding-left: 53px;
     line-height: 16px;
@@ -444,7 +497,7 @@ h4.featuretitle {
 #dummy_username1, #dummy_password_text, #dummy_btnSignup, #actualPassword{
 	width:100%;
 } 
-#username1, #password_text, #actualPassword,
+#emailpin, #username1, #password_text, #actualPassword,
 #dummy_username1, #dummy_password_text, #dummy_actualPassword{
 	height:36px; 
 	padding-left:34px; 
@@ -453,7 +506,7 @@ h4.featuretitle {
 	color:#AFAFAF; 
 	background:url(../img/login_icons.png) 0 0 no-repeat
 }
-#username1,#dummy_username1{
+#emailpin, #username1,#dummy_username1{
 	background-position:0 -23px;
 }
 #password_text, #actualPassword,
@@ -466,18 +519,18 @@ h4.featuretitle {
 	color:#fff;
 	font-size:18px;
 	
-	background: #84BD00; /* Old browsers */
-	background: -moz-linear-gradient(top,  #84BD00 0%, #84BD00 57%, #84BD00 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#84BD00), color-stop(57%,#84BD00), color-stop(100%,#84BD00)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #84BD00 0%,#84BD00 57%,#84BD00 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #84BD00 0%,#84BD00 57%,#84BD00 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #84BD00 0%,#84BD00 57%,#84BD00 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #84BD00 0%,#84BD00 57%,#84BD00 100%); /* W3C */
+	background: #00AEEF; /* Old browsers */
+	background: -moz-linear-gradient(top,  #00AEEF 0%, #00AEEF 57%, #00AEEF 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00AEEF), color-stop(57%,#00AEEF), color-stop(100%,#00AEEF)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #00AEEF 0%,#00AEEF 57%,#00AEEF 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #00AEEF 0%,#00AEEF 57%,#00AEEF 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #00AEEF 0%,#00AEEF 57%,#00AEEF 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #00AEEF 0%,#00AEEF 57%,#00AEEF 100%); /* W3C */
 	
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	border: 1px solid #84BD00;
+	border: 1px solid #00AEEF;
 	
 	margin:10px 0;
 	padding:5px 0;

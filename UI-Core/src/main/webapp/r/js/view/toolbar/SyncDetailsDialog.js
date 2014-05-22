@@ -93,7 +93,7 @@
             
             this.$el.find(".syncsuccess_webContactsAdded").html(data.webContactCreate);
             this.$el.find(".syncsuccess_webContactsEdited").html(data.webContactUpdate);
-            //this.$el.find(".syncsuccess_webContactsDeleted").html(data.webContactDelete);
+            this.$el.find(".syncsuccess_webContactsDeleted").html(data.webContactDelete);
             
             this.$el.find(".syncsuccess_webPhotosAdded").html(data.deviceTransmitImages);
             this.$el.find(".syncsuccess_webPhotosEdited").html(data.webPhotosDeleted);

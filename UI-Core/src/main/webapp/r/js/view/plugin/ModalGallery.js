@@ -66,10 +66,12 @@
         gallery: false,
         __onPlug__: function (options) {
             AMA.assert(this.getChild != null, "ModalGallery plug-in is attached to a non-view host object");
+            this.currentIndex = 0;
             this._config.settings = _.defaults(options.settings, this._config.settings)
             this._config.galleryTemplateId = _.defaults(options.galleryTemplateId, this._config.galleryTemplateId)
             this._config.detailsObj = _.defaults(options.detailsObj, this._config.detailsObj)
             this.initGallery();
+
         },
         initGallery:function() {
             var o = this
@@ -147,18 +149,20 @@
                 selected = $(this.selectedItem),
                 o = this,
                 elId = "#"+$("[data-gallery]")[index].id;
+                this.currentIndex = index;
             if(el.find("img").attr("src") === selected.find("img").attr("src")) {
                 // el.html($(this._config.detailsObj).html());
                 $("[data-index=" + index + "]").html($(this._config.detailsObj).html())
             } else {
                 this._selectItem($(elId)[0]);
                 this.once(AMA.view.ListView.EVENT.NEW_DATA_LOADED, function(content) {
-                    // el.html("");
-                    $("[data-index=" + index + "]").html(content)
-                    //el.html(content);
+                    this.eventChangesOnGallery(content, index)
                 }, this)
 
             }
+        },
+        eventChangesOnGallery: function(content, index) {
+            $("[data-index=" + index + "]").html(content)
         },
         galleryOnSlideComplete: function() {
 

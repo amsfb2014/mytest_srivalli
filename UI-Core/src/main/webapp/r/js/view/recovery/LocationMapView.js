@@ -164,30 +164,25 @@
                     workflowLocate.on(BaseWorkflow.EVENT.STATE_CHANGED, function (event) {
                         switch (event.state) {
                             case LocateWorkflow.STATE.CONNECTING:
-                                AMA.debug("Location Map view is now transitioning to 'connecting' state");
                                 o.toggleState("connecting");
-
-                                LocationMapView.CurrentState = LocateWorkflow.STATE.CONNECTING;
                                 break;
                             case LocateWorkflow.STATE.REFINING:
-                                AMA.debug("Location Map view is now transitioning to 'refining' state");
                                 o.toggleState("refining");
-
-                                LocationMapView.CurrentState = LocateWorkflow.STATE.REFINING;
                                 break;
                             case BaseWorkflow.STATE.FINALIZING:
                             	o.status = (AMA.ActionManager.getWorkflow("locate")._result == AMA.workflow.BaseWorkflow.RESULT.FAILED) ? "fail" : "success";
-                            	o.toggleState(o.status);
-                            	
-                            	LocationMapView.CurrentState = LocateWorkflow.STATE.FINALIZING;
+                                o.toggleState(o.status);                                
                                 break;
                             default:
                         }
+                        LocationMapView.CurrentState = event.state;
+                        AMA.debug("Location Map View is now transitioning to '" + workflowLocate.getStateName(event.state) + "' state");                        
                     }, this);
 
                     workflowLocate.on(BaseWorkflow.EVENT.COUNTDOWN_TICK, function (event) {
                         o.$el.find("#location_progress_note .time_remaining").show();
                         o.$el.find("#location_progress_note .time_remaining .countdown").html(event.remaining);
+                        o.infoboxLayer.clear();
                     }, this);
                     
                     workflowLocate.on(BaseWorkflow.EVENT.FINISHED, function(event) {
@@ -202,7 +197,15 @@
                 	            break;
                 	    }
                 	    AMA.debug("Location Map View finished with result of '" + workflowLocate.getResultName(event.result) + "'");
-                	}, this);                    
+                	}, this); 
+                    
+                    if (ActionManager) {
+                        ActionManager.on(ActionManager.EVENT.ACTION_STARTED, function(response) {
+                            if (response.action === 'locate') {
+                                o.infoboxLayer.clear();
+                            }
+                        });   
+                    }                    
                 }
 
             }
@@ -274,10 +277,13 @@
                 	case AMA.workflow.LocateWorkflow.STATE.CONNECTING:                	
                     case AMA.workflow.LocateWorkflow.STATE.REFINING:
                         infoBoxVisibility = false;
+                        $('#accuracyinfoid').remove();
+                        $('.cancel_locate').hide();                        
                         break;
                     case AMA.workflow.SecurePhoneWorkflow.STATE.CONNECTING:    
                     case AMA.workflow.SecurePhoneWorkflow.STATE.REFINING:
                         infoBoxVisibility = false;
+                        $('#accuracyinfoid').remove();                        
                         break;
                     default:
                         break;
@@ -417,6 +423,8 @@
                     this.$el.find("#location_progress_note").hide();
                     this._doRender();
                     this.render();
+                    
+                    break;
             }
         },
 
@@ -458,6 +466,11 @@
                 o.status=e.status;
                 o.render();
             });
+			
+			
+			
+			
+			
         },
         
         _onPageResize: function() {
@@ -475,23 +488,35 @@
                 AMA.ActionManager.start("locate"); 
                 return false;
             });
-            
-			$("#fbsharelocation").on('click', function(e) {
+			    
+					
 			
-			imageurl = 'http://dev.virtualearth.net/REST/V1/Imagery/Map/Road/37.5545220618766,-122.29045083103563/15?mapLayer=TrafficFlow&key=Ak8Erl_sptfjAM8CzgqiizN7uLPv8D_gqb4tRPv-gpqWK6JUJL1qCceuNtwcAOOv';
+            this._resizeMap();
+			this.$el.find("#fbsharelocation").on("click", function() {
+			$(".fbsharestatus").hide();
+			 var locModel = AMA.models.locations.models[0];
+            
+			var latitude =  locModel.get('latitude')
+			var longitude =			locModel.get('longitude')
+			imageurl = 'http://dev.virtualearth.net/REST/V1/Imagery/Map/Road/'+latitude+','+longitude+'/15?mapLayer=TrafficFlow&key=Ak8Erl_sptfjAM8CzgqiizN7uLPv8D_gqb4tRPv-gpqWK6JUJL1qCceuNtwcAOOv';
+			
+			
 			   FB.login(function(response) {
 					if (response.authResponse) {
 						var access_token =   FB.getAuthResponse()['accessToken'];
-						FB.api('/me/photos?access_token='+access_token, 'post', { url: imageurl, access_token: access_token , caption: "I just used Asurion app to locate my my device. Visit https://coreqa03-web.amafib.com/"}, function(response) {
+						FB.api('/me/photos?access_token='+access_token, 'post', { url: imageurl, access_token: access_token , caption: "I just used Asurion Web App to locate my device. Visit https://facebook.com/asurionwebapp for more info"}, function(response) {
 							if (!response || response.error) {
+								$(".fbsharestatus").show();
 								$(".fbsharestatus").text("Problem Sharing your picture");
 								$(".fbsharestatus").css('color',"red");
 
 								//fbsharestatus
 								//alert('Error occured: ' + JSON.stringify(response.error));
 							} else {
-							$(".fbsharestatus").text("Shared on your wall.");
+							$(".fbsharestatus").show();
+							$(".fbsharestatus").html(" <img src='img/check1-sm.jpg'>Shared on your wall.");
 							$(".fbsharestatus").css('color',"green");
+							
 							}
 						});
 					} else {
@@ -500,9 +525,8 @@
 				}, {scope: 'publish_actions',
 					return_scopes: true
 				   });
-			});
-			
-            this._resizeMap();
+		
+		});
         },
 
         _initMap: function () {
@@ -706,9 +730,6 @@
 			var workflowLocate = AMA.ActionManager.getWorkflow("locate");
 			workflowLocate.cancelLocate();
 			this._defaultMapView();
-    		this.$el.find("#location_failed_note").show();
-    		this.$el.find("#bing_map_dialog").hide();
-    		this.$el.find("#message").hide();
     		this.$el.find("#location_failed_note").show();
     		this.$el.find("#bing_map_dialog").hide();
     		this.$el.find("#message").hide();

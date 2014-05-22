@@ -113,7 +113,10 @@
         },
 
         _setupEvents: function () {
-
+            LocationTab.__super__._setupEvents.apply(this, arguments);
+            this.$el.on('click', "#toggleMapLandscape", function(){
+                $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+            })
         },
         
         showTips: function() {

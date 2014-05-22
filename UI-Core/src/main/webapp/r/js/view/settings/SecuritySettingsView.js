@@ -9,7 +9,11 @@
     SecuritySettingsView.TEMPLATE_SRC = "";
 
     AMA.augment(SecuritySettingsView.prototype, {
+        initialize: function() {
+            SecuritySettingsView.__super__.initialize.apply(this, arguments);
+            this.safeBrowsingTab = AMA.models.safeBrowsing;
 
+        },
         _processData: function(item) {
             var data = {}, day="";
             data["frequency"] = {
@@ -120,23 +124,28 @@
                 $("#security_submit").addClass("hide");
             }
 
-            this.safeBrowsingTab = new AMA.view.SafeBrowsingView({
-                el: "#safe_browsing_settings",
-                parent: this,
-                data: AMA.models.safeBrowsing
-            });
 
-            this.safeBrowsingTab._fetchData();
+
+            this.safeBrowsingTab.fetch({
+                silent: true,
+                success: function(resp) {
+                    var safeBrowsingEnabled = resp.models[0].get("safeBrowsingEnabled");
+
+                    if (safeBrowsingEnabled) {
+                        $(self.$el).find('.safeBrowsingToggle .on').toggleClass('active').find('input').prop('checked', true);
+                    } else {
+                        $(self.$el).find('.safeBrowsingToggle .off').toggleClass('active').find('input').prop('checked', true);
+                    }
+                }
+            });
+/*
 
              this.safeBrowsingTab.once(AMA.view.BaseView.EVENT.DATA_LOADED, function() {
                  var safeBrowsingEnabled = this.data.models[0].get("safeBrowsingEnabled");
-                 if (safeBrowsingEnabled) {
-                     $(self.$el).find('#safeBrowsingOn').prop('checked', true);
-                 } else {
-                     $(self.$el).find('#safeBrowsingOff').prop('checked', true);
-                 }
              });
 
+
+*/
 
         },
 
@@ -150,7 +159,7 @@
 
         _setupEvents: function () {
             var self = this,
-                    $scanScheduleSelect = this.$el.find("select[name=scanSchedule]");
+                $scanScheduleSelect = this.$el.find("select[name=scanSchedule]");
 
             $scanScheduleSelect.on("change", function (){
                 self.changeSchedule(this.value);
@@ -158,18 +167,7 @@
 
             var o = this;
             $(this.$el).find(".btnSafeBrowsingSave").on('click', function() {
-
-                var data = AMA.models.safeBrowsing.models[0];//o.data.models[0];
-                var safeBrowsingEnabled = ""+data.get("safeBrowsingEnabled");
-
-                if(safeBrowsingEnabled !== $(o.$el).find('input[name="safeBrowsing"]:checked').val()) {
-                    o.saveSafeBrowsingSetting();
-                }else {
-                    $(o.$el).find('.btnSafeBrowsingSaveMsg').html(AMA.config.legacyRecordTypes.ACCOUNT_SETTINGS.messages.noChanges);
-                    return;
-                }
                 o.saveSecurity();
-
             });
         },
         saveSafeBrowsingSetting: function() {
@@ -178,19 +176,19 @@
 
             var safeBrowsingEnabled = ("true"===$(this.el).find('input[name="safeBrowsing"]:checked').val());
 
-            this.safeBrowsingTab.data.models[0].set({
+            this.safeBrowsingTab.models[0].set({
                 safeBrowsingEnabled: safeBrowsingEnabled
             });
 
             var options = {
-                url: this.safeBrowsingTab.data.url,
-                success: this.safeBrowsingTab.saveSuccess,
-                error: this.safeBrowsingTab.saveError,
-                callback: this.safeBrowsingTab.successOrFailure,
-                data: JSON.stringify(this.safeBrowsingTab.data.models[0].attributes)
+                url: this.safeBrowsingTab.url,
+                success: $.proxy(this.saveSuccess, this),
+                error: $.proxy(this.saveError, this),
+                callback: $.proxy(this.successOrFailure, this),
+                data: JSON.stringify(this.safeBrowsingTab.models[0].attributes)
             };
 
-            this.safeBrowsingTab.data.sync("update", this.safeBrowsingTab.data.models[0], options);
+            this.safeBrowsingTab.sync("update", this.safeBrowsingTab.models[0], options);
 
         },
 
@@ -257,10 +255,13 @@
             //$("#" + section + "_submit .after_save_message").html("");
             $(".settings_intro .intro_after_save_message").html("");
 
-            var validationErrors = [];
-            var changes = {};
-            var profileData = {}; // current values go in here
-            var updateCallbacks = [];
+            var validationErrors = [],
+                changes = {},
+                profileData = {}, // current values go in here
+                updateCallbacks = [],
+                data = AMA.models.safeBrowsing.models[0],
+                safeBrowsingEnabled = ""+data.get("safeBrowsingEnabled"),
+                noChangesSafeBrowsing = (safeBrowsingEnabled === $(this.$el).find('input[name="safeBrowsing"]:checked').val());
 
             // Security Settings
             if ($(".settings_content .security_settings").is(':visible')) {
@@ -274,21 +275,28 @@
             //If validation errors. Display them. No save!
             if(validationErrors != null && validationErrors != "") {
                 AMA.Util.switchLabel(".validation_text", validationErrors, this.$el);
+                this.$el.find(".after_save_message").removeClass('hidden');
+
                 return;
             }
 
             //If no changes made... No save!
-            if(!profileChanged) {
-                //this.showMessage(AMA.config.legacyRecordTypes.ACCOUNT_SETTINGS.messages.noChanges, section, false, null);
+            if(!profileChanged && noChangesSafeBrowsing) {
                 AMA.Util.switchLabel(".validation_text", ".no_changes", this.$el);
+                this.$el.find(".after_save_message").removeClass('hidden');
+
                 return;
             }
-
+            if(!noChangesSafeBrowsing) {
+                this.saveSafeBrowsingSetting();
+            }
             // Save settings
             $("#" + section + "_submit .connecting").show();
 
             var callback = this.afterBackupSettingsSave;
-            this.saveSettings(profileData, profileChanged, callback.bind(this, profileData, changes, section));
+            if(profileChanged) {
+                this.saveSettings(profileData, profileChanged, callback.bind(this, profileData, changes, section));
+            }
         },
 
         saveSecuritySettings: function(container)
@@ -325,16 +333,16 @@
             }
 
             if(profileData.frequency !== "NEVER") {
+                if(profileData.frequency !== "DAILY") {
+                    profileData.day = $(container + " select[name='scanDay'] option:selected").val();
+                    AMA.debug("Security Settings Save - scan frequency: " + profileData.frequency);
 
-                profileData.day = $(container + " select[name='scanDay'] option:selected").val();
-                AMA.debug("Security Settings Save - scan frequency: " + profileData.frequency);
-
-                //If a change was made to day
-                if(dayValue !== profileData.day) {
-                    settingsChanged = true;
-                    AMA.debug("Security Settings Save - Change made to scan day... Saving to history");
+                    //If a change was made to day
+                    if(dayValue !== profileData.day) {
+                        settingsChanged = true;
+                        AMA.debug("Security Settings Save - Change made to scan day... Saving to history");
+                    }
                 }
-
                 profileData.range = $(container + " select[name='scanTime'] option:selected").val();
                 //If a change was made to day
                 if(rangeValue !== profileData.range) {
@@ -428,8 +436,35 @@
         afterBackupSettingsSave: function(profileData, changes, section, data)
         {
             AMA.page.standardDialogs.hideloading();
-            AMA.Util.switchLabel(".validation_text", ".success", this.$el);
+            AMA.Util.switchLabel(".validation_text", ".settingsSaved", this.$el);
+            this.$el.find(".after_save_message").removeClass('hidden');
+
+        },
+        saveSuccess: function() {
+            AMA.page.standardDialogs.hideloading();
+            AMA.Util.switchLabel(".validation_text", ".settingsSaved", this.$el);
+            this.$el.find(".after_save_message").removeClass('hidden');
+
+        },
+
+        saveError: function() {
+            AMA.page.standardDialogs.hideloading();
+            AMA.page.standardDialogs.error("Unable To Contact services");
+            AMA.debug("Ajax completed with errors");
+        },
+
+        successOrFailure: function(isSuccess) {
+            AMA.page.standardDialogs.hideloading();
+            if(isSuccess) {
+                AMA.Util.switchLabel(".validation_text", ".settingsSaved", this.$el);
+                this.$el.find(".after_save_message").removeClass('hidden');
+            }
+            else {
+                AMA.page.standardDialogs.error("Unable To Contact services");
+                AMA.debug("Ajax completed with errors");
+            }
         }
+
 
     });
 })();

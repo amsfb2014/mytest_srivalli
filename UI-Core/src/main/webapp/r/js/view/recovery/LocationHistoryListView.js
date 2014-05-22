@@ -79,6 +79,11 @@
             "click .address a.link_text": "locate",
             "click  #button_locate_history_normal": "locate"
         },
+        
+        /**
+         * Temporary variable to hold the last recorded location while locating
+         */
+        lastRecordedLocation: null,
 
 		/**
 		 * Initializes Location History List View.
@@ -256,6 +261,8 @@
 		render: function () {
 			var content = "",
 				submenuContent = "";
+				firstLoc = null,
+				oldLocation = false;					
 
 			// Apply the filters on the data
 			this._applyFilters();
@@ -299,6 +306,16 @@
 			// Get a handle of the items' DOM elements
 			this._items = this.$el.find(".default ." + this._css.ITEM);
 			AMA.debug(this.options.el + " has rendered " + this._items.length + " items");
+			
+			firstLoc = (this.data.models.length > 0) ? this.data.models[0] : null,
+			oldLocation = (firstLoc && this.lastRecordedLocation && firstLoc.attributes.eventTime <= this.lastRecordedLocation.attributes.eventTime) ? true : false;
+			if (oldLocation === true) {
+				AMA.debug("Exiting render of location history. Not updated location.");
+				return;
+			}
+
+			this.lastRecordedLocation = firstLoc;
+			AMA.debug("Saving the last recorded location", this.lastRecordedLocation);	
 
 			if (this._items.length > 0) {
 				// Reselect previously selected item if it is still in the list,

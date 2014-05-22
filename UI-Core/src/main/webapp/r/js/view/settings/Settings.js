@@ -18,13 +18,25 @@
 		
 		render: function () {
 			Settings.__super__.render.apply(this, arguments);
+			var willShowBackupSettings = false,
+			isAndroid = AMA.Util.isAndroid();	
+			
+			/*
+			 * Android DP2.4 accounts should not display the Backup Settings tab.
+			 * However, iPhone 2.3 accounts should still show the Backup Settings (read-only items) tab 
+			 */
+			
+			if ((isAndroid && AMA.models.capabilities.canUpdate("mediaSettings")) || 
+					(!isAndroid && AMA.models.capabilities.canRead("mediaSettings"))) {
+				willShowBackupSettings = true;
+			}
 			
 			// Create the Settings dialog
 			this.settingsDialog = new AMA.view.SettingsDialog({
 				el: "#settings_dialog",
 				parent: this,
 				settingsIntro: false,
-				backupSettings: AMA.models.capabilities.canRead("mediaSettings"),
+				backupSettings: willShowBackupSettings,
 				locationSettings: AMA.models.capabilities.canRead("eventSettings"),
 				profileSettings: true,
 				securitySettings: AMA.models.capabilities.canRead("appSecuritySettings"),
@@ -38,7 +50,7 @@
 		        $(this).find("a").get(0).click();
 		    });
 		    var o=this;
-            this.$el.find("#myTabDrop1").dropdown();
+            this.$el.find("#myTabDrop1").dropdown();            
 		},
 		
 		show: function (tab, prevURL) {

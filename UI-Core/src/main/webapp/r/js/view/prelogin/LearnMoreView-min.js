@@ -1,0 +1,2 @@
+/*! LearnMoreView */
+define(["jquery","underscore","backbone","text!tpl/prelogin/learn_more.html"],function(c,a,e,b){var d=e.View.extend({el:"#body_container",template:a.template(b),initialize:function(){c("#sideNav_about_menu").siblings().removeAttr("class");c("#learnmore_li").siblings().removeAttr("class")},render:function(){var f=this;this.$el.html(this.template);c("#sideNav_about_menu").addClass("selected");c("#learnmore_li").addClass("selected");return this}});return d});

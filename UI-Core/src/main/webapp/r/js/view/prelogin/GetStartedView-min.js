@@ -1,0 +1,2 @@
+/*! GetStartedView */
+define(["jquery","underscore","backbone","text!tpl/prelogin/get_started.html"],function(c,a,e,b){var d=e.View.extend({el:"#body_container",template:a.template(b),initialize:function(){c("#index_li").siblings().removeAttr("class")},render:function(){var f=this;this.$el.html(this.template);c("#get_started_li").addClass("selected");return this}});return d});

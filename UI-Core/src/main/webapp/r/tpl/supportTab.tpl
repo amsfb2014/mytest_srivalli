@@ -1,8 +1,111 @@
 <script type="text/template" id="support_tab_resources_template" >
+<!-- QUICK FIX for SupportTabAppsListView -->
+	<div style="display:none" id="appListTemps">
+		<span id="appNameCell" >
+			<table cellpadding='0' cellspacing='0' border='0'>
+				<tr><td align='left' style='padding-left:13px;font-weight:bold;border: none;word-break:break-all'></td></tr>
+				<tr><td align='left' style='padding-left:13px;font-color:#666666;border:none;'>(System App)</td></tr>
+			</table>
+		</span>
+		<span id="appStatusCell">
+			<div class="running" style='text-align: center;'>Currently Running</div>
+			<div class="notApplicable" style='text-align: center;'>N/A</div>
+			<div class="date" style='text-align: center;'>N/A</div>
+		</span>
+		<span id="appBatteryUsageCell">
+			<table cellpadding='0' cellspacing='0' border='0'>
+				<tr class="batteryLevel low">
+					<td width='98px' align='center' style='border: none;'>
+						<img src='img/green_dot.png' >
+						<span style='padding-left:8px;padding-bottom:5px'>Low&nbsp;</span>
+					</td>
+				</tr>
+				<tr class="batteryLevel high">
+					<td width='98px' align='center' style='border: none;'>
+						<img src='img/red_dot.png' >
+						<span style='padding-left:8px;padding-bottom:5px'>High</span>
+					</td>
+				</tr>
+				<tr class="batteryLevel med">
+					<td width='98px' align='center' style='border: none;'>
+						<img src='img/yellow_dot.png' >
+						<span style='padding-left:8px;padding-bottom:5px'>Med.</span>
+					</td>
+				</tr>
+				<tr>
+					<td width='98px' align='center' style='border: none;'>Battery Usage</td>
+				</tr>
+			</table>
+		</span>
+		
+		<span id="appMemoryUsageCell">
+			<div class="memoryRating none" style='text-align: center;'>N/A</div>
+			<table class="memoryRating rated" cellpadding='0' cellspacing='0' border='0'>
+				<tr class="memoryRate low">
+					<td width='101px' align='center' style='border: none;'>
+						<img src='img/green_dot.png' >
+						<span  style='padding-left:8px;padding-bottom:5px'>Low&nbsp;</span>
+					</td>
+				</tr>
+				<tr class="memoryRate high">
+					<td width='101px' align='center' style='border: none;'>
+						<img src='img/red_dot.png' >
+						<span  style='padding-left:8px;padding-bottom:5px'>High</span>
+					</td>
+				</tr>
+				<tr class="memoryRate med">
+					<td width='101px' align='center' style='border: none;'>
+						<img src='img/yellow_dot.png' >
+						<span  style='padding-left:8px;padding-bottom:5px'>Med.</span>
+					</td>
+				</tr>
+				<tr>
+					<td width='101px' align='center' style='border: none;'>Memory Usage</td>
+				</tr>
+			</table>
+		</span>
+		<span id="appStorageUsageCell">
+			<table cellpadding='0' cellspacing='0' border='0'>
+				<tr class="storageRating low"><td width='93px' align='center' style='border: none;'><img src='img/green_dot.png' ><span style='padding-left:8px;padding-bottom:5px'>Low&nbsp;</span></td></tr>
+				<tr class="storageRating high"><td width='93px' align='center' style='border: none;'><img src='img/red_dot.png' ><span style='padding-left:8px;padding-bottom:5px'>High</span></td></tr>
+				<tr class="storageRating med"><td width='93px' align='center' style='border: none;'><img src='img/yellow_dot.png' ><span style='padding-left:8px;padding-bottom:5px'>Med.</span></td></tr>
+				<tr class="storageType device"><td width='93px' align='center' align='center' style='border: none;'>Device Storage</td></tr>
+				<tr class="storageType card"><td width='93px' align='center' style='border: none;'>Card Storage</td></tr>
+			</table>
+		</span>
+		<<span id="appColumns">
+			<div id='hsap_app_name' class='app_performance_app_name_header'><span class='appNameSpan'>App Name</span></div>
+            <div id='hsap_last_used' class='app_performance_last_used_header'><span class='lastUsedSpan'>Last Used</span></div>
+            <div id='hsap_battery' class='app_performance_battery_header_down'><span class='batterySpan'>Battery</span></div>
+			<div id='hsap_memory' class='app_performance_memory_header'><span class='memorySpan'>Memory</span></div>
+			<div id='hsap_storage' class='app_performance_storage_header'><span class='storageSpan'>Storage</span></div>
+		</span>
+	</div>
 	<div id="diagnostic">
 	  	<h4 class="diagnostic-title">How can we help?</h4>
 	    <!--<div class="col-sm-12 col-md-12" id="diagnostic_title">How can we help?</div>-->
-	    
+	    <div id="diagnostic_diagnostic" class="col-sm-12 col-md-12 col-lg-12 hidden-xs">
+        	<span class="col-sm-3 col-md-3 col-lg-2 iconContect img-responsive"></span>
+        	<div class="col-sm-9 col-md-9 textContent">
+            	<h4>Is your phone running slowly? </h4>
+				<p>Run a diagnostic scan on your phone to manage storage capacity and to optimize your phone's speed and battery life.  Click on Diagnostics button above.</p>
+				<!--<div class="diagnostic_help_btn">
+					<a class="btn btn-primary healthscan_again" onclick="$('.button_healthscan').click();$('#healthscanphonedialog').css('visibility', 'hidden');">Run Diagnostic Scan</a>						
+				</div>-->
+			</div>
+		</div>
+		<div id="diagnostic_diagnostic_xs" class="col-xs-12 hidden-md hidden-lg hidden-sm">
+        	<div class="">
+            	<span class="col-sm-3 col-md-3 iconContect img-responsive"></span>
+        	</div>
+        	<div class="col-xs-10 col-sm-10 col-sm-10 diagnostic_help_content">
+            	<h4>Is your phone running slowly?</h4>
+				<p>Run a diagnostic scan on your phone to manage storage capacity and to optimize your phone's speed and battery life. Click on Diagnostics button above.</p>
+			</div>
+			<!--<div class="diagnostic_help_btn">
+				<a class="btn btn-primary col-xs-12 healthscan_again" onclick="$('.button_healthscan').click();$('#healthscanphonedialog').css('visibility', 'hidden');">Run Diagnostic Scan</a>
+			</div> -->
+		</div>
 		<div id="diagnostic_claim_xs" class="col-xs-12 hidden-sm hidden-md hidden-lg">	   
         	<div class="">
             	<span class="col-sm-3 col-md-3 iconContect img-responsive"></span>
@@ -31,30 +134,9 @@
 			</div>
 		</div>
 		
-		<div id="diagnostic_diagnostic" class="col-sm-12 col-md-12 col-lg-12 hidden-xs">
-        	<span class="col-sm-3 col-md-3 col-lg-2 iconContect img-responsive"></span>
-        	<div class="col-sm-9 col-md-9 textContent">
-            	<h4>Is your phone running slowly?</h4>
-				<p>Run a diagnostic scan on your phone to manage storage capacity and to optimize your phone's speed and battery life.</p>
-				<div class="diagnostic_help_btn">
-					<a class="btn btn-primary healthscan_again" onclick="$('.button_healthscan').click();$('#healthscanphonedialog').css('visibility', 'hidden');">Run Diagnostic Scan</a>						
-				</div>
-			</div>
-		</div>
 		
-		<div id="diagnostic_diagnostic_xs" class="col-xs-12 hidden-md hidden-lg hidden-sm">
-        	<div class="">
-            	<span class="col-sm-3 col-md-3 iconContect img-responsive"></span>
-        	</div>
-        	<div class="col-xs-10 col-sm-10 col-sm-10 diagnostic_help_content">
-            	<h4>Is your phone running slowly?</h4>
-				<p>Run a diagnostic scan on your phone to manage storage capacity and to optimize your phone's speed and battery life.</p>
-			</div>
-			<div class="diagnostic_help_btn">
-				<!--<div class="col-lg-3 col-sm-4 col-xs-12 btn"><a class="healthscan_again" onclick="$('.button_healthscan').click();$('#healthscanphonedialog').css('visibility', 'hidden');">Run Diagnostic Scan</a></div>-->
-				<a class="btn btn-primary col-xs-12 healthscan_again" onclick="$('.button_healthscan').click();$('#healthscanphonedialog').css('visibility', 'hidden');">Run Diagnostic Scan</a>
-			</div> 
-		</div>
+		
+		
 		
 		<div id="diagnostic_faq" class="col-sm-12 col-md-12  hidden-xs">
         	<span class="col-sm-3 col-md-3 col-lg-2 iconContect img-responsive"></span>

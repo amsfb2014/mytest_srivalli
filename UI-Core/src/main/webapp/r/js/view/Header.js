@@ -24,7 +24,7 @@
                 var tab = $(evt.target),
                     hashTag = tab.attr("tag");
                 location.href=location.pathname + "#" + hashTag;
-                AMA.Util.setCookie("lastVisited", hashTag, 1);
+         
             });
             this.$el.find("#header-drop-menu").dropdown();
         },
@@ -101,13 +101,6 @@
                         el: "#securephone_toolset"
                     }).plug(AMA.view.plugin.Tooltip,{}));
                 }
-                if (AMA.models.capabilities.canRead("eventActionHistory")) {
-                    o.toolbar.registerToolset("recentActivity", new AMA.view.RecentActivityToolset({
-                        parent: this.toolbar,
-                        el: "#recent_activity_toolset",
-                        data: AMA.models.endpointHistory
-                    }).plug(AMA.view.plugin.Tooltip,{}));
-                }
                 if (AMA.models.capabilities.canRead("appInfectionScanResults_actionId")) {
                     o.toolbar.registerToolset("scan", new AMA.view.ScanToolset({
                         el: "#scan_toolset",
@@ -128,6 +121,16 @@
                     }));
                 }
             });
+            
+            // check for a loginAttempt flag
+            var loginAttempt = AMA.Util && AMA.Util.getCookie("loginAttempt") || 0;
+            if (loginAttempt) {
+                AMA.debug("Reporting MR Result for successful login...");
+                var details = {};
+                details.SuccessFailureFlag="S";
+                AMA.ReportingManager.reportMRResult("login", "", details);
+            } 
+            AMA.Util.deleteCookie("loginAttempt");             
 			
         },
         

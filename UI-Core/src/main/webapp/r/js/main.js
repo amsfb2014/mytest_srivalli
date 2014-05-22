@@ -200,6 +200,7 @@ require([
             });
         },
         account_locked: function() {
+        	$("#LoginForm").hide();
             require(["view/prelogin/AccountLockedView"], function(AccountLockedView) {
                 var accountLockedView = new AccountLockedView().render();
             });

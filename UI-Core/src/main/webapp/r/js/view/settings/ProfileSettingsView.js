@@ -21,7 +21,7 @@
             ProfileSettingsView.__super__.render.apply(this, arguments);
 
             // Set the value of the security question drop down to the user's current security question
-            $("select[name='securityquestion']").val(this.data.models[0].get("securityQuestion"));
+            $("select[name='securityquestion']").val(AMA.Util.decodeHTMLEntityString(this.data.models[0].get("securityQuestion")));
         },
 
         _processData: function (item) {
@@ -56,7 +56,7 @@
 
         // Validates entries in the "Account Info" section and sends request to update if validation successful
         updateAccountInfo: function() {
-            var currentEmail = this.data.models[0].get("emailAddress"),
+            var currentEmail = AMA.Util.decodeHTMLEntityString(this.data.models[0].get("emailAddress")),
                 newEmail = $.trim(this.$el.find("input[name='email']").get(0).value),
                 validationSuccess = true,
                 newAccountInfo = {},
@@ -76,6 +76,7 @@
 
             if (newEmail == "") {
                 AMA.Util.switchLabel(".validation_text", ".email_empty", this.$el.find(".validation_accountinfo"));
+                this.$el.find(".after_save_message").removeClass("hidden");
                 validationSuccess = false;
             } else if (!AMA.Util.validateEmail(newEmail)) {
                 AMA.Util.switchLabel(".validation_text", ".email_invalid", this.$el.find(".validation_accountinfo"));
@@ -207,10 +208,11 @@
             }
 
             AMA.Util.switchLabel(".validation_text", ".password_changed", this.$el.find(".validation_password"));
+            AMA.page.logout();
         },
 
         updateSecurityInfo: function () {
-            var currentQuestion = this.data.models[0].get("securityQuestion"),
+            var currentQuestion = AMA.Util.decodeHTMLEntityString(this.data.models[0].get("securityQuestion")),
                 currentAnswer = this.data.models[0].get("securityAnswer"),
                 newQuestion = this.$el.find("select[name='securityquestion']").val(),
                 newAnswer = $.trim(this.$el.find("input[name='securityanswer']").get(0).value),
@@ -234,6 +236,8 @@
                         AMA.Util.switchLabel(".validation_text", ".security_answer_update_error", o.$el.find(".validation_securityqa"));
                     }
                 };
+            
+            o.$el.find(".validation_securityqa .validation_text").hide();
                 
             if (currentQuestion !== newQuestion || (currentQuestion === newQuestion && currentAnswer !== newAnswer && newAnswer !== "")) {
                 if (newAnswer == "") {

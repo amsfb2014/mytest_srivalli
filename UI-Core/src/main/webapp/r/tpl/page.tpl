@@ -8,11 +8,11 @@
 
     <div id="footer" class="hidden-xs">
         <div class="footer container">
-            <div class="footer_right col-md-4 col-md-push-8">
+            <div class="footer_right col-sm-2 col-sm-push-10 col-md-2 col-md-push-10">
                 <div class="icon webbycons-logo"></div>
             </div>        
         
-            <div class="footer_left col-md-8 col-md-pull-4">
+            <div class="footer_left col-sm-10 col-sm-pull-2 col-md-10 col-md-pull-2">
                 <span class="copyright">
                     &copy; Asurion Mobile Applications, Inc. 2012-2013. All Rights Reserved.
                 </span>
@@ -20,8 +20,8 @@
                     <span class="terms"> <a href="index.html#terms" target="_blank"> Terms and Conditions </a>
                     <span class="terms_pipe pipe">|</span> </span>
                     <span class="privacy_policy"><a href="index.html#privacy" target="_blank"> Privacy Policy </a></span>
-                    <span class="privacy_pipe pipe">|</span>
-                    <span class="contact_us"><a href="index.html#contact" target="_blank"> Contact </a> </span>
+                    <!--<span class="privacy_pipe pipe">|</span>
+                    <span class="contact_us"><a href="index.html#contact" target="_blank"> Contact </a> </span> -->
                 </span>
             </div>
 
@@ -94,15 +94,20 @@
                     <a class="" data-dismiss="modal"><span class="glyphicon glyphicon-chevron-up"></span><br/>Close Menu</a>
                 </div>
             </div><!-- /.modal -->
-            <div class="navbar-brand logo">
-                <div class="icon webbycons-logo"></div>
+            <div class="navbar-brand logo"><img src="img/logo.png" alt="<div class='icon webbycons-logo'></div>">
+                <!--<div class="icon webbycons-logo"></div>-->
             </div>
             <div id="xs-info" class="hidden-md hidden-lg pull-right">
                 <!--%=name%-->
                 <a role="sda" id="logout_link" tabindex="-1">Logout</a>
             </div>
             <div class="hidden-sm hidden-xs pull-right">
+				
+			 
                 <ul class="nav">
+				 <li id='fblink'> 
+						<a style="margin-top: -11px;" target="_blank" href="https://facebook.com/asurionwebapp"><img src="img/fbicon.jpg"></a>
+				 </li>
                     <li id="help_link" class="hidden-xs presentation">
                         <%=name%>
                     </li>
@@ -208,7 +213,7 @@
     <li id="wipe_toolset" class="locate_tab_button button pull-left"></li>
     <li id="securephone_toolset" class="locate_tab_button button pull-left"></li>
     <li id="account_status_toolset" class="col-md-12 pull-left"></li>
-    <li id="recent_activity_toolset" class="col-md-4 pull-left"></li>
+    <!--<li id="recent_activity_toolset" class="col-md-4 pull-left"></li>-->
     <li id="scan_toolset" class="button pull-left"></li>
     <li id="app_assist_toolset" class="col-xs-12 col-sm-12 col-md-9 col-lg-9 pull-left"></li>
     <li id="diagnosticScan_toolset" class="button pull-left"></li>
@@ -372,7 +377,7 @@
 									</label>					
 									
 									
-								<li><div class="note bs-callout bs-callout-info">Note: The selections above will affect this sync only.  It will not alter your current <a class="link_text syncSettingsDialog" href="javascript:;">Sync Settings</a>.<br></div></li>
+								<li><div class="note bs-callout bs-callout-info">Note: The selections above will affect this sync only.</div></li>
 								<li>
 									<div class="sync_setting">
 										<strong>Current Sync setting:</strong>
@@ -486,7 +491,7 @@
 								<ul>
 									<li><span class="syncsuccess_webContactsAdded">0</span>&nbsp;Added</li>
 									<li><span class="syncsuccess_webContactsEdited">0</span>&nbsp;Edited</li>
-									<li class="hidden-xs" style="list-style-type: none;">&nbsp;</li>
+									<li><span class="syncsuccess_webContactsDeleted">0</span>&nbsp;Edited</li>
 								</ul>
 							</div>
 							<div class="clear"></div>

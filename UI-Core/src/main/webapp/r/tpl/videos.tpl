@@ -87,8 +87,6 @@
             <div id="data_photos_list">
                 <div class="progressing">Loading Data</div>
             </div>
-						<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-width="30px" data-type="button"></div>
-
         </div>
     </div>
 
@@ -132,16 +130,22 @@
 
 
 <script type="text/template" id="video_details_template" class="template">
+    <div class="modal-header"> <!--%=fileName% -->
+        <button type="button" class="close" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"></h4>
+    </div>
     <div class="details_image">
         <div class="btn-group btn-group-justified <%=onTrash%>">
-            <a class="btn btn-primary btn-default btn_downloadvideo details_button standard_button report_event" id="view_photo_btn" uid="<%=id%>" role="button">Download Video</a>
+<!--
+            <a class="btn btn-primary btn-default  <%=onTrash%> btn_downloadvideo details_button standard_button report_event" id="view_photo_btn" uid="<%=id%>" role="button">Download Video</a>
+-->
             <a class="btn btn-primary btn-default btn_removefromphone <%=statueText.removeFromPhone%> details_button standard_button report_event" id="remove_photo_btn" uid="<%=id%>" role="button">Remove From Phone</a>
             <a class="btn btn-primary btn-default btn_addtophone <%=statueText.addToPhone%> details_button standard_button report_event" id="remove_photo_btn" uid="<%=id%>" role="button">Add to Phone</a>
             <a class="btn btn-primary btn-default btn_deletevideo details_button standard_button report_event" id="delete_photo_btn" uid="<%=id%>" role="button">Delete From Phone &amp; Web</a>
         </div>
 
         <div class="btn-group btn-group-justified <%=notOnTrash%>">
-            <a class="btn btn-primary btn-default btn_downloadvideo details_button standard_button report_event" id="view_photo_btn" uid="<%=id%>" role="button">Download Video</a>
+<!--<a class="btn btn-primary btn-default btn_downloadvideo details_button standard_button report_event" id="view_photo_btn" uid="<%=id%>" role="button">Download Video</a>-->
             <a class="btn btn-primary btn-default details_undeletebutton details_button standard_button report_event" id="restore_photo_btn" uid="<%=id%>" role="button">Restore Video</a>
             <a class="btn btn-primary btn-default details_deletefromtrashbutton details_button standard_button report_event" id="delete_photo_btn" uid="<%=id%>" role="button">Permanently Delete Video</a>
         </div>
@@ -159,7 +163,7 @@
                 <strong>Status</strong><br>
 
                 <span class="details_status <%=statueText.addSync%>">Added on next Sync.</span>
-                <span class="details_status <%=statueText.deleteSync%>">Deleted on next Sync.</span>
+                <span class="details_status <%=statueText.deleteSync%>">Removed on next Sync.</span>
                 <span class="details_status <%=statueText.webOnly%>">Web Only</span>
                 <span class="details_status <%=statueText.onDevice%>">On Device</span>
             </div>
@@ -179,7 +183,7 @@
 </script>
 
 <script type="text/template" id="blueimp-gallery-videos_template" class="template">
-    <div id="blueimp-gallery-videos" data-useBootstrapModal="false" useBootstrapModal="false" class="hidden hidden-sm hidden-md hidden-lg blueimp-gallery  blueimp-gallery-display">
+    <div id="blueimp-gallery-videos" data-useBootstrapModal="false" useBootstrapModal="false" class="hidden hidden-sm hidden-md hidden-lg blueimp-gallery ">
         <!-- The container for the modal slides -->
         <div class="slides"></div>
         <!-- Controls for the borderless lightbox -->

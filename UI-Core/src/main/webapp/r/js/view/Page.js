@@ -48,12 +48,20 @@
             this.plug(AMA.view.plugin.PageViewedTracker, {
                 tab: ".report_event"
             });
+            // this.fotterHack();
         },
 
         _setupEvents: function () {
             $(window).bind('beforeunload', function() {
                 AMA.session.sendSyncCommand();
             });
+            $(document)
+                    .on('focus', 'input', function(e) {
+                        $("#footer").addClass('hidden');
+                    })
+                    .on('blur', 'input', function(e) {
+                        $("#footer").removeClass('hidden');
+                    });
         },
 
         checkPlatform: function () {
@@ -79,8 +87,15 @@
              */
         },
         _onPageResize: function(e) {
+            if($(".modal-open").is(":visible")) {
+                $(".ama-menu.in").modal('toggle');
+            }
+            // this.fotterHack();
             /* Comment out below line to prevent throwing a JS error in IE */
         	//console.debug(e);
+        },
+        fotterHack: function() {
+            $("#body_container").css({ "minHeight": document.documentElement.clientHeight-$("#header_container").height()-47});
         },
 
         switchContent: function (tab, subtab) {
@@ -109,6 +124,7 @@
                     support: "techsupport"
                 };
                 var t = mapping[tab] ? mapping[tab] : tab;
+
                 this.$el.find("#"+t+"_tab, #"+t+"_modal_tab").addClass("selected").siblings().removeClass("selected");
                 this.$el.find("#menu-tab-sm-btn>.selected").html(this.$el.find("#"+t+"_tab").html());
 
@@ -116,9 +132,9 @@
                 // simply switch to that subtab
                 if (subtab && !renderPending) {
                     tabView.switchTo(subtabId);
-                    // Highlight the correct submenu link
-                    // TODO: This shouldn't have to be in Util
-                    AMA.Util.highlightSubNav(subtab);
+                    // util.highlightSubNav Not applicable on RWD...
+                    // AMA.Util.highlightSubNav(subtab);
+                    this.$el.find(".tab-" + subtab ).addClass("selected").siblings().removeClass("selected");
                 }
             }
         },

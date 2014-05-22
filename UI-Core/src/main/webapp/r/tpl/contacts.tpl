@@ -871,6 +871,10 @@
 				<div class="lineitem_key left  col-xs-4 col-sm-4 col-md-3 col-lg-4" >Birthday:</div>
 				<div class="<%= birthday.valueClass%> col-xs-8  col-sm-8 col-md-9 col-lg-8" ><%= birthday.value%></div>
 			</div>
+			<div class="<%= anniversary.elClass%> col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display:<%= anniversary.display%>">
+				<div class="lineitem_key left  col-xs-4 col-sm-4 col-md-3 col-lg-4" >Anniversary:</div>
+				<div class="<%= anniversary.valueClass%> col-xs-8  col-sm-8 col-md-9 col-lg-8" ><%= anniversary.value%></div>
+			</div>
 			<div class="<%= notes.elClass%> col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display:<%= notes.display%>">
 				<div class="lineitem_key left  col-xs-4 col-sm-4 col-md-3 col-lg-4" >Notes:</div>
 				<div class="<%= notes.valueClass%> col-xs-8  col-sm-8 col-md-9 col-lg-8" ><%= notes.value%></div>

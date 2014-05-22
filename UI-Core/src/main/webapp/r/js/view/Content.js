@@ -20,7 +20,7 @@
 			this.plug(AMA.view.plugin.TimeSpentTracker, {
 				event: this.SWITCH_VIEW_EVENT
 			});
-		
+		    this.enabledFeatures = [];
         },
 
         render: function () {
@@ -40,7 +40,6 @@
             	!AMA.models.capabilities.canRead("browserSecuritySettings") &&
             	!AMA.models.capabilities.canRead("apphealthscanresults_id_resources")) {
             		$("#header_link").hide();
-            		
             		$("#dashboard_tab").hide();
             		$("#backup_tab").hide();
 	                $("#data_tab").hide();
@@ -54,6 +53,8 @@
 	                $("#safe_browsing_tab").hide();
 	                $("#techsupport_tab").hide();
 	                $("#support_tab").hide();
+
+                    $("#backup_modal_tab").remove();
 	                
             		$("#download_tab").show();
             		this.downloadAppTab = new AMA.view.DownloadAppTab({
@@ -79,6 +80,7 @@
 	            else {
 	                $("#backup_tab").hide();
 	                $("#data_tab").hide();
+                    this.enabledFeatures.push("#backup_modal_tab");
 	            }
 	            
 	            
@@ -95,6 +97,7 @@
 	            else {
 	                $("#location_tab").hide();
 	                $("#locate_tab").hide();
+                    this.enabledFeatures.push("#locate_modal_tab");
 	            }
 	            
 	            if( AMA.models.capabilities.canRead("appInfectionScanResults_actionId") ) {
@@ -107,6 +110,8 @@
 	            else {
 	                $("#security_tab").hide();
 	                $("#security_selector_tab").hide();
+                    this.enabledFeatures.push("#security_selector_modal_tab");
+
 	            }
 	            
 	            if( AMA.models.capabilities.canRead("appVulnerabilityScanResults_id") ) {
@@ -121,7 +126,8 @@
 	            else {
 	                $("#app_assist_tab").hide();
 	                $("#app_assist_selector_tab").hide();
-	            }
+                    this.enabledFeatures.push("#app_assist_selector_modal_tab");
+                }
 	            
 	            if( AMA.models.capabilities.canRead("apphealthscanresults_id_resources") ) {
 	                this.supportTab = new AMA.view.SupportTabView({
@@ -134,8 +140,12 @@
 	            else {
 	                $("#techsupport_tab").hide();
 	                $("#support_tab").hide();
+                    this.enabledFeatures.push("#techsupport_modal_tab");
 	            }
 			}
+            _.each(this.enabledFeatures, function(item, index) {
+                $(item).remove();
+            });
         }
     });
 })();

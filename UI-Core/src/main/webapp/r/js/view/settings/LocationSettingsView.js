@@ -154,6 +154,7 @@
             if(!profileChanged)
             {
                 AMA.Util.switchLabel(".validation_text", ".noChanges", this.$el);
+                this.$el.find(".after_save_message").removeClass('hidden');
                 return;
             }
 
@@ -217,18 +218,21 @@
             {
                 if(profileData.frequency === "" && profileData.batteryLevel === "") {
                     AMA.Util.switchLabel(".validation_text", ".noFreqAndLevel", this.$el);
+                    this.$el.find(".after_save_message").removeClass('hidden');
                     AMA.debug("Failed validation - location - frequency");
                     AMA.debug("Failed validation - location - battery");
                 }
                 else if(profileData.frequency === "")
                 {
                     AMA.Util.switchLabel(".validation_text", ".noFreq", this.$el);
+                    this.$el.find(".after_save_message").removeClass('hidden');
                     //validationErrors += "Please select a location check frequency.<br/>";
                     AMA.debug("Failed validation - location - frequency");
                 }
                 else if(profileData.batteryLevel === "")
                 {
                     AMA.Util.switchLabel(".validation_text", ".noBattLevel", this.$el);
+                    this.$el.find(".after_save_message").removeClass('hidden');
                     //validationErrors += "Please select a location check battery level.<br/>";
                     AMA.debug("Failed validation - location - battery");
                 }
@@ -272,6 +276,7 @@
         afterBackupSettingsSave: function(profileData, changes, section, data)
         {
             AMA.Util.switchLabel(".validation_text", ".settingsSaved", this.$el);
+            this.$el.find(".after_save_message").removeClass("hidden");
             AMA.models.endpointHistory.fetch();
             AMA.models.devicesettings.fetch();
         }

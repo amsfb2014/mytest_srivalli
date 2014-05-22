@@ -1,0 +1,2 @@
+/*! AccountLockedView */
+define(["jquery","underscore","backbone","text!tpl/prelogin/account_locked.html"],function(c,a,e,b){var d=e.View.extend({el:"#body_container",template:a.template(b),render:function(){var f=this;this.$el.html(this.template);return this}});return d});

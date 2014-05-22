@@ -1,0 +1,2 @@
+/*! ContactUsView */
+define(["jquery","underscore","backbone","text!tpl/prelogin/contact_us.html"],function(c,a,e,b){var d=e.View.extend({el:"#body_container",template:a.template(b),initialize:function(){c("#index_li").siblings().removeAttr("class")},render:function(){var f=this;this.$el.html(this.template);return this}});return d});

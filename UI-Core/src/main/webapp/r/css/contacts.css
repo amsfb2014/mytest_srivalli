@@ -335,6 +335,7 @@ margin-bottom: 5px;
 	font-size: 16px;
 	color: #000;
 	font-weight: bold;
+	width:120px;
 }
 
 /*#rs_saveEdit,.rs_saveEdit,.rs_save,.rs_save_next{
@@ -602,6 +603,10 @@ a.ui-datepicker-prev, a.ui-datepicker-next{display:inline-block; margin-bottom:2
 }
 
 @media only screen and (min-width : 320px) and (max-width : 767px) {
+	.antiActive{
+		right: -100%;
+	}
+	
 	#data_contacts_tab .sidebar-offcanvas.active {	
 		right: 0;
 		opacity: 0;

@@ -87,9 +87,12 @@
             data.summary += (data.batteryOrMemoryUsageRating != null) ? oEl.find(".batteryOrMemoryUsageRating").clone().html('<span class="icon webbycons-battery"></span> ' + data.batteryOrMemoryUsageRating)[0].outerHTML : '';
             data.summary += (data.summary === "") ? oEl.find(".emptyPrivacyDetails")[0].outerHTML : "";
 			data.hasItem = "";
-			
+            data.cleanId = "";
+
 			if(!data.id) {
                 data.hasItem = "hidden";
+                data.cleanId = data.id.split("/").join("");
+                data.cleanId = data.cleanId.split("+").join("");
                 _.extend(data, item);
             }
 			
@@ -101,7 +104,12 @@
         render: function() {
             AppAssistDetailsView.__super__.render.apply(this, arguments);
             if(!this.data) return;
-            $("#set_details"+this.data.toJSON()[0].id)
+            if(!this.data.toJSON().length) return;
+            var currentID = this.data.toJSON()[0].id,
+                    cleanId = currentID.split("/").join("");
+            cleanId = cleanId.split("+").join("");
+
+            $("#set_details"+cleanId)
                     .html(_.template(this.template, this._processData(this.data.toJSON()[0])))
                     .removeClass("hidden");
         },

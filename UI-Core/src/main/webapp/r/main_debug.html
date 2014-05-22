@@ -9,8 +9,7 @@
     <title>Asurion Mobile Security Demo</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/blueimp-gallery.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-blue-theme.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/page.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/location.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/settings.css" rel="stylesheet">
@@ -22,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="css/videos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/trash.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/support.css" rel="stylesheet">
-	
+
+    <link rel="stylesheet" type="text/css" href="css/blueimp-gallery.min.css" rel="stylesheet">
 	<style id="antiClickjack" type="text/css">
 		body {display: none !important;}
 	 </style>
@@ -41,10 +41,9 @@
 <!--[if gt IE 11]><!-->
 <body id="_body" screen_capture_injected="true" class="body_color">
 <!--<![endif]-->
-<div id="fb-root"></div>
+
 <script>
- 
-   window.fbAsyncInit = function() {
+    window.fbAsyncInit = function() {
         FB.init({
           appId      : '248526882016867',
           xfbml      : true,
@@ -62,9 +61,9 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
 	   
-	   </script>
+</script>
 
-
+	   
     <div id="page_container" style="display: block;" class="">
     </div>
 
@@ -205,8 +204,7 @@
     <script type="text/javascript" src="js/view/toolbar/TransferDataWizard.js"></script>
     <script type="text/javascript" src="js/view/toolbar/WipePhoneDialog.js"></script>
     <script type="text/javascript" src="js/view/toolbar/WipeToolset.js"></script>
-    <script type="text/javascript" src="js/view/toolbar/SecurePhoneDialog.js"></script>
-    <script type="text/javascript" src="../js/view/toolbar/RecentActivityToolset.js"></script>
+    <script type="text/javascript" src="js/view/toolbar/SecurePhoneDialog.js"></script>    
     <script type="text/javascript" src="js/view/toolbar/SyncDetailsDialog.js"></script>
     <script type="text/javascript" src="../js/view/toolbar/ScanToolset.js"></script>
     <script type="text/javascript" src="js/view/toolbar/DiagnosticScanToolset.js"></script>
@@ -284,5 +282,7 @@
         AMA.config.legacyApiBaseUrl = "../../core/jebber";
     </script>    
     <script type="text/javascript" src="../js/start.js"></script>
+	<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="zgzl6s482ek6yom"></script>
+
 </body>
 </html>
